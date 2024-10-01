@@ -9,7 +9,6 @@
   - SQL : <1 Year
 ### Frameworks & Libraries: 
   .Net Framework 
-  
 ### Tools & Platforms:
   - Git
   - Unity3D
@@ -30,8 +29,8 @@
 <details>
   <summary style="font-size: 1.1em;" >Newfemme Apps</summary>
 
-[Projects no longer on PlayStore](#)
-  <p>Detailed information about Project 1:</p>
+  [Projects no longer on PlayStore](#)
+  Information
 
   <div style="display: flex; gap: 10px;">
     <img src="https://via.placeholder.com/300x200.png?text=Project+1+-+Screenshot+1" alt="Project 1 Screenshot 1" style="width: 300px; height: 200px; border-radius: 8px;"/>
@@ -44,6 +43,7 @@
   - Unity3D
   - C#
   
+  
   **Features**: 
   - Responsive design
   - User authentication
@@ -53,12 +53,14 @@
   - Daily Water Tracker
   - Minigames
   
+  
   **Challenges**: 
   - Implementing OAuth for social logins  
   - Implementing Voice Recongnition
   - Implementing Menstrual Tracker
   - Implementing Webview Implementation for Unity3D - Android Build
   - Implementing REST API
+  
   
   **Development Tasks**
   - Develop Newfemme Apps (Initial Apps)
@@ -70,13 +72,13 @@
   - Provide SDK Implementation, eg: Google In-App Update
   - Optimization
 
+  
   **Debugging Tools**:
    Unity Profiler, Visual Studio Debugger
 
-   **Testing**: Playtesting using Unity and Build (Manual Test)
-
-
   
+  **Testing**: Playtesting using Unity and Build (Manual Test)
+
 </details>
 
 -------
