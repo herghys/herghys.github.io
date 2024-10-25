@@ -162,5 +162,175 @@
             "path": "cinda",
             "images": []
         }
+    },
+    {
+        "title": "ARMath",
+        "projectType": "2",
+        "icon": "",
+        "description": "Math with AR about geometry for Mobile",
+        "projectTime": {
+            "startDate": "November 2022",
+            "endDate": "February 2023",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement Vuforia SDK for AR about geometry",
+            "Implement Target Marker with Vuforia SDK"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Visual Studio",
+            "Git (Github)",
+            "Vuforia SDK"
+        ],
+        "repo": {
+            "link": "https://github.com/herghys/GeoARVenture",
+            "isPrivate": false
+        },
+        "store": {
+            "link": "",
+            "isAvailable": true
+        },
+        "screenshot": {
+            "orientation": "portrait",
+            "path": "armath",
+            "images": []
+        }
+    },
+    {
+        "title": "Wayangku AR",
+        "projectType": "2",
+        "icon": "",
+        "description": "Mobile AR about Wayang (Thesis Project) with Vuforia SDK",
+        "projectTime": {
+            "startDate": "June 2021",
+            "endDate": "July 2021",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement Vuforia SDK for AR about wayang",
+            "Implement Target Marker with Vuforia SDK",
+            "Implement simple quiz"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Visual Studio",
+            "Git (Github)",
+            "Vuforia SDK"
+        ],
+        "repo": {
+            "link": "https://github.com/herghys/Wayangku",
+            "isPrivate": false
+        },
+        "store": {
+            "link": "",
+            "isAvailable": true
+        },
+        "screenshot": {
+            "orientation": "portrait",
+            "path": "armath",
+            "images": []
+        }
+    },
+    {
+        "title": "AR Batuan",
+        "projectType": "2",
+        "icon": "",
+        "description": "Mobile AR about Rock type (Geography) with Vuforia SDK",
+        "projectTime": {
+            "startDate": "June 2018",
+            "endDate": "July 2018",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement Vuforia SDK for AR about rock",
+            "Implement Target Marker with Vuforia SDK"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Visual Studio",
+            "Git (Github)",
+            "Vuforia SDK"
+        ],
+        "repo": {
+            "link": "https://github.com/herghys/Wayangku",
+            "isPrivate": false
+        },
+        "store": {
+            "link": "",
+            "isAvailable": true
+        },
+        "screenshot": {
+            "orientation": "portrait",
+            "path": "armath",
+            "images": []
+        }
+    },
+    {
+        "title": "Tap!",
+        "projectType": "2",
+        "icon": "",
+        "description": "Mobile AR about Rock type (Geography) with Vuforia SDK",
+        "projectTime": {
+            "startDate": "July 2021",
+            "endDate": "September 2021",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement Google Ads SDK",
+            "Built for Mobile"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Visual Studio",
+            "Git (Github)",
+            "Google Ads SDK"
+        ],
+        "repo": {
+            "link": "https://github.com/herghys/Tap",
+            "isPrivate": false
+        },
+        "store": {
+            "link": "https://play.google.com/store/apps/details?id=com.HerghysStudio.Game.Tap",
+            "isAvailable": true
+        },
+        "screenshot": {
+            "orientation": "portrait",
+            "path": "armath",
+            "images": []
+        }
+    },
+    {
+        "title": "Logibot",
+        "projectType": "2",
+        "icon": "",
+        "description": "Thesis Project",
+        "projectTime": {
+            "startDate": "July 2021",
+            "endDate": "September 2021",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement Input Systems",
+            "Built for Mobile"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Visual Studio",
+            "Git (Github)"
+        ],
+        "repo": {
+            "link": "https://github.com/herghys/Logibot",
+            "isPrivate": false
+        },
+        "store": {
+            "link": "https://play.google.com/store/apps/details?id=com.HerghysStudio.Game.Tap",
+            "isAvailable": false
+        },
+        "screenshot": {
+            "orientation": "portrait",
+            "path": "armath",
+            "images": []
+        }
     }
 ]
