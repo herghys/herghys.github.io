@@ -10,15 +10,10 @@
             "currentlyWorking": false
         },
         "tasks": [
-            "E-Commerce game that sells products that uses 3D generated character from selfie, targeted for mobile users",
-            "Create Game Design Document",
-            "Provide HTTP Client Utility for API Connection Module",
-            "Provide Google Sign-In Module",
-            "Provide Apple Sign-In Module",
-            "Provide Extensions Module",
-            "Develop Cinda Game",
+            "Develop & Create Game Design Document for Cinda",
+            "Create custom HTTP Client with",
+            "Provide Google & Apple Sign-In Module, Extension",
             "Help & Provide Asset Bundle Handler",
-            "Create Deeplink",
             "Setup Firebase for Google Sign-In"
         ],
         "technologies": [
@@ -53,7 +48,6 @@
             "currentlyWorking": true
         },
         "tasks": [
-            "Match-3 game created with Unity",
             "Integrations with Google and Firebase Login",
             "Create IAP using Unity IAP",
             "API Connections for Account and leaderboard",
