@@ -1,0 +1,166 @@
+[
+    {
+        "title": "Cinda: Virtual Dress Up",
+        "projectType": "2",
+        "icon": "cinda-icon.png",
+        "description": "This is a multiplayer (chat) mobile game where users can dress up a 3D generated character from selfies. Using AI to generate character, and implement it as Avatar in Cinda. Cinda also featured  e-commerce to try on Avatar and get physical item from game item",
+        "projectTime": {
+            "startDate": "28-11-2023",
+            "endDate": "31-01-2024",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "E-Commerce game that sells products that uses 3D generated character from selfie, targeted for mobile users",
+            "Create Game Design Document",
+            "Provide HTTP Client Utility for API Connection Module",
+            "Provide Google Sign-In Module",
+            "Provide Apple Sign-In Module",
+            "Provide Extensions Module",
+            "Develop Cinda Game",
+            "Help & Provide Asset Bundle Handler",
+            "Create Deeplink",
+            "Setup Firebase for Google Sign-In"
+        ],
+        "technologies": [
+            "C#",
+            "Unity",
+            "Visual Studio",
+            "Firebase SDK",
+            "Git","JSON"
+        ],
+        "repo": {
+            "link": "",
+            "isPrivate": true
+        },
+        "store": {
+            "link": "https://play.google.com/store/apps/details?id=com.newfemmewanitaindonesia.cinda",
+            "isAvailable": true
+        },
+        "screenshot": {
+            "orientation": "landscape",
+            "path": "cinda",
+            "images": []
+        }
+    },
+    {
+        "title": "Ducky Pop",
+        "projectType": "2",
+        "icon": "tap-icon.png",
+        "description": "Match 3 game that contains fluid physics",
+        "projectTime": {
+            "startDate": "May 2023",
+            "endDate": "Now",
+            "currentlyWorking": true
+        },
+        "tasks": [
+            "Match-3 game created with Unity",
+            "Integrations with Google and Firebase Login",
+            "Create IAP using Unity IAP",
+            "API Connections for Account and leaderboard",
+            "Reskin from bought assets"
+        ],
+        "technologies": [
+            "C#",
+            "Unity",
+            "Visual Studio",
+            "Firebase SDK",
+            "Git"
+        ],
+        "repo": {
+            "link": "",
+            "isPrivate": true
+        },
+        "store": {
+            "link": "https://play.google.com/store/apps/details?id=com.Graphie.DuckyPop&hl=en",
+            "isAvailable": true
+        },
+        "screenshot": {
+            "orientation": "portrait",
+            "path": "tap",
+            "images": []
+        }
+    },
+    {
+        "title": "Newfemme App",
+        "projectType": "2",
+        "icon": "",
+        "description": "Newfemme Mobile App built using Unity (Android and Mobile)",
+        "projectTime": {
+            "startDate": "April 2022",
+            "endDate": "October 2022",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Create / reskin some assets to be used for Newfemme minigame",
+            "Create Newfemme Apps",
+            "Create Apple Sign In"
+
+        ],
+        "technologies": [
+            "Unity3D",
+            "Visual Studio",
+            "Git (Github)",
+            "Postman",
+            "Firebase SDK (Analytic)",
+            "Firebase SDK (Auth)",
+            "Apple Sign-In Unity",
+            "JSON"
+        ],
+        "repo": {
+            "link": "",
+            "isPrivate": true
+        },
+        "store": {
+            "link": "",
+            "isAvailable": false
+        },
+        "screenshot": {
+            "orientation": "landscape",
+            "path": "cinda",
+            "images": []
+        }
+    },
+    {
+        "title": "Ducky Bubble",
+        "projectType": "2",
+        "icon": "",
+        "description": "Telegram WebApps (Game) made using Unity",
+        "projectTime": {
+            "startDate": "September 2024",
+            "endDate": "October 2024",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Bubble Shooter Game",
+            "Telegram Bot Game",
+            "Created Telegram API Integration to Unity",
+            "Created Custom HTTPClient Logic for Unity",
+            "Designed API",
+            "Created JSLib",
+            "Created/Modify HTML Templates"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Visual Studio",
+            "Git (Github)",
+            "Postman",
+            "Telegram API",
+            "HTML",
+            "Javascript",
+            "JSON"
+        ],
+        "repo": {
+            "link": "",
+            "isPrivate": true
+        },
+        "store": {
+            "link": "https://t.me/DuckieLandBot/DuckieBubbles/",
+            "isAvailable": true
+        },
+        "screenshot": {
+            "orientation": "landscape",
+            "path": "cinda",
+            "images": []
+        }
+    }
+]
