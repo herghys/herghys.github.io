@@ -268,7 +268,7 @@
     },
     {
         "title": "Tap!",
-        "projectType": "2",
+        "projectType": "1",
         "icon": "",
         "description": "Mobile AR about Rock type (Geography) with Vuforia SDK",
         "projectTime": {
@@ -302,7 +302,7 @@
     },
     {
         "title": "Logibot",
-        "projectType": "2",
+        "projectType": "1",
         "icon": "",
         "description": "Thesis Project",
         "projectTime": {
