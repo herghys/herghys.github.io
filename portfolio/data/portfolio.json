@@ -363,6 +363,38 @@
         }
     },
     {
+        "title": "Periodic Table (Atomic)",
+        "projectType": "1",
+        "icon": "",
+        "description": "Learn Periodic Table Elements",
+        "projectTime": {
+            "startDate": "June 2021",
+            "endDate": "June 2021",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement Interactive 2D GUI"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Git (Github)",
+            "C#"
+        ],
+        "repo": {
+            "link": "https://github.com/herghys/Periodic-Table",
+            "isPrivate": false
+        },
+        "store": {
+            "link": "",
+            "isAvailable": false
+        },
+        "screenshot": {
+            "orientation": "landscape",
+            "path": "periodictable",
+            "images": ["1.png", "2.png", "3.png"]
+        }
+    },
+    {
         "title": "Si Murda",
         "projectType": "2",
         "icon": "murda-icon.png",
