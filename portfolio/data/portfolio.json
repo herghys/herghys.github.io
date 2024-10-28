@@ -70,7 +70,7 @@
         },
         "screenshot": {
             "orientation": "portrait",
-            "path": "tap",
+            "path": "duckypop",
             "images": []
         }
     },
@@ -110,7 +110,7 @@
         },
         "screenshot": {
             "orientation": "landscape",
-            "path": "cinda",
+            "path": "newfemme",
             "images": []
         }
     },
@@ -125,13 +125,10 @@
             "currentlyWorking": false
         },
         "tasks": [
-            "Bubble Shooter Game",
-            "Telegram Bot Game",
             "Created Telegram API Integration to Unity",
             "Created Custom HTTPClient Logic for Unity",
-            "Designed API",
-            "Created JSLib",
-            "Created/Modify HTML Templates"
+            "Designed API Model for RestAPI",
+            "Create/Modify JSLib and HTML Templates"
         ],
         "technologies": [
             "Unity3D",
@@ -153,7 +150,7 @@
         },
         "screenshot": {
             "orientation": "landscape",
-            "path": "cinda",
+            "path": "duckybubble",
             "images": []
         }
     },
@@ -222,7 +219,7 @@
         },
         "screenshot": {
             "orientation": "portrait",
-            "path": "armath",
+            "path": "wayangku",
             "images": []
         }
     },
@@ -256,7 +253,7 @@
         },
         "screenshot": {
             "orientation": "portrait",
-            "path": "armath",
+            "path": "arbatuan",
             "images": []
         }
     },
@@ -290,7 +287,43 @@
         },
         "screenshot": {
             "orientation": "portrait",
-            "path": "armath",
+            "path": "tap",
+            "images": []
+        }
+    },
+    {
+        "title": "Pong Evolved",
+        "projectType": "1",
+        "icon": "",
+        "description": "Pong game with extra effects",
+        "projectTime": {
+            "startDate": "July 2021",
+            "endDate": "September 2021",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement 2D Effects",
+            "Implement Sound",
+            "Google AdMob",
+            "Implement Unlimited Levels"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Google Ads SDK",
+            "Git (Github)",
+            "C#"
+        ],
+        "repo": {
+            "link": "",
+            "isPrivate": false
+        },
+        "store": {
+            "link": "https://play.google.com/store/apps/details?id=com.UVVVE.PongEvolved",
+            "isAvailable": true
+        },
+        "screenshot": {
+            "orientation": "",
+            "path": "",
             "images": []
         }
     },
@@ -306,7 +339,9 @@
         },
         "tasks": [
             "Implement Input Systems",
-            "Built for Mobile"
+            "Implement Cinemachine",
+            "Integrating 3D Model with Animation and Input Systems",
+            "Implement and integrate Custom Shader (ShaderGraph)"
         ],
         "technologies": [
             "Unity3D",
@@ -323,7 +358,107 @@
         },
         "screenshot": {
             "orientation": "portrait",
-            "path": "armath",
+            "path": "logibot",
+            "images": []
+        }
+    },
+    {
+        "title": "Si Murda",
+        "projectType": "2",
+        "icon": "murda-icon.png",
+        "description": "Javanese Language 2D Edugame",
+        "projectTime": {
+            "startDate": "July 2023",
+            "endDate": "August 2023",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement TextMeshPro for custom text)",
+            "Implement Build for WebGL"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Visual Studio",
+            "Git (Github)",
+            "C#"
+        ],
+        "repo": {
+            "link": "",
+            "isPrivate": true
+        },
+        "store": {
+            "link": "",
+            "isAvailable": false
+        },
+        "screenshot": {
+            "orientation": "landscape",
+            "path": "murda",
+            "images": []
+        }
+    },
+    {
+        "title": "Fortune Hunter",
+        "projectType": "2",
+        "icon": "",
+        "description": "Biology Edugame for PC",
+        "projectTime": {
+            "startDate": "January 2023",
+            "endDate": "March 2023",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement Cinemecahine with Playable Director"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Visual Studio",
+            "Git (Github)",
+            "C#"
+        ],
+        "repo": {
+            "link": "",
+            "isPrivate": true
+        },
+        "store": {
+            "link": "",
+            "isAvailable": false
+        },
+        "screenshot": {
+            "orientation": "landscape",
+            "path": "fortunehunter",
+            "images": []
+        }
+    },
+    {
+        "title": "Eksponen Edugame",
+        "projectType": "2",
+        "icon": "",
+        "description": "2D WebGL Math game about Exponential",
+        "projectTime": {
+            "startDate": "",
+            "endDate": "",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement Build for WebGL"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Visual Studio",
+            "Git (Github)",
+            "C#"
+        ],
+        "repo": {
+            "link": "",
+            "isPrivate": true
+        },
+        "store": {
+            "link": "",
+            "isAvailable": false
+        },
+        "screenshot": {
+            "orientation": "",
+            "path": "eksponen",
             "images": []
         }
     }
