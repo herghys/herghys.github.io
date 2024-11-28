@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 card.appendChild(cardBody);
 
                  // Screenshots
-                if (project.screenshot && project.screenshot.path) {
+                 if (project.screenshot && project.screenshot.path) {
                     const screenshotsSection = document.createElement('div');
                     screenshotsSection.classList.add('screenshots');
                 
@@ -76,10 +76,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     const imagePath = `assets/portfolios/${project.screenshot.path}`;
                     const extensions = ['png', 'jpg', 'jpeg'];  // Supported extensions
                 
-                    project.screenshot.images.forEach(imageBaseName => {
+                    // Loop through the images in the order they are given in the project.screenshot.images array
+                    project.screenshot.images.forEach((imageBaseName, index) => {
                         let fileFound = false;
                 
-                        // Loop through possible extensions
+                        // Loop through possible extensions to find the image
                         extensions.forEach(ext => {
                             const imgPath = `${imagePath}/${imageBaseName}.${ext}`;
                             const img = new Image();
@@ -90,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                                     const imgElement = document.createElement('img');
                                     imgElement.src = imgPath;
-                                    imgElement.alt = `${project.title} screenshot`;
+                                    imgElement.alt = `${project.title} screenshot ${index + 1}`;
                                     imgElement.classList.add('screenshot-thumb');
                 
                                     // Add click event for fullscreen
@@ -117,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         };
                                     });
                 
+                                    // Append the image to the screenshots section
                                     screenshotsSection.appendChild(imgElement);
                                 }
                             };
@@ -133,9 +135,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     cardBody.appendChild(screenshotsSection);
                 }
                 
+                
 
                 projectsGrid.appendChild(card);
             });
         })
         .catch(error => console.error('Error loading the portfolio data:', error));
 });
+
