@@ -67,42 +67,72 @@ document.addEventListener('DOMContentLoaded', function () {
                 card.appendChild(document.createElement('hr'));
                 card.appendChild(cardBody);
 
-                // Screenshots
-                if (project.screenshot && project.screenshot.images.length > 0) {
+                 // Screenshots
+                if (project.screenshot && project.screenshot.path) {
                     const screenshotsSection = document.createElement('div');
                     screenshotsSection.classList.add('screenshots');
-                    project.screenshot.images.forEach(image => {
-                        const img = document.createElement('img');
-                        img.src = `assets/portfolios/${project.screenshot.path}/${image}`;
-                        img.alt = `${project.title} screenshot`;
-                        img.classList.add('screenshot-thumb');
-                        // Add click event for fullscreen
-                        img.addEventListener('click', () => {
-                            const modal = document.createElement('div');
-                            modal.classList.add('fullscreen-modal');
-                            modal.innerHTML = `
-                                <span class="close">&times;</span>
-                                <img class="fullscreen-modal-content" src="${img.src}" alt="${project.title} fullscreen">
-                            `;
-                            document.body.appendChild(modal);
-                            modal.style.display = "block";
-
-                            modal.querySelector('.close').onclick = () => {
-                                modal.style.display = "none";
-                                document.body.removeChild(modal);
-                            };
-
-                            window.onclick = (event) => {
-                                if (event.target === modal) {
-                                    modal.style.display = "none";
-                                    document.body.removeChild(modal);
+                
+                    // Fetch images from the 'images' array in the JSON
+                    const imagePath = `assets/portfolios/${project.screenshot.path}`;
+                    const extensions = ['png', 'jpg', 'jpeg'];  // Supported extensions
+                
+                    project.screenshot.images.forEach(imageBaseName => {
+                        let fileFound = false;
+                
+                        // Loop through possible extensions
+                        extensions.forEach(ext => {
+                            const imgPath = `${imagePath}/${imageBaseName}.${ext}`;
+                            const img = new Image();
+                
+                            img.onload = function () {
+                                if (!fileFound) {  // Only load the first found image
+                                    fileFound = true;
+                
+                                    const imgElement = document.createElement('img');
+                                    imgElement.src = imgPath;
+                                    imgElement.alt = `${project.title} screenshot`;
+                                    imgElement.classList.add('screenshot-thumb');
+                
+                                    // Add click event for fullscreen
+                                    imgElement.addEventListener('click', () => {
+                                        const modal = document.createElement('div');
+                                        modal.classList.add('fullscreen-modal');
+                                        modal.innerHTML = `
+                                            <span class="close">&times;</span>
+                                            <img class="fullscreen-modal-content" src="${imgElement.src}" alt="${project.title} fullscreen">
+                                        `;
+                                        document.body.appendChild(modal);
+                                        modal.style.display = "block";
+                
+                                        modal.querySelector('.close').onclick = () => {
+                                            modal.style.display = "none";
+                                            document.body.removeChild(modal);
+                                        };
+                
+                                        window.onclick = (event) => {
+                                            if (event.target === modal) {
+                                                modal.style.display = "none";
+                                                document.body.removeChild(modal);
+                                            }
+                                        };
+                                    });
+                
+                                    screenshotsSection.appendChild(imgElement);
                                 }
                             };
+                
+                            img.onerror = function () {
+                                // If this file doesn't exist, continue to next extension
+                            };
+                
+                            img.src = imgPath;  // Start loading the image
                         });
-                        screenshotsSection.appendChild(img);
                     });
+                
+                    // Append the screenshot section to the card body
                     cardBody.appendChild(screenshotsSection);
                 }
+                
 
                 projectsGrid.appendChild(card);
             });

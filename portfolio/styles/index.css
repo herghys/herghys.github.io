@@ -165,10 +165,24 @@ ul li::before {
 }
 
 .screenshots {
-  margin-top: 20px;
   display: flex;
-  justify-content: center;
+  overflow-x: auto;
   gap: 10px;
+  padding: 10px 0;
+  scrollbar-width: thin; /* For Firefox */
+}
+
+.screenshots::-webkit-scrollbar {
+  height: 6px;
+}
+
+.screenshots::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.screenshot-thumb:hover {
+  transform: scale(1.1);
 }
 
 .screenshot-thumb {
@@ -177,6 +191,35 @@ ul li::before {
   object-fit: cover;
   cursor: pointer;
   border-radius: 5px;
+  max-width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.screenshot-button-prev:hover, .screenshot-button-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: white;
 }
 
 .fullscreen-modal {
