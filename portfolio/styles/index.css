@@ -21,12 +21,21 @@ body {
   z-index: 1000;
 }
 
+.global-header nav ul li::before {
+  content: none; /* Remove the dot */
+}
+
 .global-header nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 30px;
 }
+
+.global-header nav ul li{
+  list-style: none;
+}
+
 
 .global-header nav ul li a {
   text-decoration: none;
