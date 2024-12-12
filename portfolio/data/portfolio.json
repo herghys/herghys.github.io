@@ -576,18 +576,53 @@
             "currentlyWorking": false
         },
         "tasks": [
-            "Implement ADB tools to install and push file to android device",
-            "Setup Local Database",
-            "Implement Email Messaging"
+            "Implement ADB tools to install and push file to android device"
         ],
         "technologies": [
             "Winform",
             "Visual Studio",
             "Git (Github)",
-            "VB.Net"
+            "C#.NetFramework"
         ],
         "repo": {
             "link": "https://github.com/herghys/ADBGuiTool",
+            "isPrivate": false
+        },
+        "store": {
+            "link": "",
+            "isAvailable": false
+        },
+        "screenshot": {
+            "orientation": "",
+            "path": "obat",
+            "images": [1,2,3,4,5,6,7,8,9,10,11,12,13]
+        }
+    },
+    {
+        "title": "Stardew Valley Mod Comparer",
+        "projectType": "1",
+        "icon": "",
+        "description": "A simple tool to compare between two installed mods on different PC, build on two different framework (.NetFramework and .NetCore)",
+        "projectTime": {
+            "startDate": "",
+            "endDate": "",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement folder / file search inside the Stardew Valley installed Folder",
+            "JSON Export",
+            "Compare between installed mods on current device and other mods installed in other device with JSON"
+        ],
+        "technologies": [
+            "Windows WPF",
+            "Visual Studio",
+            "Git (Github)",
+            "C#",
+            ".NET Framework",
+            ".NET Core"
+        ],
+        "repo": {
+            "link": "https://github.com/herghys/StardewValley-ModsList",
             "isPrivate": false
         },
         "store": {
