@@ -494,5 +494,110 @@
             "path": "eksponengame",
             "images": [1,2,3,4,5,6,7,8,9,10,11,12,13]
         }
+    },
+    {
+        "title": "Daftar Obat",
+        "projectType": "1",
+        "icon": "",
+        "description": "University (class project) about Medicine list with email message support",
+        "projectTime": {
+            "startDate": "",
+            "endDate": "",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Develop the grid logic",
+            "Setup Local Database",
+            "Implement Email Messaging"
+        ],
+        "technologies": [
+            "Unity3D",
+            "Visual Studio",
+            "Git (Github)",
+            "VB.Net"
+        ],
+        "repo": {
+            "link": "",
+            "isPrivate": true
+        },
+        "store": {
+            "link": "",
+            "isAvailable": false
+        },
+        "screenshot": {
+            "orientation": "",
+            "path": "obat",
+            "images": [1,2,3,4,5,6,7,8,9,10,11,12,13]
+        }
+    },
+    {
+        "title": "MSI Afterburner Monitor",
+        "projectType": "1",
+        "icon": "",
+        "description": "A Taskbar app to monitor MSI Afterburner",
+        "projectTime": {
+            "startDate": "",
+            "endDate": "",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Develop the grid logic",
+            "Setup Local Database",
+            "Implement Email Messaging"
+        ],
+        "technologies": [
+            "Winform",
+            "Visual Studio",
+            "Git (Github)",
+            "C#"
+        ],
+        "repo": {
+            "link": "https://github.com/herghys/AfterburnerMonitor",
+            "isPrivate": false
+        },
+        "store": {
+            "link": "",
+            "isAvailable": false
+        },
+        "screenshot": {
+            "orientation": "",
+            "path": "obat",
+            "images": [1,2,3,4,5,6,7,8,9,10,11,12,13]
+        }
+    },
+    {
+        "title": "ADB GUI Tool",
+        "projectType": "1",
+        "icon": "",
+        "description": "A simple tool to help with adb tool (GUI Tool)",
+        "projectTime": {
+            "startDate": "",
+            "endDate": "",
+            "currentlyWorking": false
+        },
+        "tasks": [
+            "Implement ADB tools to install and push file to android device",
+            "Setup Local Database",
+            "Implement Email Messaging"
+        ],
+        "technologies": [
+            "Winform",
+            "Visual Studio",
+            "Git (Github)",
+            "VB.Net"
+        ],
+        "repo": {
+            "link": "https://github.com/herghys/ADBGuiTool",
+            "isPrivate": false
+        },
+        "store": {
+            "link": "",
+            "isAvailable": false
+        },
+        "screenshot": {
+            "orientation": "",
+            "path": "obat",
+            "images": [1,2,3,4,5,6,7,8,9,10,11,12,13]
+        }
     }
 ]
