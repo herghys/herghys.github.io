@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 cardHeader.classList.add('card-header');
                 cardHeader.innerHTML = `
                     <h2>${project.title}</h2>
-                    <p class="year">${project.projectTime.startDate} ${ project.projectTime.currentlyWorking ? 'Now' : project.projectTime.endDate}</p>
+                    <p class="year">${project.projectTime.startDate} - ${ project.projectTime.currentlyWorking ? 'Now' : project.projectTime.endDate}</p>
                     <p class="project-type">Project Type: ${project.projectType == 1 ? 'Personal' : 'Work / Freelance'}</p>
                     <p>${project.description}</p>
                 `;
