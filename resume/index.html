@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume | Helmi Arghya Santosa</title>
+  <style>
+    :root {
+        --bg-start: #121212;
+        --bg-end: #181818;
+        --text: #f0f0f0;
+        --accent: #8ab4f8;
+        --link: #8be9fd;
+        --card-bg: #1a1a1a;
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, var(--bg-start), var(--bg-end));
+      color: var(--text);
+      line-height: 1.7;
+      background-attachment: fixed;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(30, 30, 47, 0.95);
+      padding: 0.5rem 1rem;
+      display: flex;
+      gap: 1rem;
+      border-bottom: 1px solid #444;
+    }
+
+    .nav a {
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      gap: 2rem;
+    }
+
+    .sidebar {
+      flex: 1;
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    .main {
+      flex: 3;
+    }
+
+    .profile-pic {
+      width: 100%;
+      max-width: 180px;
+      border-radius: 12px;
+      margin: 0 auto 1rem;
+      object-fit: cover;
+      display: block;
+    }
+
+    .placeholder {
+      background-color: #3a3a55;
+      color: #999;
+      height: 180px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      color: var(--accent);
+    }
+
+    .btn-group {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: white;
+      padding: 0.6rem;
+      text-align: center;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #444;
+      margin: 2rem 0;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+      background-color: rgba(255, 255, 255, 0.03);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .job-title {
+      font-weight: bold;
+      color: var(--link);
+    }
+
+    .dates {
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .btn-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .btn {
+        flex: 1 1 auto;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Navigation -->
+  <nav class="nav">
+    <a href="#summary">📝 Summary</a>
+    <a href="#education">🎓 Education</a>
+    <a href="#skills">🧠 Skills</a>
+    <a href="#sdks">🧰 SDKs</a>
+    <a href="#experience">💼 Experience</a>
+  </nav>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="assets/photo/your-image.jpg" alt="Photo" class="profile-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="placeholder" style="display: none;">No Photo Available</div>
+      <h2>Helmi Arghya Santosa</h2>
+      <p><strong>Game Developer</strong></p>
+      <hr>
+      <div>
+        <p><strong>Email:</strong><br><a href="mailto:helmi.santosa1@gmail.com">helmi.santosa1@gmail.com</a></p>
+        <p><strong>Phone:</strong><br><a href="https://wa.me/+6287771139889">+62 877-7113-9889</a></p>
+        <p><strong>Address:</strong><br>Tangerang 15151, Indonesia</p>
+      </div>
+      <div class="btn-group">
+        <a class="btn" href="https://drive.google.com/file/d/1-OxGf_6bLNlMsUk9lY4j7RCQD_D7ELcq/view?usp=sharing" target="_blank"><img src="https://img.icons8.com/ios-filled/20/ffffff/download--v1.png" alt="Download" style="vertical-align: middle; margin-right: 6px;"> Download CV</a>
+        <a class="btn" href="https://herghys.github.io/portfolio/" target="_blank"><img src="https://img.icons8.com/ios-filled/20/ffffff/domain.png" alt="Portfolio" style="vertical-align: middle; margin-right: 6px;"> Portfolio</a>
+        <a class="btn" href="https://github.com/herghys" target="_blank"><img src="https://img.icons8.com/ios-glyphs/20/ffffff/github.png" alt="GitHub" style="vertical-align: middle; margin-right: 6px;"> GitHub</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+      <div class="section" id="summary">
+        <h2>📝 Summary</h2>
+        <p>Unity Game Developer with over 4 years of experience in building mobile, WebGL, and desktop games. Specialized in Unity3D, API integration, and performance optimization. Passionate about creating immersive, efficient, and scalable applications using modern tech tools and SDKs.</p>
+      </div>
+
+      <div class="section" id="education">
+        <h2>🎓 Education</h2>
+        <p><strong>B.Ed / S.Pd in Informatics Engineering Education</strong></p>
+        <p>Yogyakarta State University, Graduated 09/2021</p>
+        <p>GPA: 3.53</p>
+      </div>
+
+      <div class="section" id="skills">
+        <h2>🧠 Skills</h2>
+        <p><strong>Programming:</strong> C#, VB.Net, Java, Arduino, Python, HTML/CSS, SQL</p>
+        <p><strong>Frameworks & Game Engines:</strong> Unity3D, SteamVR, Vuforia SDK, Winform, WPF</p>
+        <p><strong>Tools:</strong> Git, Postman, Visual Studio, Arduino IDE</p>
+        <p><strong>Cloud & APIs:</strong> Firebase SDK, Google/Apple/Facebook Sign-In, Firebase Analytics</p>
+      </div>
+
+      <div class="section" id="sdks">
+        <h2>🧰 SDKs & Tools</h2>
+        <ul>
+          <li>Facebook SDK (Unity)</li>
+          <li>Google Sign-In SDK</li>
+          <li>Apple Sign-In SDK</li>
+          <li>Firebase (Auth, Analytics, Messaging)</li>
+          <li>SteamVR SDK</li>
+          <li>Vuforia SDK</li>
+          <li>Google AdMob</li>
+          <li>Twitter SDK</li>
+          <li>Google IAP</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>📄 Certificate</h2>
+        <p><strong>C# (Basic)</strong> – HackerRank – <a href="https://www.hackerrank.com/certificates/be0c3e847a8e">View Certificate</a></p>
+      </div>
+
+      <div class="section" id="experience">
+        <h2>💼 Experience</h2>
+
+        <p class="job-title">Unity Programmer – PT. Falah Inovasi Teknologi</p>
+        <p class="dates">01/2025 – Present</p>
+        <ul>
+          <li>Developed modules, multiplayer VR systems, and optimized Unity apps.</li>
+        </ul>
+
+        <p class="job-title">Unity Developer – Newfemme Wanita Indonesia</p>
+        <p class="dates">03/2022 – 08/2024</p>
+        <ul>
+          <li>Built the Newfemme app and Cinda game with API and analytics integrations.</li>
+        </ul>
+
+        <p class="job-title">Freelance Developer – Herghys Studio</p>
+        <p class="dates">06/2021 – Present</p>
+        <ul>
+          <li>Created games, AR apps, and desktop tools using Unity & WPF.</li>
+        </ul>
+
+        <p class="job-title">Game Dev – PT Teknoreka Inovasi Nusantara</p>
+        <p class="dates">06/2023 – 08/2023</p>
+        <ul>
+          <li>Built 2D WebGL games and integrated API systems.</li>
+        </ul>
+
+        <p class="job-title">Game Dev – Fomuo Games</p>
+        <p class="dates">02/2023 – 06/2023</p>
+        <ul>
+          <li>Implemented Sign-In, Firebase, and reskin features for games.</li>
+        </ul>
+
+        <p class="job-title">Intern – SMK YPKK 1 Sleman</p>
+        <p class="dates">06/2019 – 08/2019</p>
+        <ul>
+          <li>Taught web programming and created learning modules.</li>
+        </ul>
+
+        <p class="job-title">Intern – Run System</p>
+        <p class="dates">07/2018 – 08/2018</p>
+        <ul>
+          <li>Created Arduino-based sensors and WinForms tools.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
