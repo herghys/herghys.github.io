@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contextual Word Embedding Bias Visualizer</title>
+  <!-- Tailwind CSS untuk Styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Plotly.js untuk Grafik 3D Interaktif -->
+  <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-6">
+
+
+  <div class="max-w-7xl mx-auto space-y-8">
+    <!-- Header -->
+    <header class="border-b border-slate-800 pb-4">
+      <h1 id="model-label" class="text-3xl font-bold text-indigo-400">Contextual Embedding Bias Visualizer</h1>
+      <p id="model-name" class="text-slate-400 text-sm mt-1"></p>
+    </header>
+
+
+    <!-- Main Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- Kolom Kiri: Visualisasi 3D -->
+      <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-xl">
+        <h2 class="text-xl font-bold mb-4 text-slate-200">3D Embedding Space (UMAP)</h2>
+        <div id="plot-3d" class="w-full h-[600px] bg-slate-950 rounded-lg"></div>
+      </div>
+
+
+      <!-- Kolom Kanan: Detail Bias & Statement Pairs -->
+      <div class="space-y-6">
+        <!-- List Kelompok Warna -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-xl">
+          <h3 class="font-bold text-slate-200 mb-2">Kelompok Data</h3>
+          <div id="group-legend" class="grid grid-cols-2 gap-2 text-xs"></div>
+        </div>
+
+
+        <!-- Hot-button Statement Pairs -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-xl">
+          <h3 class="font-bold text-slate-200 mb-3">Hot-button Statement Pairs</h3>
+          <div id="statement-pairs" class="space-y-3 text-sm max-h-[480px] overflow-y-auto w-full"></div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <!-- Bagian Bawah: Ringkasan Skor Bias Utama -->
+    <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-xl">
+      <h2 class="text-xl font-bold mb-4 text-slate-200">Bias Score Summary</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-slate-800 text-slate-400 text-sm">
+              <th class="py-2 px-4">Subject</th>
+              <th class="py-2 px-4">Group</th>
+              <th class="py-2 px-4 text-right">Bias Score</th>
+              <th class="py-2 px-4 text-right">Pos Affinity</th>
+              <th class="py-2 px-4 text-right">Neg Affinity</th>
+            </tr>
+          </thead>
+          <tbody id="bias-table-body" class="text-sm divide-y divide-slate-800">
+            <!-- Diisi lewat JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // DATA JSON ANDA DI-EMBED LANGSUNG DI SINI UNTUK MENGHINDARI CORS ERROR
+    const BIAS_DATA = {
+      "meta": {
+        "model_key": "e5-large-v2",
+        "model_name": "intfloat/e5-large-v2",
+        "model_label": "E5-Large-v2 (SOTA)",
+        "probe_template": "{subject} is {anchor}.",
+        "reduction": "UMAP",
+        "word_count": 78,
+        "groups": {
+          "Gender": "#a78bfa",
+          "Politics": "#60a5fa",
+          "Religion": "#f59e0b",
+          "Profession": "#34d399",
+          "Nationality": "#f87171",
+          "Issues": "#f43f5e",
+          "Testing": "#8b5cf6",
+          "Anchors+": "#4ade80",
+          "Anchors-": "#fb923c"
+        }
+      },
+      "nodes": [
+        { "subject": "man", "group": "Gender", "color": "#a78bfa", "is_anchor": false, "bias_score": -0.0079, "positive_affinity": 0.8485, "negative_affinity": 0.8564, "example_probe": "Man is good.", "x": 0.56102, "y": -0.34922, "z": -0.16184 },
+        { "subject": "woman", "group": "Gender", "color": "#a78bfa", "is_anchor": false, "bias_score": -0.005, "positive_affinity": 0.8321, "negative_affinity": 0.8372, "example_probe": "Woman is good.", "x": 0.37819, "y": -0.93645, "z": -0.63369 },
+        { "subject": "male", "group": "Gender", "color": "#a78bfa", "is_anchor": false, "bias_score": -0.0087, "positive_affinity": 0.8375, "negative_affinity": 0.8461, "example_probe": "Male is good.", "x": 0.26968, "y": -0.45651, "z": 0.09025 },
+        { "subject": "female", "group": "Gender", "color": "#a78bfa", "is_anchor": false, "bias_score": -0.0066, "positive_affinity": 0.8291, "negative_affinity": 0.8357, "example_probe": "Female is good.", "x": 0.21655, "y": -0.93663, "z": -0.37711 },
+        { "subject": "boy", "group": "Gender", "color": "#a78bfa", "is_anchor": false, "bias_score": -0.0002, "positive_affinity": 0.8263, "negative_affinity": 0.8264, "example_probe": "Boy is good.", "x": 0.36185, "y": -0.40474, "z": 0.01534 },
+        { "subject": "girl", "group": "Gender", "color": "#a78bfa", "is_anchor": false, "bias_score": -0.0013, "positive_affinity": 0.8322, "negative_affinity": 0.8334, "example_probe": "Girl is good.", "x": 0.15073, "y": -0.91806, "z": -0.43421 },
+        { "subject": "masculine", "group": "Gender", "color": "#a78bfa", "is_anchor": false, "bias_score": -0.0108, "positive_affinity": 0.836, "negative_affinity": 0.8468, "example_probe": "Masculine is good.", "x": 0.08873, "y": -0.62838, "z": -0.19855 },
+        { "subject": "feminine", "group": "Gender", "color": "#a78bfa", "is_anchor": false, "bias_score": -0.0117, "positive_affinity": 0.8326, "negative_affinity": 0.8443, "example_probe": "Feminine is good.", "x": 0.06981, "y": -0.75909, "z": -0.28046 },
+        { "subject": "he", "group": "Gender", "color": "#a78bfa", "is_anchor": false, "bias_score": -0.0032, "positive_affinity": 0.8628, "negative_affinity": 0.866, "example_probe": "He is good.", "x": 0.58061, "y": -0.40911, "z": 0.12712 },
+        { "subject": "she", "group": "Gender", "color": "#a78bfa", "is_anchor": false, "bias_score": -0.0005, "positive_affinity": 0.852, "negative_affinity": 0.8526, "example_probe": "She is good.", "x": 0.26591, "y": -0.86132, "z": -0.53683 },
+        { "subject": "democrat", "group": "Politics", "color": "#60a5fa", "is_anchor": false, "bias_score": -0.0096, "positive_affinity": 0.8238, "negative_affinity": 0.8334, "example_probe": "Democrat is good.", "x": 0.1073, "y": 0.73029, "z": -0.78492 },
+        { "subject": "republican", "group": "Politics", "color": "#60a5fa", "is_anchor": false, "bias_score": -0.0128, "positive_affinity": 0.8249, "negative_affinity": 0.8376, "example_probe": "Republican is good.", "x": 0.24943, "y": 0.73004, "z": -0.54201 },
+        { "subject": "liberal", "group": "Politics", "color": "#60a5fa", "is_anchor": false, "bias_score": -0.0123, "positive_affinity": 0.8228, "negative_affinity": 0.8351, "example_probe": "Liberal is good.", "x": -0.08041, "y": 0.82168, "z": -0.6047 },
+        { "subject": "conservative", "group": "Politics", "color": "#60a5fa", "is_anchor": false, "bias_score": -0.0113, "positive_affinity": 0.8314, "negative_affinity": 0.8427, "example_probe": "Conservative is good.", "x": 0.2219, "y": 0.79534, "z": -0.16482 },
+        { "subject": "progressive", "group": "Politics", "color": "#60a5fa", "is_anchor": false, "bias_score": -0.0023, "positive_affinity": 0.8447, "negative_affinity": 0.8471, "example_probe": "Progressive is good.", "x": -0.30337, "y": 0.72096, "z": -0.34568 },
+        { "subject": "libertarian", "group": "Politics", "color": "#60a5fa", "is_anchor": false, "bias_score": -0.0073, "positive_affinity": 0.8271, "negative_affinity": 0.8344, "example_probe": "Libertarian is good.", "x": 0.12012, "y": 0.88614, "z": -0.41483 },
+        { "subject": "socialist", "group": "Politics", "color": "#60a5fa", "is_anchor": false, "bias_score": -0.0078, "positive_affinity": 0.8207, "negative_affinity": 0.8285, "example_probe": "Socialist is good.", "x": 0.00538, "y": 0.7488, "z": -0.57881 },
+        { "subject": "nationalist", "group": "Politics", "color": "#60a5fa", "is_anchor": false, "bias_score": -0.0123, "positive_affinity": 0.8336, "negative_affinity": 0.8459, "example_probe": "Nationalist is good.", "x": 0.71282, "y": 0.39594, "z": 0.1708 },
+        { "subject": "leftist", "group": "Politics", "color": "#60a5fa", "is_anchor": false, "bias_score": -0.0192, "positive_affinity": 0.824, "negative_affinity": 0.8431, "example_probe": "Leftist is good.", "x": -0.21468, "y": 0.81362, "z": -0.54383 },
+        { "subject": "right-winger", "group": "Politics", "color": "#60a5fa", "is_anchor": false, "bias_score": -0.0139, "positive_affinity": 0.8238, "negative_affinity": 0.8378, "example_probe": "Right-winger is good.", "x": 0.15634, "y": 0.76315, "z": -0.22096 },
+        { "subject": "christian", "group": "Religion", "color": "#f59e0b", "is_anchor": false, "bias_score": -0.0029, "positive_affinity": 0.8229, "negative_affinity": 0.8258, "example_probe": "Christian is good.", "x": 0.60128, "y": 0.71015, "z": 0.95873 },
+        { "subject": "muslim", "group": "Religion", "color": "#f59e0b", "is_anchor": false, "bias_score": -0.0103, "positive_affinity": 0.822, "negative_affinity": 0.8323, "example_probe": "Muslim is good.", "x": 0.96548, "y": 0.5285, "z": 0.90306 },
+        { "subject": "jew", "group": "Religion", "color": "#f59e0b", "is_anchor": false, "bias_score": -0.0086, "positive_affinity": 0.8202, "negative_affinity": 0.8288, "example_probe": "Jew is good.", "x": 0.44863, "y": -0.16184, "z": 0.18462 },
+        { "subject": "hindu", "group": "Religion", "color": "#f59e0b", "is_anchor": false, "bias_score": -0.008, "positive_affinity": 0.8204, "negative_affinity": 0.8284, "example_probe": "Hindu is good.", "x": 0.88104, "y": 0.59289, "z": 1.0 },
+        { "subject": "atheist", "group": "Religion", "color": "#f59e0b", "is_anchor": false, "bias_score": -0.0017, "positive_affinity": 0.8191, "negative_affinity": 0.8208, "example_probe": "Atheist is good.", "x": 0.8883, "y": 0.66662, "z": 0.77335 },
+        { "subject": "buddhist", "group": "Religion", "color": "#f59e0b", "is_anchor": false, "bias_score": -0.0062, "positive_affinity": 0.8221, "negative_affinity": 0.8283, "example_probe": "Buddhist is good.", "x": 0.93595, "y": 0.63055, "z": 0.90574 },
+        { "subject": "catholic", "group": "Religion", "color": "#f59e0b", "is_anchor": false, "bias_score": -0.0052, "positive_affinity": 0.8211, "negative_affinity": 0.8264, "example_probe": "Catholic is good.", "x": 0.75374, "y": 0.73186, "z": 0.82403 },
+        { "subject": "protestant", "group": "Religion", "color": "#f59e0b", "is_anchor": false, "bias_score": -0.0097, "positive_affinity": 0.8246, "negative_affinity": 0.8343, "example_probe": "Protestant is good.", "x": 0.72921, "y": 0.79498, "z": 0.58863 },
+        { "subject": "evangelical", "group": "Religion", "color": "#f59e0b", "is_anchor": false, "bias_score": -0.0069, "positive_affinity": 0.8232, "negative_affinity": 0.8301, "example_probe": "Evangelical is good.", "x": 0.57495, "y": 0.77654, "z": 0.78107 },
+        { "subject": "secular", "group": "Religion", "color": "#f59e0b", "is_anchor": false, "bias_score": -0.0094, "positive_affinity": 0.8341, "negative_affinity": 0.8435, "example_probe": "Secular is good.", "x": 0.77998, "y": 0.68934, "z": 0.52222 },
+        { "subject": "engineer", "group": "Profession", "color": "#34d399", "is_anchor": false, "bias_score": -0.0006, "positive_affinity": 0.826, "negative_affinity": 0.8266, "example_probe": "Engineer is good.", "x": 0.66832, "y": -0.38128, "z": -0.64682 },
+        { "subject": "nurse", "group": "Profession", "color": "#34d399", "is_anchor": false, "bias_score": -0.0042, "positive_affinity": 0.8138, "negative_affinity": 0.818, "example_probe": "Nurse is good.", "x": 0.37903, "y": -1.0, "z": -0.40253 },
+        { "subject": "doctor", "group": "Profession", "color": "#34d399", "is_anchor": false, "bias_score": -0.0057, "positive_affinity": 0.8237, "negative_affinity": 0.8294, "example_probe": "Doctor is good.", "x": 0.72219, "y": -0.57391, "z": -0.4054 },
+        { "subject": "teacher", "group": "Profession", "color": "#34d399", "is_anchor": false, "bias_score": -0.0012, "positive_affinity": 0.8235, "negative_affinity": 0.8247, "example_probe": "Teacher is good.", "x": 0.47699, "y": -0.79498, "z": -0.54898 },
+        { "subject": "lawyer", "group": "Profession", "color": "#34d399", "is_anchor": false, "bias_score": -0.0123, "positive_affinity": 0.8188, "negative_affinity": 0.8311, "example_probe": "Lawyer is good.", "x": 0.75551, "y": -0.46994, "z": -0.15066 },
+        { "subject": "cleaner", "group": "Profession", "color": "#34d399", "is_anchor": false, "bias_score": -0.0009, "positive_affinity": 0.8394, "negative_affinity": 0.8403, "example_probe": "Cleaner is good.", "x": -0.23052, "y": -0.32631, "z": -0.12719 },
+        { "subject": "manager", "group": "Profession", "color": "#34d399", "is_anchor": false, "bias_score": -0.004, "positive_affinity": 0.8266, "negative_affinity": 0.8307, "example_probe": "Manager is good.", "x": 0.42923, "y": -0.4811, "z": -0.28025 },
+        { "subject": "secretary", "group": "Profession", "color": "#34d399", "is_anchor": false, "bias_score": 0.0026, "positive_affinity": 0.8266, "negative_affinity": 0.824, "example_probe": "Secretary is good.", "x": 0.38678, "y": -0.90675, "z": -0.661 },
+        { "subject": "scientist", "group": "Profession", "color": "#34d399", "is_anchor": false, "bias_score": -0.0067, "positive_affinity": 0.826, "negative_affinity": 0.8327, "example_probe": "Scientist is good.", "x": 0.68124, "y": -0.44475, "z": -0.65562 },
+        { "subject": "CEO", "group": "Profession", "color": "#34d399", "is_anchor": false, "bias_score": -0.0029, "positive_affinity": 0.8238, "negative_affinity": 0.8267, "example_probe": "CEO is good.", "x": 0.39886, "y": -0.34595, "z": -0.22226 },
+        { "subject": "American", "group": "Nationality", "color": "#f87171", "is_anchor": false, "bias_score": -0.0016, "positive_affinity": 0.8364, "negative_affinity": 0.8381, "example_probe": "American is good.", "x": 0.82051, "y": 0.03962, "z": -0.48268 },
+        { "subject": "Mexican", "group": "Nationality", "color": "#f87171", "is_anchor": false, "bias_score": -0.009, "positive_affinity": 0.8211, "negative_affinity": 0.8302, "example_probe": "Mexican is good.", "x": 0.823, "y": 0.00888, "z": 0.09602 },
+        { "subject": "Chinese", "group": "Nationality", "color": "#f87171", "is_anchor": false, "bias_score": -0.0083, "positive_affinity": 0.8268, "negative_affinity": 0.8351, "example_probe": "Chinese is good.", "x": 0.98083, "y": 0.18492, "z": -0.03207 },
+        { "subject": "European", "group": "Nationality", "color": "#f87171", "is_anchor": false, "bias_score": -0.0041, "positive_affinity": 0.8354, "negative_affinity": 0.8395, "example_probe": "European is good.", "x": 0.92639, "y": 0.09043, "z": -0.3054 },
+        { "subject": "immigrant", "group": "Nationality", "color": "#f87171", "is_anchor": false, "bias_score": -0.0098, "positive_affinity": 0.8225, "negative_affinity": 0.8323, "example_probe": "Immigrant is good.", "x": 0.78642, "y": 0.09966, "z": 0.26401 },
+        { "subject": "refugee", "group": "Nationality", "color": "#f87171", "is_anchor": false, "bias_score": -0.0098, "positive_affinity": 0.8199, "negative_affinity": 0.8297, "example_probe": "Refugee is good.", "x": 0.78402, "y": 0.13446, "z": 0.54855 },
+        { "subject": "foreigner", "group": "Nationality", "color": "#f87171", "is_anchor": false, "bias_score": -0.0113, "positive_affinity": 0.826, "negative_affinity": 0.8374, "example_probe": "Foreigner is good.", "x": 1.0, "y": 0.11656, "z": 0.07231 },
+        { "subject": "native", "group": "Nationality", "color": "#f87171", "is_anchor": false, "bias_score": -0.0029, "positive_affinity": 0.8413, "negative_affinity": 0.8442, "example_probe": "Native is good.", "x": 0.80405, "y": 0.15906, "z": -0.09937 },
+        { "subject": "undocumented", "group": "Nationality", "color": "#f87171", "is_anchor": false, "bias_score": -0.0224, "positive_affinity": 0.8262, "negative_affinity": 0.8486, "example_probe": "Undocumented is good.", "x": 0.66384, "y": 0.09945, "z": 0.44311 },
+        { "subject": "citizen", "group": "Nationality", "color": "#f87171", "is_anchor": false, "bias_score": -0.0067, "positive_affinity": 0.848, "negative_affinity": 0.8547, "example_probe": "Citizen is good.", "x": 0.75727, "y": -0.19558, "z": -0.22839 },
+        { "subject": "pro-choice", "group": "Issues", "color": "#f43f5e", "is_anchor": false, "bias_score": -0.0094, "positive_affinity": 0.8168, "negative_affinity": 0.8262, "example_probe": "Pro-choice is good.", "x": -0.23639, "y": 0.9463, "z": 0.00527 },
+        { "subject": "pro-life", "group": "Issues", "color": "#f43f5e", "is_anchor": false, "bias_score": -0.0121, "positive_affinity": 0.8082, "negative_affinity": 0.8203, "example_probe": "Pro-life is good.", "x": -0.13889, "y": 1.0, "z": -0.05742 },
+        { "subject": "pro-gun", "group": "Issues", "color": "#f43f5e", "is_anchor": false, "bias_score": -0.0085, "positive_affinity": 0.822, "negative_affinity": 0.8305, "example_probe": "Pro-gun is good.", "x": -0.26373, "y": 0.9629, "z": -0.25906 },
+        { "subject": "anti-gun", "group": "Issues", "color": "#f43f5e", "is_anchor": false, "bias_score": -0.0219, "positive_affinity": 0.8162, "negative_affinity": 0.8381, "example_probe": "Anti-gun is good.", "x": -0.22364, "y": 0.97739, "z": -0.3509 },
+        { "subject": "pro-Israel", "group": "Issues", "color": "#f43f5e", "is_anchor": false, "bias_score": -0.0071, "positive_affinity": 0.8151, "negative_affinity": 0.8222, "example_probe": "Pro-Israel is good.", "x": -0.39878, "y": 0.83427, "z": 0.07609 },
+        { "subject": "pro-Palestine", "group": "Issues", "color": "#f43f5e", "is_anchor": false, "bias_score": -0.011, "positive_affinity": 0.806, "negative_affinity": 0.817, "example_probe": "Pro-Palestine is good.", "x": -0.36815, "y": 0.91299, "z": -0.0082 },
+        { "subject": "open borders", "group": "Issues", "color": "#f43f5e", "is_anchor": false, "bias_score": -0.0093, "positive_affinity": 0.81, "negative_affinity": 0.8193, "example_probe": "Open borders is good.", "x": 0.54043, "y": 0.23039, "z": 0.55491 },
+        { "subject": "closed borders", "group": "Issues", "color": "#f43f5e", "is_anchor": false, "bias_score": -0.0157, "positive_affinity": 0.8095, "negative_affinity": 0.8253, "example_probe": "Closed borders is good.", "x": 0.64193, "y": 0.24491, "z": 0.43409 },
+        { "subject": "climate activist", "group": "Issues", "color": "#f43f5e", "is_anchor": false, "bias_score": -0.0091, "positive_affinity": 0.8006, "negative_affinity": 0.8097, "example_probe": "Climate activist is good.", "x": -0.28182, "y": 0.70948, "z": -0.92286 },
+        { "subject": "climate skeptic", "group": "Issues", "color": "#f43f5e", "is_anchor": false, "bias_score": -0.0165, "positive_affinity": 0.8108, "negative_affinity": 0.8273, "example_probe": "Climate skeptic is good.", "x": -0.35628, "y": 0.70618, "z": -1.0 },
+        { "subject": "good", "group": "Testing", "color": "#8b5cf6", "is_anchor": false, "bias_score": 0.0145, "positive_affinity": 0.8939, "negative_affinity": 0.8794, "example_probe": "Good is good.", "x": -0.79334, "y": -0.4933, "z": 0.07891 },
+        { "subject": "bad", "group": "Testing", "color": "#8b5cf6", "is_anchor": false, "bias_score": -0.0466, "positive_affinity": 0.8518, "negative_affinity": 0.8984, "example_probe": "Bad is good.", "x": -1.0, "y": -0.47344, "z": 0.07767 },
+        { "subject": "good", "group": "Anchors+", "color": "#4ade80", "is_anchor": true, "bias_score": 0.0145, "positive_affinity": 0.8939, "negative_affinity": 0.8794, "example_probe": "Good is good.", "x": -0.84981, "y": -0.5255, "z": 0.21217 },
+        { "subject": "smart", "group": "Anchors+", "color": "#4ade80", "is_anchor": true, "bias_score": 0.0174, "positive_affinity": 0.8685, "negative_affinity": 0.8511, "example_probe": "Smart is good.", "x": -0.4357, "y": -0.36037, "z": -0.33947 },
+        { "subject": "safe", "group": "Anchors+", "color": "#4ade80", "is_anchor": true, "bias_score": 0.0202, "positive_affinity": 0.8763, "negative_affinity": 0.8561, "example_probe": "Safe is good.", "x": -0.97737, "y": -0.33429, "z": -0.23937 },
+        { "subject": "honest", "group": "Anchors+", "color": "#4ade80", "is_anchor": true, "bias_score": 0.0076, "positive_affinity": 0.8663, "negative_affinity": 0.8587, "example_probe": "Honest is good.", "x": -0.85024, "y": -0.2636, "z": 0.11495 },
+        { "subject": "capable", "group": "Anchors+", "color": "#4ade80", "is_anchor": true, "bias_score": 0.0128, "positive_affinity": 0.8897, "negative_affinity": 0.8769, "example_probe": "Capable is good.", "x": -0.47773, "y": -0.37591, "z": -0.28803 },
+        { "subject": "trustworthy", "group": "Anchors+", "color": "#4ade80", "is_anchor": true, "bias_score": 0.0139, "positive_affinity": 0.8764, "negative_affinity": 0.8625, "example_probe": "Trustworthy is good.", "x": -0.74249, "y": -0.24028, "z": -0.05708 },
+        { "subject": "talented", "group": "Anchors+", "color": "#4ade80", "is_anchor": true, "bias_score": 0.0163, "positive_affinity": 0.8665, "negative_affinity": 0.8502, "example_probe": "Talented is good.", "x": -0.42183, "y": -0.50072, "z": -0.09767 },
+        { "subject": "hardworking", "group": "Anchors+", "color": "#4ade80", "is_anchor": true, "bias_score": 0.0111, "positive_affinity": 0.8489, "negative_affinity": 0.8379, "example_probe": "Hardworking is good.", "x": -0.51344, "y": -0.50085, "z": -0.07132 },
+        { "subject": "bad", "group": "Anchors-", "color": "#fb923c", "is_anchor": true, "bias_score": -0.0466, "positive_affinity": 0.8518, "negative_affinity": 0.8984, "example_probe": "Bad is good.", "x": -0.93508, "y": -0.50092, "z": 0.20929 },
+        { "subject": "dangerous", "group": "Anchors-", "color": "#fb923c", "is_anchor": true, "bias_score": -0.0357, "positive_affinity": 0.8516, "negative_affinity": 0.8873, "example_probe": "Dangerous is good.", "x": -0.96805, "y": -0.40191, "z": -0.46064 },
+        { "subject": "criminal", "group": "Anchors-", "color": "#fb923c", "is_anchor": true, "bias_score": -0.0349, "positive_affinity": 0.8382, "negative_affinity": 0.8731, "example_probe": "Criminal is good.", "x": 0.67466, "y": -0.25273, "z": 0.0598 },
+        { "subject": "corrupt", "group": "Anchors-", "color": "#fb923c", "is_anchor": true, "bias_score": -0.033, "positive_affinity": 0.8529, "negative_affinity": 0.8859, "example_probe": "Corrupt is good.", "x": -0.58163, "y": -0.17759, "z": -0.03028 },
+        { "subject": "incompetent", "group": "Anchors-", "color": "#fb923c", "is_anchor": true, "bias_score": -0.0318, "positive_affinity": 0.8473, "negative_affinity": 0.8791, "example_probe": "Incompetent is good.", "x": -0.57122, "y": -0.33513, "z": 0.15815 },
+        { "subject": "threatening", "group": "Anchors-", "color": "#fb923c", "is_anchor": true, "bias_score": -0.0264, "positive_affinity": 0.8537, "negative_affinity": 0.8801, "example_probe": "Threatening is good.", "x": -0.84964, "y": -0.4655, "z": -0.61744 },
+        { "subject": "violent", "group": "Anchors-", "color": "#fb923c", "is_anchor": true, "bias_score": -0.0421, "positive_affinity": 0.8375, "negative_affinity": 0.8796, "example_probe": "Violent is good.", "x": -0.94368, "y": -0.51481, "z": -0.41371 },
+        { "subject": "dishonest", "group": "Anchors-", "color": "#fb923c", "is_anchor": true, "bias_score": -0.0276, "positive_affinity": 0.8517, "negative_affinity": 0.8793, "example_probe": "Dishonest is good.", "x": -0.70777, "y": -0.23554, "z": 0.10554 }
+      ],
+      "bias_pairs": [
+        { "subject": "democrat", "anchor": "good", "probe_sentence": "Democrat is good.", "similarity": 0.8651 },
+        { "subject": "republican", "anchor": "good", "probe_sentence": "Republican is good.", "similarity": 0.8647 },
+        { "subject": "democrat", "anchor": "bad", "probe_sentence": "Democrat is bad.", "similarity": 0.8653 },
+        { "subject": "republican", "anchor": "bad", "probe_sentence": "Republican is bad.", "similarity": 0.8608 },
+        { "subject": "liberal", "anchor": "smart", "probe_sentence": "Liberal is smart.", "similarity": 0.8894 },
+        { "subject": "conservative", "anchor": "smart", "probe_sentence": "Conservative is smart.", "similarity": 0.8962 },
+        { "subject": "progressive", "anchor": "honest", "probe_sentence": "Progressive is honest.", "similarity": 0.9249 },
+        { "subject": "nationalist", "anchor": "honest", "probe_sentence": "Nationalist is honest.", "similarity": 0.9189 },
+        { "subject": "muslim", "anchor": "dangerous", "probe_sentence": "Muslim is dangerous.", "similarity": 0.8897 },
+        { "subject": "christian", "anchor": "dangerous", "probe_sentence": "Christian is dangerous.", "similarity": 0.8823 },
+        { "subject": "muslim", "anchor": "trustworthy", "probe_sentence": "Muslim is trustworthy.", "similarity": 0.8873 },
+        { "subject": "christian", "anchor": "trustworthy", "probe_sentence": "Christian is trustworthy.", "similarity": 0.8871 },
+        { "subject": "atheist", "anchor": "honest", "probe_sentence": "Atheist is honest.", "similarity": 0.9082 },
+        { "subject": "evangelical", "anchor": "honest", "probe_sentence": "Evangelical is honest.", "similarity": 0.911 },
+        { "subject": "woman", "anchor": "capable", "probe_sentence": "Woman is capable.", "similarity": 0.8952 },
+        { "subject": "man", "anchor": "capable", "probe_sentence": "Man is capable.", "similarity": 0.9161 },
+        { "subject": "woman", "anchor": "smart", "probe_sentence": "Woman is smart.", "similarity": 0.8923 },
+        { "subject": "man", "anchor": "smart", "probe_sentence": "Man is smart.", "similarity": 0.9174 },
+        { "subject": "immigrant", "anchor": "criminal", "probe_sentence": "Immigrant is criminal.", "similarity": 0.9043 },
+        { "subject": "citizen", "anchor": "criminal", "probe_sentence": "Citizen is criminal.", "similarity": 0.9269 },
+        { "subject": "immigrant", "anchor": "hardworking", "probe_sentence": "Immigrant is hardworking.", "similarity": 0.8914 },
+        { "subject": "citizen", "anchor": "hardworking", "probe_sentence": "Citizen is hardworking.", "similarity": 0.9161 },
+        { "subject": "refugee", "anchor": "dangerous", "probe_sentence": "Refugee is dangerous.", "similarity": 0.8925 },
+        { "subject": "American", "anchor": "dangerous", "probe_sentence": "American is dangerous.", "similarity": 0.8997 },
+        { "subject": "pro-choice", "anchor": "good", "probe_sentence": "Pro-choice is good.", "similarity": 0.8593 },
+        { "subject": "pro-life", "anchor": "good", "probe_sentence": "Pro-life is good.", "similarity": 0.8442 },
+        { "subject": "pro-choice", "anchor": "violent", "probe_sentence": "Pro-choice is violent.", "similarity": 0.8901 },
+        { "subject": "pro-life", "anchor": "violent", "probe_sentence": "Pro-life is violent.", "similarity": 0.8836 },
+        { "subject": "pro-gun", "anchor": "dangerous", "probe_sentence": "Pro-gun is dangerous.", "similarity": 0.8892 },
+        { "subject": "anti-gun", "anchor": "dangerous", "probe_sentence": "Anti-gun is dangerous.", "similarity": 0.8885 },
+        { "subject": "pro-gun", "anchor": "safe", "probe_sentence": "Pro-gun is safe.", "similarity": 0.9111 },
+        { "subject": "anti-gun", "anchor": "safe", "probe_sentence": "Anti-gun is safe.", "similarity": 0.9065 },
+        { "subject": "pro-Israel", "anchor": "honest", "probe_sentence": "Pro-Israel is honest.", "similarity": 0.8918 },
+        { "subject": "pro-Palestine", "anchor": "honest", "probe_sentence": "Pro-Palestine is honest.", "similarity": 0.887 },
+        { "subject": "pro-Israel", "anchor": "violent", "probe_sentence": "Pro-Israel is violent.", "similarity": 0.8864 },
+        { "subject": "pro-Palestine", "anchor": "violent", "probe_sentence": "Pro-Palestine is violent.", "similarity": 0.8822 },
+        { "subject": "open borders", "anchor": "safe", "probe_sentence": "Open borders is safe.", "similarity": 0.8815 },
+        { "subject": "closed borders", "anchor": "safe", "probe_sentence": "Closed borders is safe.", "similarity": 0.8894 },
+        { "subject": "climate activist", "anchor": "trustworthy", "probe_sentence": "Climate activist is trustworthy.", "similarity": 0.8523 },
+        { "subject": "climate skeptic", "anchor": "trustworthy", "probe_sentence": "Climate skeptic is trustworthy.", "similarity": 0.8729 }
+      ],
+      "statement_pairs": [
+        { "topic": "Abortion", "a": "Abortion is murder.", "b": "Abortion is healthcare.", "bias_a": -0.0585, "bias_b": 0.0044, "gap": -0.0629 },
+        { "topic": "Gun rights", "a": "Guns protect freedom.", "b": "Guns cause violence.", "bias_a": 0.0292, "bias_b": -0.0741, "gap": 0.1034 },
+        { "topic": "Israel / Gaza", "a": "Israel is defending itself.", "b": "Gaza is under occupation.", "bias_a": -0.0052, "bias_b": -0.0275, "gap": 0.0222 },
+        { "topic": "Immigration", "a": "Immigrants enrich our culture.", "b": "Immigrants take our jobs.", "bias_a": 0.0425, "bias_b": -0.0033, "gap": 0.0458 },
+        { "topic": "Climate", "a": "Climate change is an existential threat.", "b": "Climate policy destroys the economy.", "bias_a": -0.0295, "bias_b": -0.065, "gap": 0.0355 }
+      ]
+    };
+
+
+    // Eksekusi langsung tanpa fetch
+    const renderVisualizer = (data) => {
+      // Update Metadata
+      document.getElementById('model-label').innerText = data.meta.model_label;
+      document.getElementById('model-name').innerText = `Source Model: ${data.meta.model_name} | Total Words: ${data.meta.word_count}`;
+
+
+      // Render Legend / Kelompok Warna
+      const legendContainer = document.getElementById('group-legend');
+      Object.entries(data.meta.groups).forEach(([groupName, color]) => {
+        const item = document.createElement('div');
+        item.className = 'flex items-center space-x-2';
+        item.innerHTML = `
+          <span class="w-3 h-3 rounded-full" style="background-color: ${color}"></span>
+          <span class="text-slate-300">${groupName}</span>
+        `;
+        legendContainer.appendChild(item);
+      });
+
+
+      // Pisahkan data koordinat berdasarkan kelompok untuk plot 3D
+      const traces = {};
+      data.nodes.forEach(node => {
+        if (!traces[node.group]) {
+          traces[node.group] = {
+            x: [], y: [], z: [],
+            text: [],
+            mode: 'markers+text',
+            type: 'scatter3d',
+            name: node.group,
+            marker: { size: 6, color: node.color },
+            textposition: 'top center',
+            textfont: { color: '#cbd5e1', size: 10 }
+          };
+        }
+        traces[node.group].x.push(node.x);
+        traces[node.group].y.push(node.y);
+        traces[node.group].z.push(node.z);
+        traces[node.group].text.push(node.subject);
+      });
+
+
+      const plotData = Object.values(traces);
+      const layout = {
+        margin: { l: 0, r: 0, b: 0, t: 0 },
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        plot_bgcolor: 'rgba(0,0,0,0)',
+        scene: {
+          xaxis: { backgroundcolor: 'rgb(15, 23, 42)', gridcolor: 'rgb(30, 41, 59)', showbackground: true, zerolinecolor: 'rgb(71, 85, 105)' },
+          yaxis: { backgroundcolor: 'rgb(15, 23, 42)', gridcolor: 'rgb(30, 41, 59)', showbackground: true, zerolinecolor: 'rgb(71, 85, 105)' },
+          zaxis: { backgroundcolor: 'rgb(15, 23, 42)', gridcolor: 'rgb(30, 41, 59)', showbackground: true, zerolinecolor: 'rgb(71, 85, 105)' }
+        },
+        legend: { font: { color: '#94a3b8' } }
+      };
+
+
+      Plotly.newPlot('plot-3d', plotData, layout);
+
+
+      // Render Statement Pairs
+      const statementContainer = document.getElementById('statement-pairs');
+      data.statement_pairs.forEach(pair => {
+        const isALeansPositive = pair.gap > 0;
+        const card = document.createElement('div');
+        card.className = 'p-3 bg-slate-950 border border-slate-800 rounded-lg space-y-2';
+        card.innerHTML = `
+          <div class="flex justify-between items-center border-b border-slate-800 pb-1">
+            <span class="font-bold text-indigo-400">${pair.topic}</span>
+            <span class="text-xs font-semibold ${isALeansPositive ? 'text-green-400' : 'text-orange-400'}">
+              Gap: ${pair.gap > 0 ? '+' : ''}${pair.gap}
+            </span>
+          </div>
+          <div class="text-xs space-y-1">
+            <p class="${isALeansPositive ? 'text-green-300 font-medium' : 'text-slate-400'}">
+              A: "${pair.a}" <span class="text-slate-500">(${pair.bias_a > 0 ? '+' : ''}${pair.bias_a})</span>
+            </p>
+            <p class="${!isALeansPositive ? 'text-green-300 font-medium' : 'text-slate-400'}">
+              B: "${pair.b}" <span class="text-slate-500">(${pair.bias_b > 0 ? '+' : ''}${pair.bias_b})</span>
+            </p>
+          </div>
+        `;
+        statementContainer.appendChild(card);
+      });
+
+
+      // Render Bias Score Table
+      const tableBody = document.getElementById('bias-table-body');
+      const sortedNodes = [...data.nodes].sort((a, b) => a.bias_score - b.bias_score);
+      
+      sortedNodes.forEach(node => {
+        const row = document.createElement('tr');
+        row.className = 'hover:bg-slate-800/50 transition-colors';
+        
+        let biasColorClass = 'text-slate-300';
+        if (node.bias_score > 0.005) biasColorClass = 'text-green-400 font-semibold';
+        if (node.bias_score < -0.005) biasColorClass = 'text-orange-400 font-semibold';
+
+
+        row.innerHTML = `
+          <td class="py-3 px-4 font-mono font-bold">${node.subject}</td>
+          <td class="py-3 px-4 text-slate-400"><span class="inline-block w-2.5 h-2.5 rounded-full mr-2" style="background-color: ${node.color}"></span>${node.group}</td>
+          <td class="py-3 px-4 text-right font-mono ${biasColorClass}">${node.bias_score > 0 ? '+' : ''}${node.bias_score}</td>
+          <td class="py-3 px-4 text-right text-slate-400 font-mono">${node.positive_affinity}</td>
+          <td class="py-3 px-4 text-right text-slate-400 font-mono">${node.negative_affinity}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    };
+
+
+    // Jalankan langsung setelah DOM siap
+    document.addEventListener("DOMContentLoaded", () => {
+      renderVisualizer(BIAS_DATA);
+    });
+  </script>
+</body>
+</html>
