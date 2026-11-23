@@ -20,7 +20,7 @@
         <a href="#certificates">Certificates</a>
     </nav>
 
-    <div class="container">
+    <div id="resume-container" class="container layout-sidebar">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div id="resume-photo-container" class="profile-photo-container">
@@ -86,10 +86,23 @@
                     <img src="https://img.icons8.com/ios-glyphs/18/8be9fd/github.png" alt="GitHub"> GitHub Profile
                 </a>
             </div>
-        </aside>
-
-        <!-- Main Content -->
+        </aside>        <!-- Main Content -->
         <main class="main">
+
+            <!-- Resume Toolbar: 3 Layouts & Collapsible Controls -->
+            <div class="resume-toolbar">
+                <div class="toolbar-group">
+                    <span class="toolbar-label">Layout:</span>
+                    <button type="button" class="layout-btn active" data-layout="sidebar">Sidebar</button>
+                    <button type="button" class="layout-btn" data-layout="single">Single Column</button>
+                    <button type="button" class="layout-btn" data-layout="compact">Compact Grid</button>
+                </div>
+                <div class="toolbar-group">
+                    <span class="toolbar-label">Cards:</span>
+                    <button type="button" class="toggle-all-btn" id="expand-all-btn">Expand All</button>
+                    <button type="button" class="toggle-all-btn" id="collapse-all-btn">Collapse All</button>
+                </div>
+            </div>
 
             <!-- Summary -->
             <section class="section" id="summary">
@@ -111,16 +124,21 @@
             <section class="section" id="experience">
                 <h2>Professional Experience</h2>
 
+                <div class="cards-grid">
                 <!-- Experience: PT. Falah Inovasi Teknologi -->
-                <div class="experience-card">
-                    <div class="job-header">
-                        <div>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
                             <h3 class="job-title">Unity Programmer</h3>
                             <span class="company-name">PT. Falah Inovasi Teknologi</span> &bull; Jakarta, Indonesia
                         </div>
+                        </div>
                         <span class="dates">01/2025 – Present</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Develop and refine applications using Unity3D, focusing on efficient architecture and seamless functionality. Implement API connections, debug code, and optimize performance through rigorous profiling. Conduct thorough testing to ensure stability, reliability, and high-quality user interaction.
                     </p>
                     <strong>Key Responsibilities:</strong>
@@ -137,18 +155,23 @@
                         <span class="badge">Git</span>
                         <span class="badge">Postman API</span>
                     </div>
-                </div>
+                    </div>
+                </details>
 
                 <!-- Experience: Newfemme Wanita Indonesia -->
-                <div class="experience-card">
-                    <div class="job-header">
-                        <div>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
                             <h3 class="job-title">Game Developer (Unity Developer)</h3>
                             <span class="company-name">Newfemme Wanita Indonesia</span> &bull; Jakarta, Indonesia
                         </div>
+                        </div>
                         <span class="dates">03/2022 – 08/2024</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Contributed to designing and developing applications including the main Newfemme app and Cinda game. Authored Game Design Documents (GDD), developed API connection modules using C# threading, and implemented SDK integrations (Google/Apple Sign-In, Firebase Analytics, Google In-App Update). Led optimization and profiling with Unity Profiler and Visual Studio Debugger.
                     </p>
                     <strong>Key Responsibilities:</strong>
@@ -174,18 +197,23 @@
                         <span class="badge">Visual Studio</span>
                         <span class="badge">JSON</span>
                     </div>
-                </div>
+                    </div>
+                </details>
 
                 <!-- Experience: Herghys Studio -->
-                <div class="experience-card">
-                    <div class="job-header">
-                        <div>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
                             <h3 class="job-title">Developer (Self Employed)</h3>
                             <span class="company-name">Herghys Studio</span> &bull; Tangerang, Indonesia
                         </div>
+                        </div>
                         <span class="dates">06/2021 – Present</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Independent development and publishing of commercial 2D/3D mobile games, Augmented Reality (AR) applications, desktop productivity tools, and open-source Unity packages.
                     </p>
                     <strong>Key Responsibilities:</strong>
@@ -205,18 +233,23 @@
                         <span class="badge">Git</span>
                         <span class="badge">Visual Studio</span>
                     </div>
-                </div>
+                    </div>
+                </details>
 
                 <!-- Experience: PT Teknoreka Inovasi Nusantara -->
-                <div class="experience-card">
-                    <div class="job-header">
-                        <div>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
                             <h3 class="job-title">Freelance Game Developer</h3>
                             <span class="company-name">PT Teknoreka Inovasi Nusantara</span> &bull; Remote
                         </div>
+                        </div>
                         <span class="dates">06/2023 – 08/2023</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Created 2D WebGL educational games (SiMurda Edugame, Eksponen Edugame, Petualangan Qori) and integrated backend API connections for account and leaderboard data with thorough Postman API validation.
                     </p>
                     <strong>Technologies Used:</strong>
@@ -227,18 +260,23 @@
                         <span class="badge">Postman API</span>
                         <span class="badge">Git</span>
                     </div>
-                </div>
+                    </div>
+                </details>
 
                 <!-- Experience: Fomuo Games -->
-                <div class="experience-card">
-                    <div class="job-header">
-                        <div>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
                             <h3 class="job-title">Game Developer</h3>
                             <span class="company-name">Fomuo Games</span> &bull; Jakarta, Indonesia
                         </div>
+                        </div>
                         <span class="dates">02/2023 – 06/2023</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Developed and reskinned 2D mobile and PC games (Candies Land, Baker Pro, Blush Tales, Blush Crush, Crossy Cube, Tiny Crash). Built authentication modules and set up Google Cloud and Firebase platforms.
                     </p>
                     <strong>Key Responsibilities:</strong>
@@ -255,18 +293,23 @@
                         <span class="badge">Google & Apple Sign-In</span>
                         <span class="badge">Postman API</span>
                     </div>
-                </div>
+                    </div>
+                </details>
 
                 <!-- Experience: SMK YPKK 1 Sleman -->
-                <div class="experience-card">
-                    <div class="job-header">
-                        <div>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
                             <h3 class="job-title">Teacher Intern</h3>
                             <span class="company-name">SMK YPKK 1 Sleman</span> &bull; Yogyakarta, Indonesia
                         </div>
+                        </div>
                         <span class="dates">06/2019 – 08/2019</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Authored instructional curriculum and learning modules for web programming and taught foundational web development to vocational students.
                     </p>
                     <div class="badge-list">
@@ -274,18 +317,23 @@
                         <span class="badge">Web Programming</span>
                         <span class="badge">HTML / CSS</span>
                     </div>
-                </div>
+                    </div>
+                </details>
 
                 <!-- Experience: Run System -->
-                <div class="experience-card">
-                    <div class="job-header">
-                        <div>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
                             <h3 class="job-title">Software Developer Intern</h3>
                             <span class="company-name">Run System - PT. Global Sukses Solusi</span> &bull; Yogyakarta, Indonesia
                         </div>
+                        </div>
                         <span class="dates">07/2018 – 08/2018</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Developed a high-temperature monitoring hardware device with Arduino and created Windows Forms desktop software with MySQL database connection.
                     </p>
                     <div class="badge-list">
@@ -294,6 +342,8 @@
                         <span class="badge">Windows Forms</span>
                         <span class="badge">MySQL</span>
                     </div>
+                    </div>
+                </details>
                 </div>
             </section>
 
@@ -301,13 +351,20 @@
             <section class="section" id="projects">
                 <h2>Key Highlighted Projects</h2>
 
+                <div class="cards-grid">
                 <!-- Pong Evolved -->
-                <div class="project-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Pong Evolved</h3>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
+                                <h3 class="job-title">Pong Evolved</h3>
+                            </div>
+                        </div>
                         <span class="dates">09/2021 – 10/2021</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Action arcade mobile game with infinite dynamic levels, retro-modern aesthetic, particle effects, and integrated Google AdMob monetization.
                     </p>
                     <div class="badge-list">
@@ -324,15 +381,22 @@
                             Privacy Policy
                         </a>
                     </div>
-                </div>
+                    </div>
+                </details>
 
                 <!-- Tap! -->
-                <div class="project-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Tap!</h3>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
+                                <h3 class="job-title">Tap!</h3>
+                            </div>
+                        </div>
                         <span class="dates">07/2021 – 09/2021</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Fast-paced mobile reflex and tapping arcade game featuring responsive touchscreen controls, scoring systems, and Google AdMob SDK.
                     </p>
                     <div class="badge-list">
@@ -352,15 +416,22 @@
                             Privacy Policy
                         </a>
                     </div>
-                </div>
+                    </div>
+                </details>
 
                 <!-- Linjun Nail Art -->
-                <div class="project-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Linjun Nail Art</h3>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
+                                <h3 class="job-title">Linjun Nail Art</h3>
+                            </div>
+                        </div>
                         <span class="dates">2024 – Present</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         E-commerce showcase website and digital lookbook for Linjun Nail Art & Eyelashes handmade press-on nail studio. Designed product catalog with high-resolution image galleries, categorized showcases, and WhatsApp order inquiry workflows.
                     </p>
                     <div class="badge-list">
@@ -374,15 +445,22 @@
                             Live Website (linjunnailart.com) &rarr;
                         </a>
                     </div>
-                </div>
+                    </div>
+                </details>
 
                 <!-- Newfemme Cinda -->
-                <div class="project-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Newfemme Cinda</h3>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
+                                <h3 class="job-title">Newfemme Cinda</h3>
+                            </div>
+                        </div>
                         <span class="dates">10/2023 – 03/2024</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Gamified e-commerce mobile experience featuring 3D avatar generation from selfies, dress-up mechanics, asset bundle streaming, and real-world product rewards.
                     </p>
                     <div class="badge-list">
@@ -397,15 +475,22 @@
                             Google Play Store &rarr;
                         </a>
                     </div>
-                </div>
+                    </div>
+                </details>
 
                 <!-- Duckie Bubble -->
-                <div class="project-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Duckie Bubble</h3>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
+                                <h3 class="job-title">Duckie Bubble</h3>
+                            </div>
+                        </div>
                         <span class="dates">09/2024 – 10/2024</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Bubble shooter game designed for Telegram Bot WebApps with custom Unity REST client, JSLib bridge for auth tokens, and HTML5 WebGL wrapper.
                     </p>
                     <div class="badge-list">
@@ -418,15 +503,22 @@
                             Telegram Mini App &rarr;
                         </a>
                     </div>
-                </div>
+                    </div>
+                </details>
 
                 <!-- Keystore Helper -->
-                <div class="project-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Keystore Helper</h3>
+                <details class="collapsible-card" open>
+                    <summary class="job-header">
+                        <div class="job-title-group">
+                            <span class="toggle-indicator">▸</span>
+                            <div>
+                                <h3 class="job-title">Keystore Helper</h3>
+                            </div>
+                        </div>
                         <span class="dates">10/2024 – Present</span>
-                    </div>
-                    <p>
+                    </summary>
+                    <div class="collapsible-body">
+                        <p>
                         Open-source Windows desktop utility built with WPF to create Android Keystores and instantly extract SHA-1 and SHA-256 certificate fingerprints for Firebase and Google Play console setup.
                     </p>
                     <div class="badge-list">
@@ -439,6 +531,8 @@
                             GitHub Repository &rarr;
                         </a>
                     </div>
+                    </div>
+                </details>
                 </div>
 
                 <div style="text-align: center; margin-top: 1.5rem;">

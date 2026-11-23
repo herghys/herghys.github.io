@@ -54,17 +54,70 @@ a:hover {
     white-space: nowrap;
 }
 
+/* Base Container */
 .container {
-    display: flex;
-    flex-direction: row;
     max-width: 1240px;
     margin: 0 auto;
     padding: 2rem 1.25rem;
-    gap: 2rem;
+    transition: max-width 0.3s ease;
 }
 
+/* Resume Toolbar: Layout Switcher & Expand/Collapse */
+.resume-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 0.65rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.toolbar-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 0.25rem;
+}
+
+.layout-btn, .toggle-all-btn {
+    background: var(--tag-bg);
+    color: var(--text);
+    border: 1px solid var(--card-border);
+    padding: 0.35rem 0.75rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.layout-btn:hover, .toggle-all-btn:hover {
+    background: #353550;
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.layout-btn.active {
+    background: var(--accent);
+    color: #12121e;
+    border-color: var(--accent);
+}
+
+/* Sidebar Styles */
 .sidebar {
-    flex: 1;
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
     padding: 2rem 1.5rem;
@@ -78,9 +131,9 @@ a:hover {
     min-width: 0;
 }
 
-/* Profile Photo: With Photo vs No Photo */
+/* Profile Photo */
 .profile-photo-container {
-    display: none; /* Hidden by default in "No-Photo" layout */
+    display: none;
     margin: 0 auto 1.2rem;
     justify-content: center;
 }
@@ -171,30 +224,61 @@ h1, h2, h3 {
     border-color: rgba(138, 180, 248, 0.4);
 }
 
-.experience-card, .project-item {
+/* Collapsible Card (<details class="collapsible-card">) */
+details.collapsible-card {
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--card-border);
-    padding: 1.25rem;
     border-radius: 3px;
     margin-bottom: 1.25rem;
     transition: border-color 0.2s ease;
+    overflow: hidden;
 }
 
-.experience-card:hover, .project-item:hover {
+details.collapsible-card:hover {
     border-color: var(--accent);
 }
 
-.job-header {
+details.collapsible-card summary.job-header {
+    padding: 1.15rem 1.25rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+details.collapsible-card summary.job-header::-webkit-details-marker {
+    display: none;
+}
+
+.job-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex: 1;
+    min-width: 250px;
+}
+
+.toggle-indicator {
+    font-size: 0.85rem;
+    color: var(--accent);
+    transition: transform 0.2s ease;
+    display: inline-block;
+    width: 14px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+details.collapsible-card[open] summary .toggle-indicator {
+    transform: rotate(90deg);
 }
 
 .job-title {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
     font-weight: bold;
     color: var(--link);
     margin: 0;
@@ -211,6 +295,14 @@ h1, h2, h3 {
     background: var(--tag-bg);
     padding: 0.15rem 0.5rem;
     border-radius: 2px;
+    white-space: nowrap;
+}
+
+.collapsible-body {
+    padding: 0 1.25rem 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 0.25rem;
+    padding-top: 0.85rem;
 }
 
 .badge-list {
@@ -298,8 +390,77 @@ li {
     font-weight: 600;
 }
 
+/* ========================================================
+   3 RESUME LAYOUTS
+   ======================================================== */
+
+/* Layout 1: Sidebar Layout (Default 2-Column) */
+.container.layout-sidebar {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.container.layout-sidebar .sidebar {
+    flex: 1;
+    min-width: 290px;
+}
+
+.container.layout-sidebar .main {
+    flex: 3;
+}
+
+/* Layout 2: Single Column Layout (Classic Resume Flow) */
+.container.layout-single {
+    display: block;
+    max-width: 920px;
+}
+
+.container.layout-single .sidebar {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.container.layout-single .sidebar .btn-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container.layout-single .sidebar .btn {
+    flex: 1 1 180px;
+}
+
+/* Layout 3: Compact Grid Layout (High-Density Multi-Column) */
+.container.layout-compact {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    max-width: 1400px;
+}
+
+.container.layout-compact .sidebar {
+    flex: 1;
+    min-width: 270px;
+}
+
+.container.layout-compact .main {
+    flex: 3.5;
+}
+
+.container.layout-compact .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1rem;
+}
+
+.container.layout-compact details.collapsible-card {
+    margin-bottom: 0;
+}
+
 @media (max-width: 860px) {
-    .container {
+    .container,
+    .container.layout-sidebar,
+    .container.layout-compact {
         flex-direction: column;
     }
 
@@ -314,5 +475,9 @@ li {
 
     .btn {
         flex: 1 1 180px;
+    }
+
+    .container.layout-compact .cards-grid {
+        grid-template-columns: 1fr;
     }
 }
