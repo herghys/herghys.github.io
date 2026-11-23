@@ -1,13 +1,29 @@
-document.addEventListener('DOMContentLoaded', function () {
-    if (window.PORTFOLIO_DATA && Array.isArray(window.PORTFOLIO_DATA)) {
+function initPortfolio() {
+    if (window.PORTFOLIO_DATA && Array.isArray(window.PORTFOLIO_DATA) && window.PORTFOLIO_DATA.length > 0) {
         renderProjects(window.PORTFOLIO_DATA);
     } else {
         fetch('data/portfolio.json')
-            .then(response => response.json())
-            .then(projects => renderProjects(projects))
-            .catch(error => console.error('Error loading the portfolio data:', error));
+            .then(function (response) {
+                if (!response.ok) throw new Error('Network error: ' + response.status);
+                return response.json();
+            })
+            .then(function (projects) {
+                renderProjects(projects);
+            })
+            .catch(function (error) {
+                console.warn('Fetch failed (likely file:// protocol), checking window.PORTFOLIO_DATA:', error);
+                if (window.PORTFOLIO_DATA && Array.isArray(window.PORTFOLIO_DATA)) {
+                    renderProjects(window.PORTFOLIO_DATA);
+                }
+            });
     }
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPortfolio);
+} else {
+    initPortfolio();
+}
 
 function renderProjects(projects) {
     const projectsGrid = document.querySelector('.projects-grid');
