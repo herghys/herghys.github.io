@@ -1244,16 +1244,16 @@ window.PORTFOLIO_DATA = [
     "title": "Temperature Monitoring Module",
     "projectType": "2",
     "icon": "",
-    "description": "Internship project with Run System (PT. Global Sukses Solusi) - Hardware device for high-temperature monitoring connected to a Windows Forms desktop application and MySQL database.",
+    "description": "Client hardware engineering project with Run System (PT. Global Sukses Solusi) \u2014 real-world industrial hardware device for high-temperature monitoring built using Arduino microcontrollers, connected to a C# (Windows Forms) desktop telemetry application and MySQL database.",
     "projectTime": {
       "startDate": "July 2018",
       "endDate": "August 2018",
       "currentlyWorking": false
     },
     "tasks": [
-      "Created temperature monitoring device using Arduino for high-temperature sensors",
-      "Developed monitoring and reporting desktop module using Windows Forms",
-      "Integrated MySQL database connection and data logging"
+      "Engineered real-world industrial temperature monitoring hardware device using Arduino microcontrollers and high-temperature sensors for client",
+      "Developed desktop monitoring and telemetry GUI application using C# (Windows Forms)",
+      "Integrated MySQL database connection for real-time telemetry data logging and reporting"
     ],
     "technologies": [
       "Arduino",
