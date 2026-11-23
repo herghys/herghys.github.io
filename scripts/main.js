@@ -13,24 +13,40 @@ function initProfilePhoto() {
 
     if (!photoImg || !photoWrapper) return;
 
-    // Pre-check if image is already cached/complete
-    if (photoImg.complete && photoImg.naturalHeight !== 0) {
-        photoWrapper.style.display = 'flex';
-        if (heroSection) heroSection.classList.add('has-photo');
+    var candidates = [
+        'assets/photo/profile.jpeg',
+        'assets/photo/profile.jpg',
+        'assets/photo/profile.png'
+    ];
+    var candidateIndex = 0;
+
+    function tryNextPhoto() {
+        if (candidateIndex < candidates.length) {
+            photoImg.src = candidates[candidateIndex++];
+        } else {
+            // All candidates failed -> clean "No Photo" layout
+            photoWrapper.style.display = 'none';
+            if (heroSection) heroSection.classList.remove('has-photo');
+        }
     }
 
     photoImg.onload = function () {
         if (photoImg.naturalHeight !== 0) {
             photoWrapper.style.display = 'flex';
             if (heroSection) heroSection.classList.add('has-photo');
+        } else {
+            tryNextPhoto();
         }
     };
 
     photoImg.onerror = function () {
-        // Hide wrapper and keep "No Photo" layout
-        photoWrapper.style.display = 'none';
-        if (heroSection) heroSection.classList.remove('has-photo');
+        tryNextPhoto();
     };
+
+    if (photoImg.complete && photoImg.naturalHeight !== 0) {
+        photoWrapper.style.display = 'flex';
+        if (heroSection) heroSection.classList.add('has-photo');
+    }
 }
 
 function loadFeaturedProjects() {

@@ -68,7 +68,7 @@ a:hover {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
     padding: 2rem 1.5rem;
-    border-radius: 12px;
+    border-radius: 4px;
     min-width: 290px;
     height: fit-content;
 }
@@ -86,12 +86,11 @@ a:hover {
 }
 
 .profile-pic {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    border-radius: 4px;
     object-fit: cover;
-    border: 3px solid var(--accent);
-    box-shadow: 0 4px 16px rgba(138, 180, 248, 0.2);
+    border: 2px solid var(--accent);
     display: block;
 }
 
@@ -119,21 +118,21 @@ a:hover {
 .btn {
     background: var(--accent);
     color: #12121e;
-    padding: 0.65rem 1rem;
+    padding: 0.6rem 1rem;
     text-align: center;
-    border-radius: 6px;
-    font-weight: bold;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.92rem;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    transition: transform 0.2s ease, background 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 .btn:hover {
     background: #a8cbff;
-    transform: translateY(-2px);
     text-decoration: none;
 }
 
@@ -164,25 +163,24 @@ h1, h2, h3 {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
     padding: 1.5rem;
-    border-radius: 10px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
 }
 
 .section:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(138, 180, 248, 0.4);
 }
 
 .experience-card, .project-item {
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--card-border);
     padding: 1.25rem;
-    border-radius: 8px;
+    border-radius: 3px;
     margin-bottom: 1.25rem;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: border-color 0.2s ease;
 }
 
 .experience-card:hover, .project-item:hover {
-    transform: translateY(-2px);
     border-color: var(--accent);
 }
 
@@ -208,26 +206,26 @@ h1, h2, h3 {
 }
 
 .dates {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: #aaa;
     background: var(--tag-bg);
-    padding: 0.15rem 0.55rem;
-    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
 }
 
 .badge-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
+    gap: 0.4rem;
     margin-top: 0.75rem;
 }
 
 .badge {
     background: var(--tag-bg);
     color: #cbd5e1;
-    font-size: 0.8rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
+    font-size: 0.78rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -273,13 +271,12 @@ li {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
-    transition: background 0.2s ease, transform 0.2s ease;
+    border-radius: 3px;
+    transition: background 0.2s ease;
 }
 
 .social-icons a:hover {
     background: var(--accent);
-    transform: translateY(-2px);
 }
 
 .social-icons a:hover img {

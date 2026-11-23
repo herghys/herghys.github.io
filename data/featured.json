@@ -2,18 +2,18 @@
   {
     "title": "Pong Evolved",
     "badge": "Mobile Game",
-    "description": "Action arcade mobile game with infinite dynamic levels, rich 2D visual effects, and integrated Google AdMob monetization.",
+    "description": "Action arcade mobile game with infinite dynamic levels, retro-modern aesthetic, particle effects, and integrated Google AdMob monetization.",
     "technologies": ["Unity3D", "C#", "Google AdMob"],
     "link": "https://play.google.com/store/apps/details?id=com.HerghysStudio.PongEvolved",
-    "linkText": "▶ View on Google Play →"
+    "linkText": "View on Google Play &rarr;"
   },
   {
     "title": "Tap!",
     "badge": "Mobile Game",
-    "description": "Fast-paced reflex and tapping arcade game for mobile, featuring responsive input mechanics and Google AdMob integration.",
+    "description": "Fast-paced reflex and tapping arcade game for mobile, featuring responsive input mechanics, custom audio, and Google AdMob integration.",
     "technologies": ["Unity3D", "C#", "Google AdMob"],
     "link": "https://play.google.com/store/apps/details?id=com.HerghysStudio.Game.Tap",
-    "linkText": "▶ View on Google Play →"
+    "linkText": "View on Google Play &rarr;"
   },
   {
     "title": "Linjun Nail Art",
@@ -21,15 +21,15 @@
     "description": "Curated online showcase, product catalog, and digital lookbook for Linjun Nail Art & Eyelashes handmade press-on nail studio.",
     "technologies": ["PHP / Laravel", "JavaScript", "Responsive Web"],
     "link": "https://linjunnailart.com/",
-    "linkText": "🌐 Visit Website →"
+    "linkText": "Visit Website &rarr;"
   },
   {
     "title": "Cinda: Virtual Dress Up",
     "badge": "Mobile / AI Game",
-    "description": "Commercial mobile game featuring 3D avatar generation from selfies, dress-up mechanics, and real-world e-commerce product rewards.",
+    "description": "Commercial mobile game featuring 3D avatar generation from selfies, dress-up mechanics, asset bundle streaming, and real-world product rewards.",
     "technologies": ["Unity3D", "Firebase Auth", "Google/Apple Sign-In"],
     "link": "https://play.google.com/store/apps/details?id=com.newfemmewanitaindonesia.cinda",
-    "linkText": "▶ View on Google Play →"
+    "linkText": "View on Google Play &rarr;"
   },
   {
     "title": "Duckie Bubble",
@@ -37,7 +37,7 @@
     "description": "Bubble shooter game integrated into Telegram Bot WebApps with custom REST API client and WebGL wrapper bridge.",
     "technologies": ["Unity WebGL", "Telegram API", "JSLib / JS"],
     "link": "https://t.me/DuckieLandBot/DuckieBubbles/",
-    "linkText": "✈ Play on Telegram →"
+    "linkText": "Play on Telegram &rarr;"
   },
   {
     "title": "Keystore Helper",
@@ -45,6 +45,6 @@
     "description": "Windows desktop application (WPF) to streamline Android Keystore generation and extract SHA-1 and SHA-256 certificate fingerprints.",
     "technologies": ["C#", "WPF", ".NET"],
     "link": "https://github.com/herghys/Keystore-Helper",
-    "linkText": "🐙 View on GitHub →"
+    "linkText": "View on GitHub &rarr;"
   }
 ]

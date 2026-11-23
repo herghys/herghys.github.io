@@ -4,25 +4,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const photoImg = document.getElementById('resume-profile-photo');
 
     if (photoContainer && photoImg) {
-        const showPhoto = () => {
+        const candidates = [
+            '../assets/photo/profile.jpeg',
+            '../assets/photo/profile.jpg',
+            '../assets/photo/profile.png'
+        ];
+        let candidateIndex = 0;
+
+        const tryNextPhoto = () => {
+            if (candidateIndex < candidates.length) {
+                photoImg.src = candidates[candidateIndex++];
+            } else {
+                photoContainer.style.display = 'none';
+            }
+        };
+
+        photoImg.onload = () => {
             if (photoImg.naturalWidth > 0 && photoImg.naturalHeight > 0) {
                 photoContainer.style.display = 'flex';
-            }
-        };
-
-        const hidePhoto = () => {
-            photoContainer.style.display = 'none';
-        };
-
-        if (photoImg.complete) {
-            if (photoImg.naturalWidth > 0 && photoImg.naturalHeight > 0) {
-                showPhoto();
             } else {
-                hidePhoto();
+                tryNextPhoto();
             }
-        } else {
-            photoImg.addEventListener('load', showPhoto);
-            photoImg.addEventListener('error', hidePhoto);
+        };
+
+        photoImg.onerror = () => {
+            tryNextPhoto();
+        };
+
+        if (photoImg.complete && photoImg.naturalWidth > 0 && photoImg.naturalHeight > 0) {
+            photoContainer.style.display = 'flex';
         }
     }
 });

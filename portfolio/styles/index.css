@@ -73,7 +73,7 @@ body {
 
 .card {
   background-color: #2c2c2c;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   width: 450px;
   padding: 20px;
@@ -90,7 +90,7 @@ body {
 .card-header {
   background-color: #3a3a3a;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .card-header h2 {
@@ -144,8 +144,8 @@ ul li::before {
 .tech-item {
   background-color: #007bff;
   color: white;
-  padding: 5px 10px;
-  border-radius: 25px;
+  padding: 4px 8px;
+  border-radius: 2px;
   font-size: 12px;
 }
 
@@ -159,7 +159,7 @@ ul li::before {
   flex: 1;
   padding: 10px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: 14px;
   text-decoration: none;
   color: white;
@@ -267,7 +267,7 @@ ul li::before {
   background-color: #007bff;
   color: #fff;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 3px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
