@@ -1,0 +1,1274 @@
+window.PORTFOLIO_DATA = [
+  {
+    "title": "Linjun Nail Art",
+    "projectType": "2",
+    "icon": "",
+    "description": "E-commerce showcase website and digital lookbook for Linjun Nail Art & Eyelashes, a handmade press-on nail studio. Features curated product catalogs, design collections, responsive galleries, and WhatsApp direct ordering workflows.",
+    "projectTime": {
+      "startDate": "2024",
+      "endDate": "Now",
+      "currentlyWorking": true
+    },
+    "tasks": [
+      "Designed and developed responsive product catalog and digital showcase for handmade press-on nails",
+      "Implemented high-resolution image galleries and categorized nail design collections",
+      "Integrated direct WhatsApp order consultation and customer inquiry workflows",
+      "Optimized media asset delivery and mobile browsing performance"
+    ],
+    "technologies": [
+      "PHP",
+      "Laravel",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Responsive Web Design"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "https://linjunnailart.com/",
+      "isAvailable": true,
+      "buttonText": "Visit Website"
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Pong Evolved",
+    "projectType": "1",
+    "icon": "",
+    "description": "Action arcade mobile game with infinite dynamic levels, retro-modern visual effects, sound feedback, and integrated Google AdMob monetization.",
+    "projectTime": {
+      "startDate": "September 2021",
+      "endDate": "October 2021",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Developed 2D arcade physics and responsive paddle-ball mechanics",
+      "Implemented dynamic level generation and progressive difficulty scaling",
+      "Integrated Google AdMob SDK for non-intrusive mobile monetization",
+      "Designed particle effects, audio feedback, and modern neon visuals"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Google AdMob SDK",
+      "Visual Studio",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "https://play.google.com/store/apps/details?id=com.HerghysStudio.PongEvolved",
+      "isAvailable": true
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Tap!",
+    "projectType": "1",
+    "icon": "",
+    "description": "Fast-paced mobile reflex and tapping arcade game featuring responsive touchscreen controls, scoring systems, and Google AdMob SDK.",
+    "projectTime": {
+      "startDate": "July 2021",
+      "endDate": "September 2021",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Designed core reflex-testing tap mechanics and progressive scoring",
+      "Built responsive portrait UI for Android devices",
+      "Integrated Google AdMob SDK for monetization",
+      "Optimized memory and touch responsiveness in Unity"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      ".NET Core 3.1",
+      ".NET Framework 4.7.2",
+      "Google AdMob SDK",
+      "Visual Studio",
+      "Git"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/Tap",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "https://play.google.com/store/apps/details?id=com.HerghysStudio.Game.Tap",
+      "isAvailable": true
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Keystore Helper",
+    "projectType": "1",
+    "icon": "",
+    "description": "Open-source Windows desktop utility built with WPF to create Android Keystores and instantly extract SHA-1 and SHA-256 certificate fingerprints for Firebase and Google Play setup.",
+    "projectTime": {
+      "startDate": "October 2024",
+      "endDate": "Now",
+      "currentlyWorking": true
+    },
+    "tasks": [
+      "Built modern WPF desktop GUI for Android Keystore generation",
+      "Implemented automated parsing and extraction of SHA-1 and SHA-256 certificate fingerprints",
+      "Simplified Android app signing and certificate management workflow for developers"
+    ],
+    "technologies": [
+      "C#",
+      "WPF",
+      ".NET Framework",
+      "Visual Studio",
+      "Git"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/Keystore-Helper",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Cinda: Virtual Dress Up",
+    "projectType": "2",
+    "icon": "cinda-icon.png",
+    "description": "Commercial mobile game where users dress up a 3D avatar generated from selfies using AI, featuring gamified e-commerce and real-world physical reward integrations.",
+    "projectTime": {
+      "startDate": "28/11/2023",
+      "endDate": "31/01/2024",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Authored Game Design Document (GDD) for Cinda",
+      "Developed HTTP client utility and API connection module with C# Threading",
+      "Implemented Google Sign-In and Apple Sign-In authentication modules",
+      "Integrated Asset Bundle handling and deep linking",
+      "Setup Firebase Authentication and analytics telemetry"
+    ],
+    "technologies": [
+      "C#",
+      "Unity3D",
+      "Visual Studio",
+      "Firebase SDK",
+      "Git",
+      "JSON"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "https://play.google.com/store/apps/details?id=com.newfemmewanitaindonesia.cinda",
+      "isAvailable": true
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "cinda",
+      "images": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    }
+  },
+  {
+    "title": "Ducky Pop",
+    "projectType": "2",
+    "icon": "tap-icon.png",
+    "description": "Fluid-physics match-3 mobile game with Google & Firebase login, in-app purchases, and live leaderboard API integrations.",
+    "projectTime": {
+      "startDate": "May 2023",
+      "endDate": "October 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Integrated Google and Firebase Login authentication",
+      "Implemented in-app purchases using Unity IAP",
+      "Built API connections for account data and live leaderboards",
+      "Reskinned gameplay elements and optimized frame rates"
+    ],
+    "technologies": [
+      "C#",
+      "Unity3D",
+      "Visual Studio",
+      "Firebase SDK",
+      "Google Sign-In SDK",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "https://play.google.com/store/apps/details?id=com.Graphie.DuckyPop&hl=en",
+      "isAvailable": true
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "duckypop",
+      "images": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  },
+  {
+    "title": "Duckie Bubble",
+    "projectType": "2",
+    "icon": "",
+    "description": "Telegram Bot Mini-App bubble shooter game built with Unity WebGL, featuring custom REST client and JavaScript web wrapper integration.",
+    "projectTime": {
+      "startDate": "September 2024",
+      "endDate": "October 2024",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Created Telegram API integration for Unity WebGL",
+      "Engineered custom HTTPClient logic and REST API models",
+      "Created JSLib bridge and custom HTML templates to pass authentication tokens"
+    ],
+    "technologies": [
+      "Unity3D",
+      "WebGL",
+      "Telegram API",
+      "JavaScript",
+      "HTML5",
+      "Postman",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "https://t.me/DuckieLandBot/DuckieBubbles/",
+      "isAvailable": true,
+      "buttonText": "Play on Telegram"
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "duckybubble",
+      "images": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "title": "Newfemme App",
+    "projectType": "2",
+    "icon": "",
+    "description": "Cross-platform mobile application and integrated minigames developed using Unity for iOS and Android.",
+    "projectTime": {
+      "startDate": "April 2022",
+      "endDate": "October 2022",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Developed Newfemme mobile application features and UI",
+      "Created and reskinned assets for in-app minigames",
+      "Implemented Apple Sign-In and Firebase Analytics for Unity"
+    ],
+    "technologies": [
+      "Unity3D",
+      "Visual Studio",
+      "Git",
+      "Postman",
+      "Firebase SDK",
+      "Apple Sign-In Unity",
+      "JSON"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "newfemme",
+      "images": []
+    }
+  },
+  {
+    "title": "HappyD",
+    "projectType": "2",
+    "icon": "",
+    "description": "Gamification health prototype built to help individuals managing diabetes. Integrated Ready Player Me for personalized 3D avatar creation and Firebase SDK backend.",
+    "projectTime": {
+      "startDate": "March 2022",
+      "endDate": "April 2022",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Integrated Ready Player Me SDK for 3D character generation and avatar rigging",
+      "Implemented gamified health tracking mechanics and UI in Unity",
+      "Connected Firebase SDK for user data persistence"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Ready Player Me",
+      "Firebase SDK",
+      "Visual Studio",
+      "Git",
+      "JSON"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Candies Land",
+    "projectType": "2",
+    "icon": "",
+    "description": "Match-3 puzzle game created with Unity, integrating Google and Firebase login, Facebook login, and online leaderboard API connections.",
+    "projectTime": {
+      "startDate": "April 2023",
+      "endDate": "June 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Integrating Google and Firebase Login authentication",
+      "Configured Facebook Login SDK for social features",
+      "Built REST API connections for user accounts and global leaderboards",
+      "Created JSLib extensions and customized WebGL templates"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Firebase Auth",
+      "Google Sign-In SDK",
+      "Facebook SDK",
+      "Postman",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "https://play.google.com/store/apps/details?id=com.Fomuo.CandiesLand",
+      "isAvailable": true
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Baker Pro",
+    "projectType": "2",
+    "icon": "",
+    "description": "Engaging cooking and restaurant simulation game developed in Unity with social login and account synchronization.",
+    "projectTime": {
+      "startDate": "April 2023",
+      "endDate": "May 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Integrated Google Sign-In and Firebase Authentication",
+      "Implemented Facebook Login SDK integration",
+      "Connected REST APIs for player profiles and leaderboard data",
+      "Reskinned gameplay elements and optimized performance"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Firebase Auth",
+      "Google Sign-In SDK",
+      "Postman",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "https://play.google.com/store/apps/details?id=com.Fomuo.BakerPro",
+      "isAvailable": true
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Blush Tales",
+    "projectType": "2",
+    "icon": "",
+    "description": "Match-3 puzzle mobile game created with Unity with Google and Firebase Login, FB Login, and online leaderboard integration.",
+    "projectTime": {
+      "startDate": "March 2023",
+      "endDate": "May 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Integrating Google and Firebase Login",
+      "API Connections for Account and leaderboard",
+      "Setup FB Login",
+      "Reskin from bought assets"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Firebase Auth",
+      "Google Sign-In SDK",
+      "Postman",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "https://play.google.com/store/apps/details?id=com.Fomuo.BlushTales",
+      "isAvailable": true
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Blush Crush",
+    "projectType": "2",
+    "icon": "",
+    "description": "Casual match game created with Unity featuring Google and Firebase Login and leaderboard API connections.",
+    "projectTime": {
+      "startDate": "March 2023",
+      "endDate": "April 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Integrating Google and Firebase Login",
+      "API Connections for Account and leaderboard",
+      "Reskin from bought assets"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Firebase Auth",
+      "Google Sign-In SDK",
+      "Postman",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "https://play.google.com/store/apps/details?id=com.Fomuo.BlushCrush",
+      "isAvailable": true
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Crossy Cube",
+    "projectType": "2",
+    "icon": "",
+    "description": "3D casual arcade crossing game prototype developed in Unity with cross-platform social authentication and online leaderboards.",
+    "projectTime": {
+      "startDate": "April 2023",
+      "endDate": "May 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Integrated Google Sign-In and Firebase Authentication modules",
+      "Configured Facebook Login SDK and online leaderboard API connections",
+      "Reskinned 3D assets, obstacle hazards, and responsive touch controls"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Firebase Auth",
+      "Google Sign-In SDK",
+      "Facebook SDK",
+      "Postman",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Tiny Crash",
+    "projectType": "2",
+    "icon": "",
+    "description": "3D arcade car racing game prototype built for Windows in Unity, featuring vehicle dynamics, custom track design, and online leaderboards.",
+    "projectTime": {
+      "startDate": "March 2023",
+      "endDate": "May 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Engineered 3D car physics, drift mechanics, and race circuit layout",
+      "Integrated Google and Firebase Login authentication for player profiles",
+      "Designed track thumbnails, loading sequences, and Windows desktop build pipeline"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Firebase Auth",
+      "Google Sign-In SDK",
+      "Visual Studio",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Sky Racer",
+    "projectType": "2",
+    "icon": "",
+    "description": "3D airplane flight racing prototype developed in Unity for Windows with pitch/roll flight dynamics and global scoreboards.",
+    "projectTime": {
+      "startDate": "March 2023",
+      "endDate": "April 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Developed 3D flight control kinematics, aerial checkpoints, and speed ring gates",
+      "Integrated Google Sign-In and Firebase Authentication for player ranking",
+      "Connected REST APIs for account and leaderboard synchronization"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Firebase Auth",
+      "Google Sign-In SDK",
+      "Postman",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Si Murda",
+    "projectType": "2",
+    "icon": "murda-icon.png",
+    "description": "Educational Javanese language adventure game with interactive trivia quizzes built for WebGL.",
+    "projectTime": {
+      "startDate": "July 2023",
+      "endDate": "August 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Developed 2D adventure exploration mechanics and trivia scoring",
+      "Implemented TextMeshPro for custom stylized typography",
+      "Optimized and built for WebGL deployment"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "WebGL",
+      "TextMeshPro",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "simurda",
+      "images": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    }
+  },
+  {
+    "title": "Fortune Hunter",
+    "projectType": "2",
+    "icon": "",
+    "description": "Biology educational treasure-hunting adventure game developed for PC with Universal Render Pipeline (URP).",
+    "projectTime": {
+      "startDate": "January 2023",
+      "endDate": "March 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Implemented Cinemachine dynamic cameras and Playable Director timelines",
+      "Developed interactive biology exploration gameplay",
+      "Configured URP lighting and graphics settings"
+    ],
+    "technologies": [
+      "Unity3D",
+      "URP",
+      "Cinemachine",
+      "C#",
+      "Git"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/FortuneHunter",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "fortunehunter",
+      "images": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "title": "Petualangan Qori",
+    "projectType": "2",
+    "icon": "",
+    "description": "Islamic educational WebGL game featuring adventure storytelling, trivia quizzes, and interactive memory minigames.",
+    "projectTime": {
+      "startDate": "August 2022",
+      "endDate": "September 2022",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Developed adventure exploration mechanics and trivia minigames",
+      "Implemented scoring and educational progress evaluation",
+      "Optimized WebGL build for low-bandwidth browser performance"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "WebGL",
+      "Visual Studio",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Eksponen Edugame",
+    "projectType": "2",
+    "icon": "",
+    "description": "2D WebGL math educational game focused on exponential arithmetic and interactive problem-solving.",
+    "projectTime": {
+      "startDate": "September 2022",
+      "endDate": "October 2022",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Developed interactive mathematical problem-solving gameplay",
+      "Built and optimized for WebGL browser delivery"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "WebGL",
+      "Visual Studio",
+      "Git"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "eksponengame",
+      "images": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    }
+  },
+  {
+    "title": "ARMath",
+    "projectType": "2",
+    "icon": "",
+    "description": "Augmented Reality geometry educational mobile game developed with Unity and Vuforia SDK.",
+    "projectTime": {
+      "startDate": "November 2022",
+      "endDate": "February 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Implemented Vuforia SDK image target tracking for 3D geometric shapes",
+      "Engineered interactive educational spatial math puzzles"
+    ],
+    "technologies": [
+      "Unity3D",
+      "Vuforia SDK",
+      "C#",
+      "Visual Studio",
+      "Git"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/GeoARVenture",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Wayangku AR",
+    "projectType": "2",
+    "icon": "",
+    "description": "Mobile Augmented Reality educational application exploring Indonesian Pandawa Wayang Kulit culture using Vuforia SDK.",
+    "projectTime": {
+      "startDate": "June 2021",
+      "endDate": "July 2021",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Implemented Vuforia image target tracking for cultural Wayang figures",
+      "Built 3D character visualization and interactive cultural quizzes"
+    ],
+    "technologies": [
+      "Unity3D",
+      "Vuforia SDK",
+      "C#",
+      "Git"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/Wayangku",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "AR Batuan",
+    "projectType": "2",
+    "icon": "",
+    "description": "Mobile Augmented Reality educational game teaching rock types and geology using Vuforia target markers.",
+    "projectTime": {
+      "startDate": "June 2018",
+      "endDate": "July 2018",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Implemented Vuforia AR target tracking for geological specimens",
+      "Created 3D mineral models and information displays"
+    ],
+    "technologies": [
+      "Unity3D",
+      "Vuforia SDK",
+      "C#",
+      "Git"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/ARBatuan",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Logibot",
+    "projectType": "1",
+    "icon": "",
+    "description": "3D educational robotics puzzle game built with custom Shader Graph visual effects, Cinemachine, and input systems.",
+    "projectTime": {
+      "startDate": "July 2021",
+      "endDate": "September 2021",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Implemented new Unity Input System and Cinemachine camera rigging",
+      "Integrated 3D character models, rigging, and animation blending",
+      "Authored and integrated custom visual shaders with ShaderGraph"
+    ],
+    "technologies": [
+      "Unity3D",
+      "ShaderGraph",
+      "Cinemachine",
+      "C#",
+      "Git"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/Logibot",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "portrait",
+      "path": "logibot",
+      "images": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  },
+  {
+    "title": "Periodic Table (Atomic)",
+    "projectType": "1",
+    "icon": "",
+    "description": "Interactive educational 2D chemistry game for mobile to learn and master chemical elements of the Periodic Table.",
+    "projectTime": {
+      "startDate": "June 2021",
+      "endDate": "June 2021",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Implemented interactive responsive 2D GUI and element categorization",
+      "Built score evaluation and data persistence logic"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Git"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/Periodic-Table",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "periodictable",
+      "images": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "title": "Unity 2D Extension",
+    "projectType": "1",
+    "icon": "",
+    "description": "Open-source collection of reusable 2D utility scripts and helper extensions for Unity3D game developers.",
+    "projectTime": {
+      "startDate": "September 2022",
+      "endDate": "January 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Created modular extension methods for 2D vectors, colliders, and physics",
+      "Packaged utilities for easy import into Unity projects"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Git"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/Unity-2DExtension",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Unity Linq Extension",
+    "projectType": "1",
+    "icon": "",
+    "description": "Open-source LINQ helper extensions optimized for Unity GameObjects, Transforms, and Component hierarchies.",
+    "projectTime": {
+      "startDate": "October 2022",
+      "endDate": "December 2022",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Implemented Linq methods for scene hierarchy traversal and filtering",
+      "Published repository for developer community use"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "LINQ",
+      "Git"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/Unity-LinqExtension",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Unity Simple Audio Manager",
+    "projectType": "1",
+    "icon": "",
+    "description": "Lightweight, decoupled audio management package for Unity handling BGM, SFX, pitch variation, and volume fading.",
+    "projectTime": {
+      "startDate": "February 2022",
+      "endDate": "June 2022",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Created centralized AudioManager singleton with pooled AudioSources",
+      "Implemented smooth cross-fading and category volume control"
+    ],
+    "technologies": [
+      "Unity3D",
+      "C#",
+      "Git"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/UnityAudioManager",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "MSI Afterburner Monitor",
+    "projectType": "1",
+    "icon": "",
+    "description": "Open-source Windows system tray utility to monitor GPU stats and switch MSI Afterburner profiles effortlessly.",
+    "projectTime": {
+      "startDate": "May 2021",
+      "endDate": "June 2021",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Developed Windows taskbar notification tray utility for MSI Afterburner",
+      "Implemented profile switching and hardware monitoring integration",
+      "Built lightweight WinForms desktop interface"
+    ],
+    "technologies": [
+      "WinForms",
+      "Visual Studio",
+      "Git",
+      "C#"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/AfterburnerMonitor",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "ADB GUI Tool",
+    "projectType": "1",
+    "icon": "",
+    "description": "Open-source Windows desktop utility providing a clean graphical interface over Android Debug Bridge (ADB) commands.",
+    "projectTime": {
+      "startDate": "April 2022",
+      "endDate": "April 2022",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Implemented ADB wrapper to install APKs and push/pull files to connected Android devices",
+      "Eliminated need for terminal commands for non-technical users"
+    ],
+    "technologies": [
+      "WinForms",
+      "Visual Studio",
+      "Git",
+      "C#.NET"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/ADBGuiTool",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Stardew Valley Mod Comparer",
+    "projectType": "1",
+    "icon": "",
+    "description": "Windows desktop WPF application to inspect and compare installed Stardew Valley game mods between different PCs via JSON export.",
+    "projectTime": {
+      "startDate": "January 2023",
+      "endDate": "January 2023",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Implemented recursive directory scanning inside Stardew Valley mod directories",
+      "Built JSON mod manifest export and comparison engine",
+      "Developed dual-targeted application for .NET Framework and .NET Core"
+    ],
+    "technologies": [
+      "Windows WPF",
+      "Visual Studio",
+      "Git",
+      "C#",
+      ".NET Framework",
+      ".NET Core"
+    ],
+    "repo": {
+      "link": "https://github.com/herghys/StardewValley-ModsList",
+      "isPrivate": false
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  },
+  {
+    "title": "Temperature Monitoring Module",
+    "projectType": "2",
+    "icon": "",
+    "description": "Internship project with Run System (PT. Global Sukses Solusi) - Hardware device for high-temperature monitoring connected to a Windows Forms desktop application and MySQL database.",
+    "projectTime": {
+      "startDate": "July 2018",
+      "endDate": "August 2018",
+      "currentlyWorking": false
+    },
+    "tasks": [
+      "Created temperature monitoring device using Arduino for high-temperature sensors",
+      "Developed monitoring and reporting desktop module using Windows Forms",
+      "Integrated MySQL database connection and data logging"
+    ],
+    "technologies": [
+      "Arduino",
+      "C#",
+      "Windows Forms",
+      "MySQL",
+      "Visual Studio"
+    ],
+    "repo": {
+      "link": "",
+      "isPrivate": true
+    },
+    "store": {
+      "link": "",
+      "isAvailable": false
+    },
+    "screenshot": {
+      "orientation": "landscape",
+      "path": "",
+      "images": []
+    }
+  }
+];

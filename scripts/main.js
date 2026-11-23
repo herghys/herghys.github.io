@@ -49,38 +49,103 @@ function initProfilePhoto() {
     }
 }
 
+// Built-in featured projects dataset (prevents CORS failure when browsing via file:// protocol or offline)
+var FEATURED_PROJECTS_FALLBACK = [
+    {
+        title: "Pong Evolved",
+        badge: "Mobile Game",
+        description: "Action arcade mobile game with infinite dynamic levels, retro-modern aesthetic, particle effects, and integrated Google AdMob monetization.",
+        technologies: ["Unity3D", "C#", "Google AdMob"],
+        link: "https://play.google.com/store/apps/details?id=com.HerghysStudio.PongEvolved",
+        linkText: "View on Google Play &rarr;"
+    },
+    {
+        title: "Tap!",
+        badge: "Mobile Game",
+        description: "Fast-paced reflex and tapping arcade game for mobile, featuring responsive input mechanics, custom audio, and Google AdMob integration.",
+        technologies: ["Unity3D", "C#", "Google AdMob"],
+        link: "https://play.google.com/store/apps/details?id=com.HerghysStudio.Game.Tap",
+        linkText: "View on Google Play &rarr;"
+    },
+    {
+        title: "Linjun Nail Art",
+        badge: "Web Platform",
+        description: "Curated online showcase, product catalog, and digital lookbook for Linjun Nail Art & Eyelashes handmade press-on nail studio.",
+        technologies: ["PHP / Laravel", "JavaScript", "Responsive Web"],
+        link: "https://linjunnailart.com/",
+        linkText: "Visit Website &rarr;"
+    },
+    {
+        title: "Cinda: Virtual Dress Up",
+        badge: "Mobile / AI Game",
+        description: "Commercial mobile game featuring 3D avatar generation from selfies, dress-up mechanics, asset bundle streaming, and real-world product rewards.",
+        technologies: ["Unity3D", "Firebase Auth", "Google/Apple Sign-In"],
+        link: "https://play.google.com/store/apps/details?id=com.newfemmewanitaindonesia.cinda",
+        linkText: "View on Google Play &rarr;"
+    },
+    {
+        title: "Duckie Bubble",
+        badge: "Telegram WebApp",
+        description: "Bubble shooter game integrated into Telegram Bot WebApps with custom REST API client and WebGL wrapper bridge.",
+        technologies: ["Unity WebGL", "Telegram API", "JSLib / JS"],
+        link: "https://t.me/DuckieLandBot/DuckieBubbles/",
+        linkText: "Play on Telegram &rarr;"
+    },
+    {
+        title: "Keystore Helper",
+        badge: "Desktop Tool",
+        description: "Windows desktop application (WPF) to streamline Android Keystore generation and extract SHA-1 and SHA-256 certificate fingerprints.",
+        technologies: ["C#", "WPF", ".NET"],
+        link: "https://github.com/herghys/Keystore-Helper",
+        linkText: "View on GitHub &rarr;"
+    }
+];
+
+function renderFeatured(items, container) {
+    if (!container || !items || !items.length) return;
+    container.innerHTML = items.map(function (item) {
+        var techBadges = (item.technologies || []).map(function (t) {
+            return '<span class="tech-pill">' + t + '</span>';
+        }).join('');
+
+        return '<div class="project-card">' +
+            '<div>' +
+                '<span class="project-badge">' + (item.badge || 'Project') + '</span>' +
+                '<h3>' + item.title + '</h3>' +
+                '<p class="project-desc">' + item.description + '</p>' +
+            '</div>' +
+            '<div>' +
+                '<div class="project-tech">' + techBadges + '</div>' +
+                '<a class="project-link" href="' + item.link + '" target="_blank" rel="noopener noreferrer">' +
+                    (item.linkText || 'View Project &rarr;') +
+                '</a>' +
+            '</div>' +
+        '</div>';
+    }).join('');
+}
+
 function loadFeaturedProjects() {
     var container = document.getElementById('featured-grid');
     if (!container) return;
 
-    fetch('data/featured.json')
-        .then(function (res) {
-            if (!res.ok) throw new Error('Network error loading featured projects');
-            return res.json();
-        })
-        .then(function (items) {
-            container.innerHTML = items.map(function (item) {
-                var techBadges = item.technologies.map(function (t) {
-                    return '<span class="tech-pill">' + t + '</span>';
-                }).join('');
+    // 1. Immediately render fallback data (zero delay, immune to CORS/file:// blocks)
+    renderFeatured(FEATURED_PROJECTS_FALLBACK, container);
 
-                return '<div class="project-card">' +
-                    '<div>' +
-                        '<span class="project-badge">' + (item.badge || 'Project') + '</span>' +
-                        '<h3>' + item.title + '</h3>' +
-                        '<p class="project-desc">' + item.description + '</p>' +
-                    '</div>' +
-                    '<div>' +
-                        '<div class="project-tech">' + techBadges + '</div>' +
-                        '<a class="project-link" href="' + item.link + '" target="_blank" rel="noopener noreferrer">' +
-                            (item.linkText || 'View Project &rarr;') +
-                        '</a>' +
-                    '</div>' +
-                '</div>';
-            }).join('');
-        })
-        .catch(function (err) {
-            console.error('Featured projects loader:', err);
-            container.innerHTML = '<div style="color: #ff79c6;">Failed to load featured projects. Explore the full catalog in <a href="portfolio/">Portfolio</a>.</div>';
-        });
+    // 2. If served via HTTP / HTTPS, dynamically load data/featured.json to get live updates
+    if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+        fetch('data/featured.json')
+            .then(function (res) {
+                if (!res.ok) throw new Error('Status: ' + res.status);
+                return res.json();
+            })
+            .then(function (items) {
+                if (Array.isArray(items) && items.length > 0) {
+                    renderFeatured(items, container);
+                }
+            })
+            .catch(function (err) {
+                // If fetch fails (e.g. network disconnect or offline), silent fallback is already rendered
+                console.warn('Could not load data/featured.json dynamically; kept default data.', err);
+            });
+    }
 }
