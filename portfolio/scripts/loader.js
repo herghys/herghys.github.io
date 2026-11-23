@@ -1,5 +1,5 @@
 /**
- * Portfolio Loader & Interactive Showcase Engine
+ * Portfolio Loader & Interactive Showcase Engine (Ultra-Performant Edition)
  * Helmi Arghya Santosa (Herghys) - Unity Game Developer & Software Engineer
  */
 
@@ -19,8 +19,10 @@
     };
 
     let allProjects = [];
+    let allCards = [];
     let currentCategory = 'all';
     let searchQuery = '';
+    let searchRafId = null;
 
     // Lightbox modal state
     let activeGallery = {
@@ -40,8 +42,11 @@
         // Project Type
         if (project.projectType == 2) {
             categories.push('commercial');
+        } else if (project.projectType == 3 || project.projectType === 'personal') {
+            categories.push('personal');
         } else if (project.projectType == 1) {
             categories.push('opensource');
+            categories.push('tools');
         }
 
         // AR / VR & Simulation
@@ -61,6 +66,25 @@
         }
 
         return categories;
+    }
+
+    /**
+     * Pre-indexes projects for O(1) category lookup and zero-allocation search
+     */
+    function indexProjects(projects) {
+        const total = projects.length;
+        for (let i = 0; i < total; i++) {
+            const p = projects[i];
+            const categories = getProjectCategories(p);
+            p._catSet = new Set(categories);
+            p._catStr = categories.join(' ');
+
+            const techStr = (p.technologies || []).join(' ');
+            const tasksStr = (p.tasks || []).join(' ');
+            p._searchIndex = `${p.title} ${p.description || ''} ${techStr} ${tasksStr}`.toLowerCase();
+            p._index = i;
+        }
+        return projects;
     }
 
     /**
@@ -88,15 +112,13 @@
     }
 
     /**
-     * Render a single project card element
+     * Render a single project card element with performance optimizations
      */
     function createProjectCard(project, projectIndex) {
         const card = document.createElement('article');
         card.className = 'project-card';
         card.setAttribute('data-index', projectIndex);
-
-        const categories = getProjectCategories(project);
-        card.setAttribute('data-categories', categories.join(' '));
+        card.setAttribute('data-categories', project._catStr || '');
 
         const isCommercial = project.projectType == 2;
         const timeline = formatTimeline(project.projectTime);
@@ -122,7 +144,7 @@
                 const thumbSrc = `assets/portfolios/${folder}/${images[i]}.${ext}`;
                 thumbsHtml += `
                     <button type="button" class="thumb-btn ${i === 0 ? 'active' : ''}" data-folder="${folder}" data-ext="${ext}" data-img-idx="${i}" data-proj-idx="${projectIndex}" aria-label="View screenshot ${i + 1}">
-                        <img src="${thumbSrc}" alt="${escapeHtml(project.title)} preview ${i + 1}" loading="lazy">
+                        <img src="${thumbSrc}" alt="${escapeHtml(project.title)} preview ${i + 1}" loading="lazy" decoding="async" width="48" height="32">
                     </button>
                 `;
             }
@@ -134,10 +156,14 @@
                 `;
             }
 
+            // High-priority image loading for top 4 cards (above the fold)
+            const imgLoading = projectIndex < 4 ? 'eager' : 'lazy';
+            const fetchPriority = projectIndex === 0 ? 'fetchpriority="high"' : '';
+
             mediaHtml = `
                 <div class="card-media">
                     <div class="media-preview" data-proj-idx="${projectIndex}" data-img-idx="0">
-                        <img src="${firstImgSrc}" alt="${escapeHtml(project.title)} showcase" class="hero-preview-img" loading="lazy">
+                        <img src="${firstImgSrc}" alt="${escapeHtml(project.title)} showcase" class="hero-preview-img" loading="${imgLoading}" decoding="async" ${fetchPriority} width="640" height="360">
                         <div class="media-overlay">
                             <span class="media-zoom-hint"><i class="fas fa-search-plus"></i> View Gallery</span>
                         </div>
@@ -151,9 +177,14 @@
         }
 
         // --- Card Header ---
-        const typeBadge = isCommercial
-            ? `<span class="badge badge-commercial"><i class="fas fa-briefcase"></i> Commercial</span>`
-            : `<span class="badge badge-oss"><i class="fas fa-code-branch"></i> Open Source</span>`;
+        let typeBadge = '';
+        if (project.projectType == 2) {
+            typeBadge = `<span class="badge badge-commercial"><i class="fas fa-briefcase"></i> Commercial</span>`;
+        } else if (project.projectType == 3 || project.projectType === 'personal') {
+            typeBadge = `<span class="badge badge-personal"><i class="fas fa-user"></i> Personal Project</span>`;
+        } else {
+            typeBadge = `<span class="badge badge-oss"><i class="fas fa-code-branch"></i> Open Source</span>`;
+        }
 
         const timelineBadge = timeline
             ? `<span class="timeline-badge"><i class="far fa-calendar-alt"></i> ${timeline}</span>`
@@ -264,45 +295,31 @@
     }
 
     /**
-     * Filter projects based on current category and search query
+     * Ultra-fast O(N) project filter with zero heap string allocations during typing
      */
     function filterProjects() {
         const grid = document.getElementById('projects-grid');
         const emptyState = document.getElementById('empty-state');
         const visibleCountEl = document.getElementById('visible-count');
-        if (!grid) return;
+        if (!grid || allCards.length === 0) return;
 
-        const cards = grid.querySelectorAll('.project-card');
+        const isAll = currentCategory === 'all';
+        const query = searchQuery; // already trimmed and lowercased
         let visibleCount = 0;
-        const query = searchQuery.trim().toLowerCase();
+        const total = allCards.length;
 
-        cards.forEach(card => {
-            const index = parseInt(card.getAttribute('data-index'), 10);
-            const project = allProjects[index];
-            if (!project) return;
+        for (let i = 0; i < total; i++) {
+            const card = allCards[i];
+            const proj = allProjects[i];
+            if (!proj) continue;
 
-            const categories = getProjectCategories(project);
-            const matchesCategory = currentCategory === 'all' || categories.includes(currentCategory);
+            const matchesCategory = isAll || proj._catSet.has(currentCategory);
+            const matchesSearch = !query || proj._searchIndex.includes(query);
+            const isVisible = matchesCategory && matchesSearch;
 
-            let matchesSearch = true;
-            if (query) {
-                const title = (project.title || '').toLowerCase();
-                const desc = (project.description || '').toLowerCase();
-                const tech = (project.technologies || []).join(' ').toLowerCase();
-                const tasks = (project.tasks || []).join(' ').toLowerCase();
-                matchesSearch = title.includes(query) ||
-                    desc.includes(query) ||
-                    tech.includes(query) ||
-                    tasks.includes(query);
-            }
-
-            if (matchesCategory && matchesSearch) {
-                card.style.display = '';
-                visibleCount++;
-            } else {
-                card.style.display = 'none';
-            }
-        });
+            card.classList.toggle('is-hidden', !isVisible);
+            if (isVisible) visibleCount++;
+        }
 
         if (visibleCountEl) {
             visibleCountEl.textContent = visibleCount;
@@ -314,18 +331,24 @@
     }
 
     /**
-     * Render the whole project list into the grid
+     * Render the whole project list into the grid using DocumentFragment & replaceChildren
      */
     function renderProjectGrid(projects) {
-        allProjects = projects;
+        allProjects = indexProjects(projects);
         const grid = document.getElementById('projects-grid');
         if (!grid) return;
 
-        grid.innerHTML = '';
-        projects.forEach((proj, idx) => {
-            const cardEl = createProjectCard(proj, idx);
-            grid.appendChild(cardEl);
-        });
+        const fragment = document.createDocumentFragment();
+        const total = allProjects.length;
+        allCards = new Array(total);
+
+        for (let i = 0; i < total; i++) {
+            const cardEl = createProjectCard(allProjects[i], i);
+            allCards[i] = cardEl;
+            fragment.appendChild(cardEl);
+        }
+
+        grid.replaceChildren(fragment);
 
         setupCardInteractions();
         updateCategoryCounts();
@@ -333,7 +356,7 @@
     }
 
     /**
-     * Compute and display live counts in filter pill badges
+     * Compute and display live counts in filter pill badges with O(N) lookup
      */
     function updateCategoryCounts() {
         const counts = {
@@ -342,34 +365,39 @@
             'games': 0,
             'ar-vr-sim': 0,
             'tools': 0,
+            'personal': 0,
             'opensource': 0
         };
 
-        allProjects.forEach(p => {
-            const cats = getProjectCategories(p);
-            cats.forEach(c => {
-                if (counts[c] !== undefined && c !== 'all') {
-                    counts[c]++;
+        const total = allProjects.length;
+        for (let i = 0; i < total; i++) {
+            const set = allProjects[i]._catSet;
+            if (!set) continue;
+            for (const cat in counts) {
+                if (cat !== 'all' && set.has(cat)) {
+                    counts[cat]++;
                 }
-            });
-        });
+            }
+        }
 
         const pills = document.querySelectorAll('.filter-pill');
-        pills.forEach(pill => {
+        for (let i = 0; i < pills.length; i++) {
+            const pill = pills[i];
             const cat = pill.getAttribute('data-filter');
             const badge = pill.querySelector('.count-badge');
             if (badge && counts[cat] !== undefined) {
                 badge.textContent = counts[cat];
             }
-        });
+        }
     }
 
     /**
-     * Setup event listeners for thumbnail swaps and lightbox triggers
+     * Setup event listeners for thumbnail swaps and lightbox triggers (delegated)
      */
     function setupCardInteractions() {
         const grid = document.getElementById('projects-grid');
-        if (!grid) return;
+        if (!grid || grid.dataset.interactionsReady) return;
+        grid.dataset.interactionsReady = 'true';
 
         // Thumbnail click / hover swapping
         grid.addEventListener('click', function (e) {
@@ -393,7 +421,8 @@
                         mediaPreview.setAttribute('data-img-idx', imgIdx);
                     }
                     // Update active thumb
-                    card.querySelectorAll('.thumb-btn').forEach(btn => btn.classList.remove('active'));
+                    const activeThumb = card.querySelector('.thumb-btn.active');
+                    if (activeThumb) activeThumb.classList.remove('active');
                     thumbBtn.classList.add('active');
                 }
                 return;
@@ -406,7 +435,7 @@
                 const imgIdx = parseInt(mediaPreview.getAttribute('data-img-idx') || '0', 10);
                 openLightbox(projIdx, imgIdx);
             }
-        });
+        }, { passive: true });
     }
 
     /**
@@ -478,7 +507,7 @@
     }
 
     /**
-     * Setup UI controls (filter pills, search input, lightbox controls)
+     * Setup UI controls with RAF debouncing and fast event handling
      */
     function setupControls() {
         // Filter pills
@@ -488,7 +517,8 @@
                 const pill = e.target.closest('.filter-pill');
                 if (!pill) return;
 
-                filterContainer.querySelectorAll('.filter-pill').forEach(btn => btn.classList.remove('active'));
+                const activePill = filterContainer.querySelector('.filter-pill.active');
+                if (activePill) activePill.classList.remove('active');
                 pill.classList.add('active');
 
                 currentCategory = pill.getAttribute('data-filter') || 'all';
@@ -496,17 +526,18 @@
             });
         }
 
-        // Search input
+        // Search input with requestAnimationFrame debouncing
         const searchInput = document.getElementById('project-search');
         const clearBtn = document.getElementById('clear-search');
 
         if (searchInput) {
             searchInput.addEventListener('input', function () {
-                searchQuery = searchInput.value;
+                searchQuery = searchInput.value.trim().toLowerCase();
                 if (clearBtn) {
                     clearBtn.style.display = searchQuery ? 'block' : 'none';
                 }
-                filterProjects();
+                if (searchRafId) cancelAnimationFrame(searchRafId);
+                searchRafId = requestAnimationFrame(filterProjects);
             });
         }
 
@@ -533,7 +564,8 @@
                 if (clearBtn) clearBtn.style.display = 'none';
 
                 if (filterContainer) {
-                    filterContainer.querySelectorAll('.filter-pill').forEach(btn => btn.classList.remove('active'));
+                    const activePill = filterContainer.querySelector('.filter-pill.active');
+                    if (activePill) activePill.classList.remove('active');
                     const allPill = filterContainer.querySelector('[data-filter="all"]');
                     if (allPill) allPill.classList.add('active');
                 }
@@ -581,24 +613,17 @@
     function init() {
         setupControls();
 
-        if (window.PORTFOLIO_DATA && Array.isArray(window.PORTFOLIO_DATA) && window.PORTFOLIO_DATA.length > 0) {
-            renderProjectGrid(window.PORTFOLIO_DATA);
-        } else {
-            fetch('data/portfolio.json')
-                .then(res => {
-                    if (!res.ok) throw new Error('Network error: ' + res.status);
-                    return res.json();
-                })
-                .then(projects => {
-                    renderProjectGrid(projects);
-                })
-                .catch(err => {
-                    console.warn('Fetch fallback to window.PORTFOLIO_DATA:', err);
-                    if (window.PORTFOLIO_DATA && Array.isArray(window.PORTFOLIO_DATA)) {
-                        renderProjectGrid(window.PORTFOLIO_DATA);
-                    }
-                });
-        }
+        fetch('data/portfolio.json')
+            .then(res => {
+                if (!res.ok) throw new Error('Network error: ' + res.status);
+                return res.json();
+            })
+            .then(projects => {
+                renderProjectGrid(projects);
+            })
+            .catch(err => {
+                console.error('Failed to load portfolio data:', err);
+            });
     }
 
     if (document.readyState === 'loading') {

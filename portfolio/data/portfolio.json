@@ -40,7 +40,7 @@
     },
     {
         "title": "Pong Evolved",
-        "projectType": "1",
+        "projectType": "3",
         "icon": "",
         "description": "Action arcade mobile game with infinite dynamic levels, retro-modern visual effects, sound feedback, and integrated Google AdMob monetization.",
         "projectTime": {
@@ -77,7 +77,7 @@
     },
     {
         "title": "Tap!",
-        "projectType": "1",
+        "projectType": "3",
         "icon": "",
         "description": "Fast-paced mobile reflex and tapping arcade game featuring responsive touchscreen controls, scoring systems, and Google AdMob SDK.",
         "projectTime": {
@@ -658,7 +658,7 @@
         "title": "Si Murda",
         "projectType": "2",
         "icon": "murda-icon.png",
-        "description": "Educational Javanese language adventure game with interactive trivia quizzes built for WebGL.",
+        "description": "Client educational Javanese language adventure game with interactive trivia quizzes built for WebGL.",
         "projectTime": {
             "startDate": "July 2023",
             "endDate": "August 2023",
@@ -708,7 +708,7 @@
         "title": "Fortune Hunter",
         "projectType": "2",
         "icon": "",
-        "description": "Biology educational treasure-hunting adventure game developed for PC with Universal Render Pipeline (URP).",
+        "description": "Client biology educational treasure-hunting adventure game developed for PC with Universal Render Pipeline (URP).",
         "projectTime": {
             "startDate": "January 2023",
             "endDate": "March 2023",
@@ -755,7 +755,7 @@
         "title": "Petualangan Qori",
         "projectType": "2",
         "icon": "",
-        "description": "Islamic educational WebGL game featuring adventure storytelling, trivia quizzes, and interactive memory minigames.",
+        "description": "Client Islamic educational WebGL game featuring adventure storytelling, trivia quizzes, and interactive memory minigames.",
         "projectTime": {
             "startDate": "August 2022",
             "endDate": "September 2022",
@@ -791,7 +791,7 @@
         "title": "Eksponen Edugame",
         "projectType": "2",
         "icon": "",
-        "description": "2D WebGL math educational game focused on exponential arithmetic and interactive problem-solving.",
+        "description": "Client 2D WebGL math educational game focused on exponential arithmetic and interactive problem-solving.",
         "projectTime": {
             "startDate": "September 2022",
             "endDate": "October 2022",
@@ -840,7 +840,7 @@
         "title": "ARMath",
         "projectType": "2",
         "icon": "",
-        "description": "Augmented Reality geometry educational mobile game developed with Unity and Vuforia SDK.",
+        "description": "Client Augmented Reality geometry educational mobile game developed with Unity and Vuforia SDK.",
         "projectTime": {
             "startDate": "November 2022",
             "endDate": "February 2023",
@@ -875,7 +875,7 @@
         "title": "Wayangku AR",
         "projectType": "2",
         "icon": "",
-        "description": "Mobile Augmented Reality educational application exploring Indonesian Pandawa Wayang Kulit culture using Vuforia SDK.",
+        "description": "Client mobile Augmented Reality educational application exploring Indonesian Pandawa Wayang Kulit culture using Vuforia SDK.",
         "projectTime": {
             "startDate": "June 2021",
             "endDate": "July 2021",
@@ -909,7 +909,7 @@
         "title": "AR Batuan",
         "projectType": "2",
         "icon": "",
-        "description": "Mobile Augmented Reality educational game teaching rock types and geology using Vuforia target markers.",
+        "description": "Client mobile Augmented Reality educational game teaching rock types and geology using Vuforia target markers.",
         "projectTime": {
             "startDate": "June 2018",
             "endDate": "July 2018",
@@ -941,7 +941,7 @@
     },
     {
         "title": "Logibot",
-        "projectType": "1",
+        "projectType": "3",
         "icon": "",
         "description": "Undergraduate thesis project — an educational 3D robotics logic and puzzle game built in Unity featuring custom Shader Graph visual effects, Cinemachine camera rigging, and the new Unity Input System.",
         "projectTime": {
@@ -996,7 +996,7 @@
     },
     {
         "title": "Periodic Table (Atomic)",
-        "projectType": "1",
+        "projectType": "3",
         "icon": "",
         "description": "Interactive UI-based chemistry application and learning game built in Unity (uGUI) to visualize, explore, and test knowledge on chemical elements of the Periodic Table on mobile.",
         "projectTime": {

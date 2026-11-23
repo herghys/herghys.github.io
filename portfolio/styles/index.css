@@ -63,6 +63,7 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-default);
+  transform: translateZ(0);
 }
 
 .nav-container {
@@ -382,6 +383,12 @@ body {
   overflow: hidden;
   box-shadow: var(--shadow-card);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 520px;
+}
+
+.project-card.is-hidden {
+  display: none !important;
 }
 
 .project-card:hover {
@@ -560,6 +567,12 @@ body {
   background: rgba(46, 160, 67, 0.12);
   color: #7ee787;
   border: 1px solid rgba(46, 160, 67, 0.3);
+}
+
+.badge-personal {
+  background: rgba(210, 153, 34, 0.15);
+  color: #f2cc60;
+  border: 1px solid rgba(210, 153, 34, 0.35);
 }
 
 .timeline-badge {
