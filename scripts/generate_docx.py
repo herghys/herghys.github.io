@@ -118,18 +118,18 @@ def create_resume():
 
     # 1. PROFESSIONAL SUMMARY
     add_section_header("Professional Summary")
-    p_sum = doc.add_paragraph()
-    p_sum.paragraph_format.space_before = Pt(2)
-    p_sum.paragraph_format.space_after = Pt(5)
-    p_sum.paragraph_format.line_spacing = 1.15
-    r_sum = p_sum.add_run(
-        "Results-driven Unity Game Developer and Software Engineer with 5 years of experience designing, "
-        "developing, and publishing interactive applications, commercial mobile games, multiplayer VR simulations, desktop utilities, "
-        "and rapid game prototypes. Prolific creator of over 30 published games, prototypes, and open-source tools. "
-        "Proven track record architecting robust game loops, implementing multi-platform SDKs (Firebase, SteamVR, AdMob, OAuth), "
-        "and optimizing performance through comprehensive profiling. Holds a Bachelor of Education in Informatics Engineering."
-    )
-    r_sum.font.size = Pt(9.5)
+    summary_paras = [
+        "Unity developer who loves making games, from 2D to 3D, for mobile and desktop. Professional experience includes building VR applications, and independent freelance work covers AR projects and desktop apps.",
+        "Day to day, working as a Unity developer, mostly in C# and .NET: building game systems, tools, and extensions, with a focus on clean, reliable code and a smooth experience for the player or user.",
+        "Graduated from Yogyakarta State University with a degree in Education. Always learning and keeping up with what’s new in gaming and game technology."
+    ]
+    for sp in summary_paras:
+        p_sp = doc.add_paragraph()
+        p_sp.paragraph_format.space_before = Pt(1)
+        p_sp.paragraph_format.space_after = Pt(3)
+        p_sp.paragraph_format.line_spacing = 1.15
+        r_sp = p_sp.add_run(sp)
+        r_sp.font.size = Pt(9.5)
 
     # 2. TECHNICAL SKILLS
     add_section_header("Technical Skills")

@@ -5,7 +5,11 @@
 [![Resume](https://img.shields.io/badge/Resume-Online-green?style=flat)](https://herghys.github.io/resume/)
 [![Google Play](https://img.shields.io/badge/Google%20Play-Herghys%20Studio-414141?style=flat&logo=google-play)](https://play.google.com/store/apps/developer?id=Herghys+Studio)
 
-I am a **Unity Game Developer & Software Engineer** with **5 years of experience** building games, interactive applications, multiplayer VR systems, and desktop utilities. Specialized in Unity3D, C#, and end-to-end third-party SDK integrations (Firebase, Google/Apple Sign-In, SteamVR, Google AdMob).
+Unity developer who loves making games, from 2D to 3D, for mobile and desktop. Professional experience includes building VR applications, and independent freelance work covers AR projects and desktop apps.
+
+Day to day, working as a Unity developer, mostly in C# and .NET: building game systems, tools, and extensions, with a focus on clean, reliable code and a smooth experience for the player or user.
+
+Graduated from Yogyakarta State University with a degree in Education. Always learning and keeping up with what’s new in gaming and game technology.
 
 ---
 

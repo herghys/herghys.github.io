@@ -6,7 +6,11 @@ Tangerang 15151, Indonesia | +62 877-7113-9889 | helmi.santosa1@gmail.com
 ---
 
 ### PROFESSIONAL SUMMARY
-Results-driven Unity Game Developer and Software Engineer with **5 years of experience** designing, developing, and publishing interactive applications, commercial mobile games, multiplayer VR simulations, desktop utilities, and rapid game prototypes. Prolific creator of over 30 published games, prototypes, and open-source tools. Proven track record architecting robust game loops, implementing multi-platform SDKs (Firebase, SteamVR, AdMob, OAuth), and optimizing performance through comprehensive profiling. Holds a Bachelor of Education in Informatics Engineering.
+Unity developer who loves making games, from 2D to 3D, for mobile and desktop. Professional experience includes building VR applications, and independent freelance work covers AR projects and desktop apps.
+
+Day to day, working as a Unity developer, mostly in C# and .NET: building game systems, tools, and extensions, with a focus on clean, reliable code and a smooth experience for the player or user.
+
+Graduated from Yogyakarta State University with a degree in Education. Always learning and keeping up with what’s new in gaming and game technology.
 
 ---
 
