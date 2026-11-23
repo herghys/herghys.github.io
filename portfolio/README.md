@@ -9,15 +9,20 @@ This directory contains the interactive project portfolio for Helmi Arghya Santo
 ```
 portfolio/
 ├── README.md               # Portfolio technical documentation (this file)
-├── index.html              # Main HTML entry point rendering the project grid
+├── PORTFOLIO.md            # ATS-friendly linear Markdown project catalog
+├── Helmi_Arghya_Santosa_Portfolio.docx # ATS-formatted Word document (all 32 projects)
+├── index.html              # Main HTML entry point rendering the visual project grid
+├── print.html              # Clean single-column, printable & ATS-scannable web view
 ├── data/
 │   ├── portfolio.json      # Canonical JSON dataset (all 32 projects)
 │   └── portfolio.js        # Global JavaScript dataset for local file:// & offline compatibility
 ├── scripts/
 │   ├── loader.js           # Dynamic card builder, button generator, and modal viewer
+│   ├── print.js            # Print / PDF trigger script for print view
 │   └── slider.js           # Lightweight screenshot slider handler
 ├── styles/
-│   └── index.css           # Styling for grid layout, project cards, and modals
+│   ├── index.css           # Styling for grid layout, project cards, and modals
+│   └── print.css           # Clean single-column, print-friendly stylesheet
 └── assets/
     └── portfolios/         # Project screenshot directories
         ├── cinda/          # Screenshot files (1.png, 2.png, ...)
@@ -189,3 +194,37 @@ npx serve
 ```
 
 Alternatively, you can double-click `index.html` to open directly in any browser (`file:///`). Thanks to `data/portfolio.js`, all 32 cards will load immediately without CORS restrictions.
+
+---
+
+## 7. ATS-Friendly Portfolio Documentation
+
+Applicant Tracking Systems (Taleo, Workday, Greenhouse, Lever, iCIMS, Ashby) and automated recruitment parsers require structured, linear documentation to reliably extract projects, skills, technologies, and achievements.
+
+To ensure 100% ATS compatibility and provide comprehensive offline documents:
+
+1. **Microsoft Word Export (`Helmi_Arghya_Santosa_Portfolio.docx`)**:
+   - The primary ATS standard format.
+   - Built with standard 0.65" margins, linear single-column layout, standard Arial typography, and semantic styles.
+   - Categorizes all 32 projects into 5 clear domains with complete technical metadata, bulleted engineering contributions, and direct repository links.
+   - Generated automatically via:
+     ```bash
+     python scripts/generate_portfolio_docx.py
+     ```
+
+2. **Linear Markdown Catalog (`PORTFOLIO.md`)**:
+   - Clean, table-free markdown document optimized for plain-text ATS parsers, terminal readers, and GitHub viewing.
+   - Contains complete keyword density for game development and software engineering.
+   - Generated automatically via:
+     ```bash
+     python scripts/generate_portfolio_md.py
+     ```
+
+3. **Print-Ready / Scannable HTML View (`print.html`)**:
+   - Single-column web view powered by `styles/print.css` with `@media print` optimization.
+   - Allows instant browser printing (`Ctrl+P`) or saving directly to clean, single-column PDF.
+   - Generated automatically via:
+     ```bash
+     python scripts/generate_portfolio_print_html.py
+     ```
+
