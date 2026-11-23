@@ -3,34 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Helmi Arghya Santosa (Herghys)</title>
+    <title>Portfolio | Helmi Arghya Santosa - Unity Game Developer &amp; Software Engineer</title>
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="data/portfolio.js"></script>
     <script src="scripts/loader.js" defer></script>
 </head>
 <body>
+    <!-- Global Header -->
     <header class="global-header">
-        <nav>
-            <ul>
-                <li><a href="../">Home</a></li>
-                <li><a href="../resume/">Resume</a></li>
-                <li><a href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                <li><a href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <a href="../" class="nav-brand">
+                <span class="brand-name">Helmi Arghya Santosa</span>
+                <span class="brand-role">Portfolio</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../">Home</a>
+                <a href="../resume/">Resume</a>
+                <a href="./" class="active">Portfolios</a>
+                <a href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+            <div class="header-actions">
+                <a href="https://drive.google.com/file/d/1FFAe2pfSTmFZhA0L0pNWRxAnHuyokqt0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="action-btn" title="Download Portfolio PDF">
+                    <i class="fas fa-file-pdf"></i> <span>Original PDF</span>
+                </a>
+                <a href="resources/Helmi_Arghya_Santosa_Portfolio.docx" download class="action-btn" title="Download Portfolio Word Document">
+                    <i class="fas fa-file-word"></i> <span>Word (.docx)</span>
+                </a>
+                <a href="print.html" class="action-btn" title="Clean print and text document view">
+                    <i class="fas fa-print"></i> <span>Print View</span>
+                </a>
+            </div>
+        </div>
     </header>
-    <div class="portfolio-actions-bar">
-        <a href="https://drive.google.com/file/d/1FFAe2pfSTmFZhA0L0pNWRxAnHuyokqt0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="portfolio-action-btn btn-primary">
-            <i class="fas fa-file-pdf"></i> Download Portfolio (PDF)
-        </a>
-        <a href="Helmi_Arghya_Santosa_Portfolio.docx" download class="portfolio-action-btn btn-docx">
-            <i class="fas fa-file-word"></i> Download Portfolio (.docx)
-        </a>
-        <a href="print.html" class="portfolio-action-btn btn-secondary">
-            <i class="fas fa-file-alt"></i> Print / Text View
-        </a>
+
+    <!-- Hero Showcase Intro -->
+    <section class="portfolio-hero">
+        <div class="hero-container">
+            <h1 class="hero-title">Engineering &amp; Game Development Portfolio</h1>
+            <p class="hero-subtitle">
+                A curated showcase of 32 delivered projects spanning commercial simulations, published mobile &amp; WebGL games, AR systems, and open-source developer tooling built with Unity, C#, and .NET across 7+ years of engineering.
+            </p>
+            <div class="hero-metrics">
+                <div class="metric-item">
+                    <span class="metric-num">32</span>
+                    <span class="metric-label">Delivered Projects</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num">7+</span>
+                    <span class="metric-label">Years Experience</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num">21</span>
+                    <span class="metric-label">Commercial &amp; Client Titles</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num">11</span>
+                    <span class="metric-label">Open Source &amp; Tools</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Controls: Filter & Live Search -->
+    <section class="controls-section">
+        <div class="controls-container">
+            <!-- Category Tabs -->
+            <div class="category-filters" id="category-filters">
+                <button type="button" class="filter-pill active" data-filter="all">All <span class="count-badge">32</span></button>
+                <button type="button" class="filter-pill" data-filter="commercial">Commercial <span class="count-badge">21</span></button>
+                <button type="button" class="filter-pill" data-filter="games">Games &amp; Interactive <span class="count-badge">26</span></button>
+                <button type="button" class="filter-pill" data-filter="ar-vr-sim">AR / VR &amp; Simulation <span class="count-badge">6</span></button>
+                <button type="button" class="filter-pill" data-filter="tools">Tools &amp; Utilities <span class="count-badge">7</span></button>
+                <button type="button" class="filter-pill" data-filter="opensource">Open Source <span class="count-badge">11</span></button>
+            </div>
+
+            <!-- Search and Status Bar -->
+            <div class="search-toolbar">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="project-search" placeholder="Search by title, tech stack (e.g. Unity, VR, C#, Firebase, WebGL, ShaderGraph)..." autocomplete="off" spellcheck="false">
+                    <button type="button" id="clear-search" class="clear-search-btn" aria-label="Clear search">&times;</button>
+                </div>
+                <div class="results-count" id="results-count">
+                    Showing <strong id="visible-count">32</strong> of 32 projects
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid Container -->
+    <main class="projects-main">
+        <div class="projects-grid" id="projects-grid"></div>
+        <div class="empty-state" id="empty-state" style="display: none;">
+            <i class="fas fa-folder-open empty-icon"></i>
+            <h3>No matching projects found</h3>
+            <p>Try adjusting your search terms or selecting a different category filter.</p>
+            <button type="button" class="btn-reset-filter" id="reset-filter-btn">Reset All Filters</button>
+        </div>
+    </main>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog">
+        <div class="lightbox-overlay"></div>
+        <div class="lightbox-container">
+            <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+            <div class="lightbox-media-wrapper">
+                <img id="lightbox-img" src="" alt="Fullscreen screenshot" class="lightbox-img">
+                <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#10094;</button>
+                <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#10095;</button>
+            </div>
+            <div class="lightbox-caption">
+                <div class="lightbox-title" id="lightbox-title"></div>
+                <div class="lightbox-counter" id="lightbox-counter"></div>
+            </div>
+        </div>
     </div>
-    <div class="projects-grid"></div>
 </body>
 </html>

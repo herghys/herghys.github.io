@@ -3,23 +3,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Herghys | Helmi Arghya Santosa</title>
+    <title>Helmi Arghya Santosa (Herghys) | Unity Game Developer & Software Engineer</title>
+    <meta name="description" content="Personal site and portfolio of Helmi Arghya Santosa (Herghys) — Unity Game Developer and Software Engineer building 2D/3D games, VR applications, and software tools." />
     <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Hero Section (Adapts dynamically to With-Photo or No-Photo layout) -->
-        <header class="hero-section" id="hero-section">
-            <div class="profile-photo-wrapper" id="profile-photo-wrapper">
-                <img id="profile-photo"
-                     src="assets/photo/profile.jpeg"
-                     alt="Helmi Arghya Santosa"
-                     class="profile-photo" />
+    <!-- Global Top Navigation Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#" class="brand-logo">herghys<span class="dot">.</span></a>
+            <nav class="site-nav">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+                <a href="portfolio/" class="nav-btn">Portfolios</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Full-Page Hero: Self-Introduction -->
+    <section class="hero-fullpage" id="about">
+        <div class="hero-intro-container">
+            <div class="intro-status-pill">
+                <span class="status-dot"></span>
+                <span>Unity Game Developer &bull; Systems &amp; Gameplay</span>
             </div>
-            <div class="hero-text">
-                <h1>Helmi Arghya Santosa</h1>
+
+            <h1 class="intro-name">Helmi Arghya Santosa</h1>
+            <div class="intro-subtitle">Unity Developer &bull; Software Engineer &bull; C# &amp; .NET</div>
+
+            <div class="intro-bio">
                 <p>
                     Unity developer who loves making games, from 2D to 3D, for mobile and desktop. Professional experience includes building VR applications, and independent freelance work covers AR projects and desktop apps.
                 </p>
@@ -29,86 +46,117 @@
                 <p>
                     Graduated from Yogyakarta State University with a degree in Education. Always learning and keeping up with what’s new in gaming and game technology.
                 </p>
+            </div>
 
-                <div class="button-group">
-                    <a class="btn" href="resume/">Resume</a>
-                    <a class="btn" href="portfolio/">View Portfolio</a>
-                    <a class="btn btn-outline" href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a class="btn btn-outline" href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <!-- Developer Specs Strip -->
+            <div class="dev-specs-strip">
+                <div class="spec-item">
+                    <span class="spec-val">7+ Years</span>
+                    <span class="spec-lbl">Experience</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-val">32</span>
+                    <span class="spec-lbl">Projects Shipped</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-val">Unity &bull; C#</span>
+                    <span class="spec-lbl">Core Engine</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-val">PC &bull; Mobile &bull; VR</span>
+                    <span class="spec-lbl">Platforms</span>
                 </div>
             </div>
-        </header>
 
-        <hr class="divider" />
+            <div class="button-group">
+                <a class="btn btn-primary" href="portfolio/">Portfolios</a>
+                <a class="btn btn-secondary" href="resume/">Resume</a>
+                <a class="btn btn-outline" href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a class="btn btn-outline" href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
 
-        <!-- Featured Projects Highlight (Loaded dynamically via scripts/main.js from data/featured.json) -->
-        <div class="section">
-            <h2>Featured Projects</h2>
+        <div class="hero-scroll-cue">
+            <a href="#projects">&darr; Featured Projects</a>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- Featured Projects Highlight -->
+        <section class="section" id="projects">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="section-subtitle">Selected commercial games, web platforms, and software tools</div>
+            </div>
             <div id="featured-grid" class="featured-grid">
-                <div style="color: #aaa; font-style: italic; padding: 1rem 0;">Loading featured projects...</div>
+                <div style="color: var(--text-muted); font-style: italic; padding: 1.5rem 0;">Loading featured projects...</div>
             </div>
             <div class="show-more-wrapper">
-                <a class="btn btn-outline" href="portfolio/">Show More Projects</a>
+                <a class="btn btn-outline" href="portfolio/">Show More Projects &rarr;</a>
             </div>
-        </div>
+        </section>
 
-        <hr class="divider" />
-
-        <div class="row">
-            <div class="col section">
-                <h2>Technologies & Tools</h2>
-                <p><strong>Languages:</strong> C#, VB.Net, Java, Python, Arduino, SQL, HTML/CSS, JavaScript</p>
-                <p><strong>Frameworks & Engines:</strong> Unity3D, SteamVR, Vuforia SDK, WinForms, WPF, .NET Core, .NET Framework</p>
-                <p><strong>SDKs & APIs:</strong> Firebase SDK (Auth, Analytics, FCM), Google & Apple Sign-In, Google AdMob, Google IAP, SteamVR, Mirror Networking, Telegram API, Facebook SDK</p>
-                <p><strong>Tools & Platforms:</strong> Git, Postman, Visual Studio, VS Code, Arduino IDE, Android Studio</p>
+        <!-- Resume & Career Bridge -->
+        <section class="section" id="resume">
+            <div class="resume-bridge-card">
+                <div class="bridge-content">
+                    <span class="bridge-tag">Career &amp; Credentials</span>
+                    <h2>Detailed Resume &amp; Work Experience</h2>
+                    <p>
+                        Looking for my full employment history and technical credentials? Explore my complete career timeline across PT Falah Inovasi Teknologi, Newfemme, and freelance productions &mdash; including VR simulations (HTC Vive Pro 2 &amp; Meta Quest), multiplayer systems, local data persistence, and formal education from Yogyakarta State University.
+                    </p>
+                </div>
+                <div class="bridge-actions">
+                    <a class="btn btn-primary" href="resume/">View Full Resume &rarr;</a>
+                    <a class="btn btn-secondary" href="resume/print.html" target="_blank">Print / Text View</a>
+                    <a class="btn btn-outline" href="resume/Helmi_Arghya_Santosa_Resume.docx" download>Download (.docx)</a>
+                </div>
             </div>
+        </section>
 
-            <div class="col section">
-                <h2>Experience Highlights</h2>
-                <ul>
-                    <li><strong>Unity Programmer</strong> – PT. Falah Inovasi Teknologi (01/2025–Present)</li>
-                    <li><strong>Game Developer (Unity Developer)</strong> – Newfemme Wanita Indonesia (03/2022–08/2024)</li>
-                    <li><strong>Developer (Self Employed)</strong> – Herghys Studio (06/2021–Present)</li>
-                    <li><strong>Freelance Game Developer</strong> – PT Teknoreka Inovasi Nusantara (06/2023–08/2023)</li>
-                    <li><strong>Game Developer</strong> – Fomuo Games (02/2023–06/2023)</li>
-                    <li><strong>Teacher Intern</strong> – SMK YPKK 1 Sleman (06/2019–08/2019)</li>
-                    <li><strong>Software Developer Intern</strong> – Run System - PT. Global Sukses Solusi (07/2018–08/2018)</li>
-                </ul>
+        <!-- Connect & Socials -->
+        <section class="section" id="contact">
+            <div class="section-header">
+                <h2>Connect &amp; Socials</h2>
+                <div class="section-subtitle">Get in touch for game engineering, collaboration, or inquiries</div>
             </div>
-        </div>
-
-        <hr class="divider" />
-
-        <div class="row">
-            <div class="col section">
-                <h2>Currently Learning & Exploring</h2>
-                <ul>
-                    <li>Advanced C# Architecture & Design Patterns</li>
-                    <li>Advanced Unity3D Profiling & Memory Optimization</li>
-                    <li>Unity DOTS / ECS (Data-Oriented Technology Stack)</li>
-                    <li>Multiplayer Systems with Mirror Networking & Netcode</li>
-                    <li>VR Experiences with SteamVR SDK</li>
-                </ul>
+            <div class="contact-grid">
+                <a class="contact-link-card" href="mailto:helmi.santosa1@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    <span>helmi.santosa1@gmail.com</span>
+                </a>
+                <a class="contact-link-card" href="https://wa.me/+6287771139889" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+62 877-7113-9889</span>
+                </a>
+                <a class="contact-link-card" href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a class="contact-link-card" href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a class="contact-link-card" href="https://steamcommunity.com/id/herghys" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-steam"></i>
+                    <span>Steam</span>
+                </a>
             </div>
+        </section>
 
-            <div class="col section">
-                <h2>Contact & Socials</h2>
-                <ul class="contact-icons">
-                    <li><img src="https://img.icons8.com/ios-glyphs/30/email.png" alt="Email" /> <a href="mailto:helmi.santosa1@gmail.com">helmi.santosa1@gmail.com</a></li>
-                    <li><img src="https://img.icons8.com/ios-filled/30/whatsapp.png" alt="WhatsApp" /> <a href="https://wa.me/+6287771139889" target="_blank" rel="noopener noreferrer">+62 877-7113-9889</a></li>
-                    <li><img src="https://img.icons8.com/ios-filled/30/linkedin.png" alt="LinkedIn" /> <a href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer">LinkedIn (herghys)</a></li>
-                    <li><img src="https://img.icons8.com/ios-filled/30/github.png" alt="GitHub" /> <a href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">GitHub (@herghys)</a></li>
-                    <li><img src="https://img.icons8.com/ios-filled/30/steam.png" alt="Steam" /> <a href="https://steamcommunity.com/id/herghys" target="_blank" rel="noopener noreferrer">Steam (herghys)</a></li>
-                    <li><img src="https://img.icons8.com/ios-filled/30/facebook-new.png" alt="Facebook" /> <a href="https://www.facebook.com/herghys" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                    <li><img src="https://img.icons8.com/ios-filled/30/instagram-new.png" alt="Instagram" /> <a href="https://www.instagram.com/herghys__" target="_blank" rel="noopener noreferrer">Instagram (@herghys__)</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <hr class="divider" />
-        <footer style="text-align: center; color: #888; font-size: 0.9rem; padding: 1rem 0;">
-            <p>&copy; 2026 Helmi Arghya Santosa (Herghys). All rights reserved.</p>
-        </footer>
     </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container" style="padding-top: 0; padding-bottom: 0;">
+            <p>&copy; 2026 Helmi Arghya Santosa (Herghys) &bull; Unity Game Developer &bull; <a href="resume/">Resume</a> &bull; <a href="portfolio/">Portfolios</a></p>
+        </div>
+    </footer>
+
 </body>
 </html>

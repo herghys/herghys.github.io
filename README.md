@@ -39,7 +39,8 @@ Graduated from Yogyakarta State University with a degree in Education. Always le
 ### 🛠 Tech Stack & Tools
 
 - **Languages:** C#, VB.Net, Java, Python, Arduino, SQL, HTML/CSS, JavaScript
-- **Game Engines & Frameworks:** Unity3D, SteamVR SDK, Vuforia SDK, Windows Forms, WPF, .NET Core, .NET Framework
+- **Game Engines & Frameworks:** Unity3D (2018–Unity 6), Unity Localization, SteamVR SDK, Vuforia SDK, Windows Forms, WPF, .NET Core, .NET Framework
+- **VR Headsets & Hardware:** HTC Vive Pro 2, Meta Quest (Quest 2 / 3 / Pro), SteamVR Tracking
 - **SDKs & APIs:** Firebase SDK (Auth, Analytics, FCM), Google & Apple Sign-In, Google AdMob, Google IAP, SteamVR, Mirror Networking, Telegram API
 - **Tools:** Git, Postman, Visual Studio, VS Code, Android Studio, Arduino IDE
 

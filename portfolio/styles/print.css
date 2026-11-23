@@ -1,7 +1,32 @@
-/* Clean Single-Column Printable Portfolio Layout */
-@page {
-  size: letter;
-  margin: 0.6in 0.6in 0.6in 0.6in;
+/* ==========================================================================
+   Portfolio Document Viewer & Print Stylesheet
+   - On-screen: Modern Dark Developer Theme with Sticky Category Navigation
+   - In-print: Clean, ATS-compliant, single-column paper layout (white bg, black text)
+   ========================================================================== */
+
+:root {
+  --bg: #0b0d13;
+  --surface: #141724;
+  --surface-hover: #191e30;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(59, 130, 246, 0.45);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-subtle: rgba(59, 130, 246, 0.12);
+  --accent-border: rgba(59, 130, 246, 0.3);
+  
+  --tag-bg: rgba(255, 255, 255, 0.04);
+  --tag-border: rgba(255, 255, 255, 0.09);
+  --tag-text: #e2e8f0;
+  
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 * {
@@ -10,239 +35,451 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #111;
-  background: #f7f7f7;
-  line-height: 1.45;
-  font-size: 10pt;
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 14.5px;
+  -webkit-font-smoothing: antialiased;
 }
 
-.portfolio-wrapper {
-  max-width: 860px;
-  margin: 20px auto;
-  background: #fff;
-  padding: 40px 50px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* ==========================================================================
+   Sticky Top Navigation Bar (Screen Only)
+   ========================================================================== */
+.doc-top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11, 13, 19, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 
-.actions-bar {
-  max-width: 860px;
-  margin: 20px auto 0;
+.doc-bar-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.print-btn, .back-btn {
+.doc-back-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 4px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.doc-back-link:hover {
+  color: var(--text-primary);
+}
+
+.doc-nav-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.nav-pill {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 3px;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-pill:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+  border-color: var(--accent-border);
+}
+
+.doc-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.doc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  border-radius: 3px;
   text-decoration: none;
   cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.15s ease, transform 0.1s ease;
 }
 
-.print-btn {
-  background: #0066cc;
-  color: white;
-  border: none;
-}
-
-.print-btn:hover {
-  background: #004c99;
+.doc-btn:hover {
+  transform: translateY(-1px);
 }
 
 .btn-docx {
-  background: #2b579a;
-  color: white;
+  background: #2563eb;
+  color: #ffffff;
 }
 
 .btn-docx:hover {
-  background: #1e3f73;
+  background: #1d4ed8;
 }
 
-.back-btn {
-  background: #e5e5e5;
-  color: #333;
+.btn-print {
+  background: var(--surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
 }
 
-.back-btn:hover {
-  background: #d4d4d4;
+.btn-print:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
 }
 
-header {
+/* ==========================================================================
+   Document Wrapper / Body
+   ========================================================================== */
+.portfolio-wrapper {
+  max-width: 960px;
+  margin: 2rem auto 4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3rem 3.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+header.doc-header {
   text-align: center;
-  border-bottom: 2px solid #222;
-  padding-bottom: 12px;
-  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-header h1 {
-  font-size: 20pt;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  color: #000;
-  text-transform: uppercase;
-  margin-bottom: 4px;
+header.doc-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
 }
 
-.headline {
-  font-size: 11pt;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 6px;
+.doc-headline {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
 }
 
-.contact-line {
-  font-size: 9pt;
-  color: #444;
-  line-height: 1.5;
+.doc-contact-line {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
-.contact-line a {
-  color: #0066cc;
+.doc-contact-line a {
+  color: var(--accent);
   text-decoration: none;
 }
 
-section {
-  margin-bottom: 18px;
+.doc-contact-line a:hover {
+  text-decoration: underline;
 }
 
-h2 {
-  font-size: 12pt;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #111;
-  border-bottom: 1.5px solid #333;
-  padding-bottom: 3px;
-  margin-top: 16px;
-  margin-bottom: 10px;
-  letter-spacing: 0.5px;
-  break-after: avoid;
+/* Category Sections */
+.doc-section {
+  margin-bottom: 2.5rem;
+  scroll-margin-top: 5rem;
+}
+
+.doc-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .summary-text {
-  font-size: 9.5pt;
-  line-height: 1.5;
-  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
 }
 
 .skills-category {
-  font-size: 9.5pt;
-  margin-bottom: 4px;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
 }
 
 .skills-category strong {
-  color: #111;
+  color: var(--text-primary);
 }
 
+/* Project Item */
 .project-item {
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px dashed #e0e0e0;
-  page-break-inside: avoid;
-  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
 }
 
 .project-item:last-child {
   border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .project-header-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 2px;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
 }
 
 .project-title {
-  font-size: 11pt;
-  font-weight: bold;
-  color: #111;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .project-dates {
-  font-size: 9pt;
-  color: #555;
-  font-style: italic;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--text-dim);
 }
 
 .project-classification {
-  font-size: 9pt;
-  color: #444;
-  margin-bottom: 2px;
+  font-size: 0.86rem;
+  color: #60a5fa;
+  margin-bottom: 0.35rem;
+}
+
+.project-classification strong {
+  color: var(--text-muted);
 }
 
 .project-technologies {
-  font-size: 8.5pt;
-  color: #333;
-  margin-bottom: 3px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.project-technologies strong {
+  color: var(--text-primary);
 }
 
 .project-links {
-  font-size: 8.5pt;
-  color: #0066cc;
-  margin-bottom: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 0.65rem;
 }
 
 .project-links a {
-  color: #0066cc;
+  color: var(--accent);
   text-decoration: underline;
   margin-right: 12px;
 }
 
+.project-links a:hover {
+  color: #60a5fa;
+}
+
 .project-desc {
-  font-size: 9.5pt;
-  line-height: 1.45;
-  margin-bottom: 4px;
-  color: #222;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-bottom: 0.65rem;
+  color: var(--text-secondary);
 }
 
 .project-item ul {
-  padding-left: 20px;
-  margin-top: 2px;
+  padding-left: 1.25rem;
+  margin-top: 0.35rem;
 }
 
 .project-item ul li {
-  font-size: 9pt;
-  margin-bottom: 3px;
-  line-height: 1.4;
-  color: #222;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 
+/* Floating Back To Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Print Mode (@media print) — Clean White ATS-Compliant Layout
+   ========================================================================== */
 @media print {
-  body {
-    background: #fff;
-    color: #000;
-    font-size: 9.5pt;
+  @page {
+    size: letter;
+    margin: 0.6in;
   }
 
-  .actions-bar {
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 9.5pt !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    line-height: 1.45 !important;
+  }
+
+  .doc-top-bar,
+  .back-to-top {
     display: none !important;
   }
 
   .portfolio-wrapper {
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  header.doc-header {
+    border-bottom: 2px solid #222 !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 12px !important;
+  }
+
+  header.doc-header h1 {
+    color: #000 !important;
+    font-size: 18pt !important;
+  }
+
+  .doc-headline {
+    color: #333 !important;
+    font-size: 10.5pt !important;
+  }
+
+  .doc-contact-line {
+    color: #444 !important;
+    font-size: 8.5pt !important;
+  }
+
+  .doc-contact-line a {
+    color: #000 !important;
+  }
+
+  .doc-section {
+    margin-bottom: 16px !important;
+    scroll-margin-top: 0 !important;
+  }
+
+  .doc-section h2 {
+    color: #111 !important;
+    border-bottom: 1.5px solid #333 !important;
+    font-size: 11pt !important;
+    padding-bottom: 3px !important;
+    margin-top: 14px !important;
+    margin-bottom: 8px !important;
+    break-after: avoid !important;
+  }
+
+  .summary-text {
+    color: #222 !important;
+    font-size: 9pt !important;
+    margin-bottom: 8px !important;
+  }
+
+  .skills-category {
+    color: #222 !important;
+    font-size: 9pt !important;
   }
 
   .project-item {
-    page-break-inside: avoid;
-    break-inside: avoid;
+    border-bottom: 1px dashed #ccc !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 10px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 
-  h2 {
-    break-after: avoid;
+  .project-title {
+    color: #000 !important;
+    font-size: 10.5pt !important;
   }
 
-  a {
+  .project-dates {
+    color: #555 !important;
+    font-size: 8.5pt !important;
+  }
+
+  .project-classification {
+    color: #333 !important;
+    font-size: 8.5pt !important;
+  }
+
+  .project-technologies {
+    color: #222 !important;
+    font-size: 8.5pt !important;
+  }
+
+  .project-desc {
+    color: #222 !important;
+    font-size: 9pt !important;
+  }
+
+  .project-item ul li {
+    color: #222 !important;
+    font-size: 8.5pt !important;
+  }
+
+  .project-links a {
     color: #000 !important;
     text-decoration: none !important;
   }
@@ -250,6 +487,22 @@ h2 {
   .project-links a::after {
     content: " (" attr(href) ")";
     font-size: 8pt;
-    color: #444;
+    color: #555;
+  }
+}
+
+/* Responsive screen */
+@media screen and (max-width: 768px) {
+  .portfolio-wrapper {
+    padding: 2rem 1.5rem;
+    margin: 1rem auto;
+  }
+
+  .doc-bar-inner {
+    padding: 0.65rem 1rem;
+  }
+
+  .doc-nav-pills {
+    display: none; /* Hide pills on small screens to save space */
   }
 }

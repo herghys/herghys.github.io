@@ -3,25 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Helmi Arghya Santosa - Project Portfolio</title>
+  <title>Helmi Arghya Santosa - Project Portfolio Document</title>
   <link rel="stylesheet" href="styles/print.css">
   <script src="scripts/print.js" defer></script>
 </head>
 <body>
 
-  <div class="actions-bar">
-    <a href="index.html" class="back-btn">&larr; Back to Visual Portfolio</a>
-    <div style="display: flex; gap: 10px;">
-      <a href="Helmi_Arghya_Santosa_Portfolio.docx" download class="print-btn btn-docx">Download Word (.docx)</a>
-      <button id="print-portfolio-btn" type="button" class="print-btn">Print / Save as PDF</button>
+  <!-- Sticky Navigation Bar with Category Jump Pills -->
+  <div class="doc-top-bar">
+    <div class="doc-bar-inner">
+      <a href="index.html" class="doc-back-link">&larr; Back to Portfolio</a>
+      <div class="doc-nav-pills">
+        <a href="#summary" class="nav-pill">Overview</a>
+        <a href="#commercial" class="nav-pill">Commercial</a>
+        <a href="#freelance" class="nav-pill">Freelance &amp; Sims</a>
+        <a href="#ar" class="nav-pill">AR Systems</a>
+        <a href="#mobile" class="nav-pill">Mobile</a>
+        <a href="#tools" class="nav-pill">Tools</a>
+      </div>
+      <div class="doc-actions">
+        <a href="resources/Helmi_Arghya_Santosa_Portfolio.docx" download class="doc-btn btn-docx">Download Word (.docx)</a>
+        <button id="print-portfolio-btn" type="button" class="doc-btn btn-print">Print / Save as PDF</button>
+      </div>
     </div>
   </div>
 
   <div class="portfolio-wrapper">
-    <header>
+    <header class="doc-header">
       <h1>Helmi Arghya Santosa</h1>
-      <div class="headline">Unity Game Developer &bull; Software Engineer</div>
-      <div class="contact-line">
+      <div class="doc-headline">Unity Game Developer &bull; Software Engineer</div>
+      <div class="doc-contact-line">
         Tangerang 15151, Indonesia &bull; +62 877-7113-9889 &bull; <a href="mailto:helmi.santosa1@gmail.com">helmi.santosa1@gmail.com</a><br>
         <a href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer">linkedin.com/in/herghys</a> &bull; 
         <a href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">github.com/herghys</a> &bull; 
@@ -29,17 +40,17 @@
       </div>
     </header>
 
-    <section>
-      <h2>Technical Competencies & Profile Summary</h2>
-      <p class="summary-text">Senior Game Developer and Software Engineer with 7+ years of hands-on experience architecting high-performance 2D/3D games, cross-platform interactive simulations, augmented reality applications, and developer tooling. Proven track record delivering 32 complete software projects spanning commercial productions, serious medical/educational simulations, published mobile titles, and open-source engine extensions. Specialized in Unity3D, C#, memory optimization, physics engines, Universal Render Pipeline (URP), and backend/SDK integrations.</p>
-      <div class="skills-category"><strong>Game Engines & Platforms:</strong> Unity3D (2018–2022 / Unity 6), Unreal Engine, WebGL, Android, iOS, Windows Desktop, Telegram Mini Apps</div>
+    <section class="doc-section" id="summary">
+      <h2>Technical Competencies &amp; Profile Summary</h2>
+      <p class="summary-text">Senior Game Developer and Software Engineer with 7+ years of hands-on experience architecting high-performance 2D/3D games, cross-platform interactive simulations, augmented reality applications, and developer tooling. Proven track record delivering 32 complete software projects spanning commercial productions, freelance medical/educational simulations, published mobile titles, and open-source engine extensions. Specialized in Unity3D, C#, memory optimization, physics engines, Universal Render Pipeline (URP), and backend/SDK integrations.</p>
+      <div class="skills-category"><strong>Game Engines &amp; Platforms:</strong> Unity3D (2018–2022 / Unity 6), Unreal Engine, WebGL, Android, iOS, Windows Desktop, Telegram Mini Apps</div>
       <div class="skills-category"><strong>Programming Languages:</strong> C# (.NET Core / Framework), C++, Python, PHP (Laravel), JavaScript (ES6+), HLSL, SQL, HTML5, CSS3</div>
-      <div class="skills-category"><strong>Graphics & Visual Systems:</strong> Universal Render Pipeline (URP), ShaderGraph, HLSL Custom Shaders, Cinemachine, Particle Systems, 2D/3D Animation</div>
-      <div class="skills-category"><strong>SDKs & Middleware:</strong> Google AdMob SDK, Firebase Auth, Google/Apple Sign-In, Vuforia AR Engine, Ready Player Me SDK, Telegram Bot API, REST APIs</div>
-      <div class="skills-category"><strong>Architecture & Practices:</strong> Object-Oriented Programming (OOP), Component-Based Architecture, Game Physics Simulation, Memory Profiling, Garbage Collection Reduction, Git Version Control, CI/CD</div>
+      <div class="skills-category"><strong>Graphics &amp; Visual Systems:</strong> Universal Render Pipeline (URP), ShaderGraph, HLSL Custom Shaders, Cinemachine, Particle Systems, 2D/3D Animation</div>
+      <div class="skills-category"><strong>SDKs &amp; Middleware:</strong> Google AdMob SDK, Firebase Auth, Google/Apple Sign-In, Vuforia AR Engine, Ready Player Me SDK, Telegram Bot API, REST APIs</div>
+      <div class="skills-category"><strong>Architecture &amp; Practices:</strong> Object-Oriented Programming (OOP), Component-Based Architecture, Game Physics Simulation, Memory Profiling, Garbage Collection Reduction, Git Version Control, CI/CD</div>
     </section>
 
-    <section>
+    <section class="doc-section" id="commercial">
       <h2>1. Commercial Games &amp; Interactive Web Applications</h2>
       <div class="project-item">
         <div class="project-header-row">
@@ -255,14 +266,14 @@
       </div>
     </section>
 
-    <section>
-      <h2>2. Serious Games, Interactive Simulations &amp; Educational Software</h2>
+    <section class="doc-section" id="freelance">
+      <h2>2. Freelance Projects, Interactive Simulations &amp; Educational Software</h2>
       <div class="project-item">
         <div class="project-header-row">
           <span class="project-title">Si Murda</span>
           <span class="project-dates">July 2023 &ndash; August 2023</span>
         </div>
-        <div class="project-classification"><strong>Classification:</strong> Commercial Interactive Medical Simulation (WebGL)</div>
+        <div class="project-classification"><strong>Classification:</strong> Freelance Interactive Medical Simulation (WebGL)</div>
         <div class="project-technologies"><strong>Technologies:</strong> Unity3D, C#, WebGL, TextMeshPro, Git</div>
         <div class="project-desc">Educational Javanese language adventure game with interactive trivia quizzes built for WebGL.</div>
         <ul>
@@ -276,7 +287,7 @@
           <span class="project-title">Petualangan Qori</span>
           <span class="project-dates">August 2022 &ndash; September 2022</span>
         </div>
-        <div class="project-classification"><strong>Classification:</strong> Commercial Educational 2D Platformer (WebGL)</div>
+        <div class="project-classification"><strong>Classification:</strong> Freelance Educational 2D Platformer (WebGL)</div>
         <div class="project-technologies"><strong>Technologies:</strong> Unity3D, C#, WebGL, Visual Studio, Git</div>
         <div class="project-desc">Islamic educational WebGL game featuring adventure storytelling, trivia quizzes, and interactive memory minigames.</div>
         <ul>
@@ -290,7 +301,7 @@
           <span class="project-title">Eksponen Edugame</span>
           <span class="project-dates">September 2022 &ndash; October 2022</span>
         </div>
-        <div class="project-classification"><strong>Classification:</strong> Commercial Gamified Math Learning Platform (WebGL)</div>
+        <div class="project-classification"><strong>Classification:</strong> Freelance Gamified Math Learning Platform (WebGL)</div>
         <div class="project-technologies"><strong>Technologies:</strong> Unity3D, C#, WebGL, Visual Studio, Git</div>
         <div class="project-desc">2D WebGL math educational game focused on exponential arithmetic and interactive problem-solving.</div>
         <ul>
@@ -303,7 +314,7 @@
           <span class="project-title">Temperature Monitoring Module</span>
           <span class="project-dates">July 2018 &ndash; August 2018</span>
         </div>
-        <div class="project-classification"><strong>Classification:</strong> Commercial IoT / Hardware Telemetry Dashboard</div>
+        <div class="project-classification"><strong>Classification:</strong> Freelance IoT / Hardware Telemetry Dashboard</div>
         <div class="project-technologies"><strong>Technologies:</strong> Arduino, C#, Windows Forms, MySQL, Visual Studio</div>
         <div class="project-desc">Internship project with Run System (PT. Global Sukses Solusi) - Hardware device for high-temperature monitoring connected to a Windows Forms desktop application and MySQL database.</div>
         <ul>
@@ -314,7 +325,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="doc-section" id="ar">
       <h2>3. Augmented Reality (AR) Systems</h2>
       <div class="project-item">
         <div class="project-header-row">
@@ -374,7 +385,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="doc-section" id="mobile">
       <h2>4. Published Mobile &amp; Arcade Games</h2>
       <div class="project-item">
         <div class="project-header-row">
@@ -410,7 +421,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="doc-section" id="tools">
       <h2>5. Developer Tools, Game Engine Extensions &amp; Utilities</h2>
       <div class="project-item">
         <div class="project-header-row">
@@ -531,5 +542,8 @@
     </section>
 
   </div>
+
+  <!-- Floating Back to Top Button -->
+  <a href="#" class="back-to-top" title="Back to Top">&uarr;</a>
 </body>
 </html>
