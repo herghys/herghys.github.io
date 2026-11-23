@@ -17,7 +17,8 @@ Graduated from Yogyakarta State University with a degree in Education. Always le
 ### CORE COMPETENCIES & TECHNICAL SKILLS
 
 - **Languages:** C#, VB.NET, Java, Python, SQL, JavaScript, HTML5/CSS3, Arduino (C++)
-- **Game Engines & Frameworks:** Unity3D (2019 - Unity 6), SteamVR, Vuforia AR SDK, Ready Player Me SDK, .NET Core, .NET Framework, Windows Forms, WPF
+- **Game Engines & Frameworks:** Unity3D (2018 - Unity 6), Unity Localization, SteamVR, Vuforia AR SDK, Ready Player Me SDK, .NET Core, .NET Framework, Windows Forms, WPF
+- **VR & Hardware Platforms:** HTC Vive Pro 2, Meta Quest (Quest 2 / 3 / Pro), SteamVR SDK
 - **Architecture & Gameplay:** Object-Oriented Design (OOD), State Machines, Object Pooling, Event-Driven Architecture, C# Multithreading, Shader Graph, Cinemachine, URP, Vehicle Physics, Flight Kinematics
 - **Networking & Backend APIs:** RESTful APIs, UnityWebRequest, JSON Serialization, Mirror Networking, Netcode for GameObjects, Telegram API
 - **SDKs & Third-Party Services:** Firebase SDK (Authentication, Analytics, Cloud Messaging), Google Sign-In, Apple Sign-In, Facebook SDK, Google AdMob, Unity IAP, Google In-App Update
@@ -30,10 +31,11 @@ Graduated from Yogyakarta State University with a degree in Education. Always le
 **Unity Programmer**  
 *PT. Falah Inovasi Teknologi* | Jakarta, Indonesia  
 *01/2025 – Present*
-- Architect and develop modular gameplay systems, UI frameworks, and simulation features in Unity3D for cross-platform enterprise and gaming applications.
-- Serve as lead system integrator for VR multiplayer titles utilizing SteamVR, synchronizing networked player rigs, physics interactions, and real-time state replication.
-- Profile memory allocations, draw calls, and CPU spikes using the Unity Profiler, maintaining smooth 90 FPS target frame rates on VR headsets.
-- Integrate REST API communication pipelines with Postman validation for cloud state synchronization and analytics logging.
+- Engineer high-fidelity 3D and VR simulation applications in Unity3D, developing modular physics-driven simulation systems and real-time trajectory calculation mechanics.
+- Develop immersive VR training and interactive simulations with dedicated hardware support for HTC Vive Pro 2 and Meta Quest headsets.
+- Implement procedural generation systems and dynamic event sequencing for interactive VR disaster simulation scenarios.
+- Architect a robust local save and load data persistence system for standalone offline sessions alongside real-time networked multiplayer simulation systems.
+- Build custom modular UI systems (including custom dropdown extensions) and implement multi-language internationalization using the Unity Localization package.
 
 **Game Developer (Unity Developer)**  
 *Newfemme Wanita Indonesia* | Jakarta, Indonesia  

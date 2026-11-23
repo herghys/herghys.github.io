@@ -3,614 +3,676 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume | Helmi Arghya Santosa</title>
+    <title>Resume | Helmi Arghya Santosa (Herghys)</title>
+    <meta name="description" content="Resume of Helmi Arghya Santosa — Unity Game Developer and Software Engineer specializing in C#, 2D/3D games, VR simulations, and tools." />
     <link rel="stylesheet" href="styles/resume.css">
+    <script src="scripts/resume.js" defer></script>
 </head>
 <body>
 
-    <!-- Scroll Navigation -->
+    <!-- Top Navigation -->
     <nav class="nav">
-        <a href="https://herghys.github.io/">Home</a>
-        <a href="#summary">Summary</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#sdks">SDKs</a>
-        <a href="#education">Education</a>
-        <a href="#certificates">Certificates</a>
+        <a href="../" class="nav-brand">herghys<span>.</span></a>
+        <div class="nav-links">
+            <a href="#summary">Summary</a>
+            <a href="#experience">Professional Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Technical Skills</a>
+            <a href="#sdks">SDKs &amp; Networking</a>
+            <a href="#education">Education</a>
+            <a href="#certificate">Certificate</a>
+        </div>
+        <a href="../portfolio/" class="nav-portfolio-btn">Portfolios &rarr;</a>
     </nav>
 
-    <div id="resume-container" class="container layout-sidebar">
-        <!-- Sidebar -->
+    <div class="container">
+        <!-- Left Sidebar -->
         <aside class="sidebar">
             <div id="resume-photo-container" class="profile-photo-container">
                 <img id="resume-profile-photo" src="../assets/photo/profile.jpeg" alt="Helmi Arghya Santosa" class="profile-pic">
             </div>
 
-            <h2>Helmi Arghya Santosa</h2>
-            <div class="role-subtitle">
-                <strong>Unity Game Developer & Software Engineer</strong><br>
-                Tangerang 15151, Indonesia
+            <h1 class="sidebar-name">Helmi Arghya Santosa</h1>
+            <div class="sidebar-role">Unity Game Developer &bull; Software Engineer</div>
+            <div class="sidebar-location">Tangerang, Indonesia</div>
+
+            <hr class="sidebar-divider">
+
+            <!-- Languages (Placed before Contacts) -->
+            <div class="sidebar-section">
+                <div class="sidebar-heading">Languages</div>
+                <ul class="language-list">
+                    <li class="lang-item">
+                        <span class="lang-name">Indonesian</span>
+                        <span class="lang-level">Native</span>
+                    </li>
+                    <li class="lang-item">
+                        <span class="lang-name">English</span>
+                        <span class="lang-level">Professional (570 TOEFL Like)</span>
+                    </li>
+                </ul>
             </div>
 
-            <hr>
+            <hr class="sidebar-divider">
 
-            <div class="contact-info">
-                <p>
-                    <img src="https://img.icons8.com/ios-filled/16/ffffff/new-post.png" alt="Email">
-                    <a href="mailto:helmi.santosa1@gmail.com">helmi.santosa1@gmail.com</a>
-                </p>
-                <p>
-                    <img src="https://img.icons8.com/ios-filled/16/ffffff/whatsapp.png" alt="Phone">
-                    <a href="https://wa.me/+6287771139889" target="_blank" rel="noopener noreferrer">+62 877-7113-9889</a>
-                </p>
-                <p>
-                    <strong>Total Experience:</strong> 5 Years<br>
-                    <strong>Career Level:</strong> Experienced
-                </p>
+            <!-- Contact -->
+            <div class="sidebar-section">
+                <div class="sidebar-heading">Contact</div>
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <a class="contact-value" href="mailto:helmi.santosa1@gmail.com">helmi.santosa1@gmail.com</a>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-label">WhatsApp</span>
+                        <a class="contact-value" href="https://wa.me/+6287771139889" target="_blank" rel="noopener noreferrer">+62 877-7113-9889</a>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-label">Experience</span>
+                        <span class="contact-value">7+ Years (5+ Commercial)</span>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Social Media Icons -->
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                    <img src="https://img.icons8.com/ios-filled/20/ffffff/linkedin.png" alt="LinkedIn">
-                </a>
-                <a href="https://github.com/herghys" target="_blank" rel="noopener noreferrer" title="GitHub">
-                    <img src="https://img.icons8.com/ios-glyphs/20/ffffff/github.png" alt="GitHub">
-                </a>
-                <a href="https://steamcommunity.com/id/herghys" target="_blank" rel="noopener noreferrer" title="Steam">
-                    <img src="https://img.icons8.com/ios-filled/20/ffffff/steam.png" alt="Steam">
-                </a>
-                <a href="https://www.facebook.com/herghys" target="_blank" rel="noopener noreferrer" title="Facebook">
-                    <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png" alt="Facebook">
-                </a>
-                <a href="https://www.instagram.com/herghys__" target="_blank" rel="noopener noreferrer" title="Instagram">
-                    <img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png" alt="Instagram">
-                </a>
-            </div>
+            <hr class="sidebar-divider">
 
-            <div class="btn-group">
-                <a class="btn" href="print.html" target="_blank" rel="noopener noreferrer">
-                    <img src="https://img.icons8.com/ios-filled/18/12121e/download--v1.png" alt="Download"> Download Resume
-                </a>
-                <a class="btn btn-secondary" href="Helmi_Arghya_Santosa_Resume.docx" download>
-                    <img src="https://img.icons8.com/ios-filled/18/8be9fd/word.png" alt="Word"> Download Word (.docx)
-                </a>
-                <a class="btn btn-secondary" href="https://drive.google.com/file/d/1-OxGf_6bLNlMsUk9lY4j7RCQD_D7ELcq/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                    <img src="https://img.icons8.com/ios-filled/18/8be9fd/download--v1.png" alt="Download"> Original CV (PDF)
-                </a>
-                <a class="btn btn-secondary" href="https://herghys.github.io/portfolio/">
-                    <img src="https://img.icons8.com/ios-filled/18/8be9fd/domain.png" alt="Portfolio"> View Portfolio
-                </a>
-                <a class="btn btn-secondary" href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">
-                    <img src="https://img.icons8.com/ios-glyphs/18/8be9fd/github.png" alt="GitHub"> GitHub Profile
-                </a>
-            </div>
-        </aside>        <!-- Main Content -->
-        <main class="main">
-
-            <!-- Resume Toolbar: 3 Layouts & Collapsible Controls -->
-            <div class="resume-toolbar">
-                <div class="toolbar-group">
-                    <span class="toolbar-label">Layout:</span>
-                    <button type="button" class="layout-btn active" data-layout="sidebar">Sidebar</button>
-                    <button type="button" class="layout-btn" data-layout="single">Single Column</button>
-                    <button type="button" class="layout-btn" data-layout="compact">Compact Grid</button>
-                </div>
-                <div class="toolbar-group">
-                    <span class="toolbar-label">Cards:</span>
-                    <button type="button" class="toggle-all-btn" id="expand-all-btn">Expand All</button>
-                    <button type="button" class="toggle-all-btn" id="collapse-all-btn">Collapse All</button>
+            <!-- Profiles -->
+            <div class="sidebar-section">
+                <div class="sidebar-heading">Profiles</div>
+                <div class="social-links">
+                    <a class="social-pill" href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a class="social-pill" href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="social-pill" href="https://steamcommunity.com/id/herghys" target="_blank" rel="noopener noreferrer">Steam</a>
                 </div>
             </div>
 
-            <!-- Summary -->
-            <section class="section" id="summary">
-                <h2>Summary</h2>
-                <p>
-                    Unity developer who loves making games, from 2D to 3D, for mobile and desktop. Professional experience includes building VR applications, and independent freelance work covers AR projects and desktop apps.
-                </p>
-                <p>
-                    Day to day, working as a Unity developer, mostly in C# and .NET: building game systems, tools, and extensions, with a focus on clean, reliable code and a smooth experience for the player or user.
-                </p>
-                <p>
-                    Graduated from Yogyakarta State University with a degree in Education. Always learning and keeping up with what’s new in gaming and game technology.
-                </p>
-                <div class="badge-list">
-                    <span class="badge badge-accent">Unity Specialist</span>
-                    <span class="badge">C# & .NET</span>
-                    <span class="badge">2D & 3D Games</span>
-                    <span class="badge">VR Applications</span>
-                    <span class="badge">AR & Desktop Tools</span>
-                </div>
-            </section>
+            <hr class="sidebar-divider">
 
-            <!-- Experience -->
-            <section class="section" id="experience">
-                <h2>Professional Experience</h2>
-
-                <div class="cards-grid">
-                <!-- Experience: PT. Falah Inovasi Teknologi -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                            <h3 class="job-title">Unity Programmer</h3>
-                            <span class="company-name">PT. Falah Inovasi Teknologi</span> &bull; Jakarta, Indonesia
-                        </div>
-                        </div>
-                        <span class="dates">01/2025 – Present</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Develop and refine applications using Unity3D, focusing on efficient architecture and seamless functionality. Implement API connections, debug code, and optimize performance through rigorous profiling. Conduct thorough testing to ensure stability, reliability, and high-quality user interaction.
-                    </p>
-                    <strong>Key Responsibilities:</strong>
-                    <ul>
-                        <li>Developed modules for the main application and simulation games</li>
-                        <li>Built custom reusable UI systems across company projects</li>
-                        <li>Served as integrator of VR multiplayer game systems using SteamVR</li>
-                    </ul>
-                    <strong>Technologies Used:</strong>
-                    <div class="badge-list">
-                        <span class="badge">C#</span>
-                        <span class="badge">Unity3D</span>
-                        <span class="badge">SteamVR</span>
-                        <span class="badge">Git</span>
-                        <span class="badge">Postman API</span>
-                    </div>
-                    </div>
-                </details>
-
-                <!-- Experience: Newfemme Wanita Indonesia -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                            <h3 class="job-title">Game Developer (Unity Developer)</h3>
-                            <span class="company-name">Newfemme Wanita Indonesia</span> &bull; Jakarta, Indonesia
-                        </div>
-                        </div>
-                        <span class="dates">03/2022 – 08/2024</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Contributed to designing and developing applications including the main Newfemme app and Cinda game. Authored Game Design Documents (GDD), developed API connection modules using C# threading, and implemented SDK integrations (Google/Apple Sign-In, Firebase Analytics, Google In-App Update). Led optimization and profiling with Unity Profiler and Visual Studio Debugger.
-                    </p>
-                    <strong>Key Responsibilities:</strong>
-                    <ul>
-                        <li>Developed Newfemme mobile application and minigames</li>
-                        <li>Authored comprehensive Game Design Documents (GDD) for Cinda</li>
-                        <li>Provided asynchronous HTTP client and API connection modules using C# Threading</li>
-                        <li>Provided custom extensions for Google Sign-In and Apple Sign-In authentication in Unity</li>
-                        <li>Implemented Firebase Analytics, Google In-App Update SDK, and custom analytics telemetry</li>
-                        <li>Conducted performance optimization and memory profiling with Unity Profiler and Visual Studio Debugger</li>
-                        <li>Performed manual playtesting and API response validation via Postman</li>
-                    </ul>
-                    <strong>Technologies Used:</strong>
-                    <div class="badge-list">
-                        <span class="badge">C#</span>
-                        <span class="badge">Unity3D</span>
-                        <span class="badge">Firebase SDK</span>
-                        <span class="badge">Google Sign-In</span>
-                        <span class="badge">Apple Sign-In</span>
-                        <span class="badge">Facebook SDK</span>
-                        <span class="badge">Postman</span>
-                        <span class="badge">Figma</span>
-                        <span class="badge">Visual Studio</span>
-                        <span class="badge">JSON</span>
-                    </div>
-                    </div>
-                </details>
-
-                <!-- Experience: Herghys Studio -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                            <h3 class="job-title">Developer (Self Employed)</h3>
-                            <span class="company-name">Herghys Studio</span> &bull; Tangerang, Indonesia
-                        </div>
-                        </div>
-                        <span class="dates">06/2021 – Present</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Independent development and publishing of commercial 2D/3D mobile games, Augmented Reality (AR) applications, desktop productivity tools, and open-source Unity packages.
-                    </p>
-                    <strong>Key Responsibilities:</strong>
-                    <ul>
-                        <li>Developed and published mobile games: <em>Pong Evolved</em> and <em>Tap!</em> on Google Play Store</li>
-                        <li>Engineered AR applications utilizing Vuforia SDK with image targets and interactive 3D media</li>
-                        <li>Created Windows desktop applications (WPF & WinForms) including Keystore Helper, ADB GUI Tool, and Afterburner Monitor</li>
-                        <li>Published open-source Unity extensions and modular packages (Audio Manager, 2D Extensions, Linq Extensions)</li>
-                    </ul>
-                    <strong>Technologies Used:</strong>
-                    <div class="badge-list">
-                        <span class="badge">C#</span>
-                        <span class="badge">Unity3D</span>
-                        <span class="badge">Google AdMob</span>
-                        <span class="badge">Vuforia SDK</span>
-                        <span class="badge">WPF / WinForms</span>
-                        <span class="badge">Git</span>
-                        <span class="badge">Visual Studio</span>
-                    </div>
-                    </div>
-                </details>
-
-                <!-- Experience: PT Teknoreka Inovasi Nusantara -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                            <h3 class="job-title">Freelance Game Developer</h3>
-                            <span class="company-name">PT Teknoreka Inovasi Nusantara</span> &bull; Remote
-                        </div>
-                        </div>
-                        <span class="dates">06/2023 – 08/2023</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Created 2D WebGL educational games (SiMurda Edugame, Eksponen Edugame, Petualangan Qori) and integrated backend API connections for account and leaderboard data with thorough Postman API validation.
-                    </p>
-                    <strong>Technologies Used:</strong>
-                    <div class="badge-list">
-                        <span class="badge">C#</span>
-                        <span class="badge">Unity3D</span>
-                        <span class="badge">WebGL</span>
-                        <span class="badge">Postman API</span>
-                        <span class="badge">Git</span>
-                    </div>
-                    </div>
-                </details>
-
-                <!-- Experience: Fomuo Games -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                            <h3 class="job-title">Game Developer</h3>
-                            <span class="company-name">Fomuo Games</span> &bull; Jakarta, Indonesia
-                        </div>
-                        </div>
-                        <span class="dates">02/2023 – 06/2023</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Developed and reskinned 2D mobile and PC games (Candies Land, Baker Pro, Blush Tales, Blush Crush, Crossy Cube, Tiny Crash). Built authentication modules and set up Google Cloud and Firebase platforms.
-                    </p>
-                    <strong>Key Responsibilities:</strong>
-                    <ul>
-                        <li>Developed 2D gameplay logic, scoring, and level progressions</li>
-                        <li>Engineered Google Sign-In and Apple Sign-In modules for cross-platform authentication</li>
-                        <li>Configured Firebase Authentication, Firestore, and Analytics backends</li>
-                    </ul>
-                    <strong>Technologies Used:</strong>
-                    <div class="badge-list">
-                        <span class="badge">C#</span>
-                        <span class="badge">Unity3D</span>
-                        <span class="badge">Firebase Auth & Analytics</span>
-                        <span class="badge">Google & Apple Sign-In</span>
-                        <span class="badge">Postman API</span>
-                    </div>
-                    </div>
-                </details>
-
-                <!-- Experience: SMK YPKK 1 Sleman -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                            <h3 class="job-title">Teacher Intern</h3>
-                            <span class="company-name">SMK YPKK 1 Sleman</span> &bull; Yogyakarta, Indonesia
-                        </div>
-                        </div>
-                        <span class="dates">06/2019 – 08/2019</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Authored instructional curriculum and learning modules for web programming and taught foundational web development to vocational students.
-                    </p>
-                    <div class="badge-list">
-                        <span class="badge">Teaching</span>
-                        <span class="badge">Web Programming</span>
-                        <span class="badge">HTML / CSS</span>
-                    </div>
-                    </div>
-                </details>
-
-                <!-- Experience: Run System -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                            <h3 class="job-title">Software Developer Intern</h3>
-                            <span class="company-name">Run System - PT. Global Sukses Solusi</span> &bull; Yogyakarta, Indonesia
-                        </div>
-                        </div>
-                        <span class="dates">07/2018 – 08/2018</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Developed a high-temperature monitoring hardware device with Arduino and created Windows Forms desktop software with MySQL database connection.
-                    </p>
-                    <div class="badge-list">
-                        <span class="badge">Arduino IDE</span>
-                        <span class="badge">C#</span>
-                        <span class="badge">Windows Forms</span>
-                        <span class="badge">MySQL</span>
-                    </div>
-                    </div>
-                </details>
-                </div>
-            </section>
-
-            <!-- Key Highlighted Projects -->
-            <section class="section" id="projects">
-                <h2>Key Highlighted Projects</h2>
-
-                <div class="cards-grid">
-                <!-- Pong Evolved -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                                <h3 class="job-title">Pong Evolved</h3>
-                            </div>
-                        </div>
-                        <span class="dates">09/2021 – 10/2021</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Action arcade mobile game with infinite dynamic levels, retro-modern aesthetic, particle effects, and integrated Google AdMob monetization.
-                    </p>
-                    <div class="badge-list">
-                        <span class="badge">Unity3D</span>
-                        <span class="badge">C#</span>
-                        <span class="badge">Google AdMob</span>
-                        <span class="badge">Mobile</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.HerghysStudio.PongEvolved" target="_blank" rel="noopener noreferrer">
-                            Google Play Store &rarr;
-                        </a>
-                        <a href="https://herghys.github.io/PrivacyPolicyCollection/Pong-Evolved-Privacy-Policy/" target="_blank" rel="noopener noreferrer">
-                            Privacy Policy
-                        </a>
-                    </div>
-                    </div>
-                </details>
-
-                <!-- Tap! -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                                <h3 class="job-title">Tap!</h3>
-                            </div>
-                        </div>
-                        <span class="dates">07/2021 – 09/2021</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Fast-paced mobile reflex and tapping arcade game featuring responsive touchscreen controls, scoring systems, and Google AdMob SDK.
-                    </p>
-                    <div class="badge-list">
-                        <span class="badge">Unity3D</span>
-                        <span class="badge">C#</span>
-                        <span class="badge">Google AdMob</span>
-                        <span class="badge">Mobile</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.HerghysStudio.Game.Tap" target="_blank" rel="noopener noreferrer">
-                            Google Play Store &rarr;
-                        </a>
-                        <a href="https://github.com/herghys/Tap" target="_blank" rel="noopener noreferrer">
-                            GitHub Repository &rarr;
-                        </a>
-                        <a href="https://herghys.github.io/PrivacyPolicyCollection/Tap-Privacy-Policy/" target="_blank" rel="noopener noreferrer">
-                            Privacy Policy
-                        </a>
-                    </div>
-                    </div>
-                </details>
-
-                <!-- Linjun Nail Art -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                                <h3 class="job-title">Linjun Nail Art</h3>
-                            </div>
-                        </div>
-                        <span class="dates">2024 – Present</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        E-commerce showcase website and digital lookbook for Linjun Nail Art & Eyelashes handmade press-on nail studio. Designed product catalog with high-resolution image galleries, categorized showcases, and WhatsApp order inquiry workflows.
-                    </p>
-                    <div class="badge-list">
-                        <span class="badge">PHP</span>
-                        <span class="badge">Laravel</span>
-                        <span class="badge">JavaScript</span>
-                        <span class="badge">Responsive Web</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://linjunnailart.com/" target="_blank" rel="noopener noreferrer">
-                            Live Website (linjunnailart.com) &rarr;
-                        </a>
-                    </div>
-                    </div>
-                </details>
-
-                <!-- Newfemme Cinda -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                                <h3 class="job-title">Newfemme Cinda</h3>
-                            </div>
-                        </div>
-                        <span class="dates">10/2023 – 03/2024</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Gamified e-commerce mobile experience featuring 3D avatar generation from selfies, dress-up mechanics, asset bundle streaming, and real-world product rewards.
-                    </p>
-                    <div class="badge-list">
-                        <span class="badge">Unity3D</span>
-                        <span class="badge">C# Threading</span>
-                        <span class="badge">Firebase Auth</span>
-                        <span class="badge">Google/Apple Sign-In</span>
-                        <span class="badge">Asset Bundles</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.newfemmewanitaindonesia.cinda" target="_blank" rel="noopener noreferrer">
-                            Google Play Store &rarr;
-                        </a>
-                    </div>
-                    </div>
-                </details>
-
-                <!-- Duckie Bubble -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                                <h3 class="job-title">Duckie Bubble</h3>
-                            </div>
-                        </div>
-                        <span class="dates">09/2024 – 10/2024</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Bubble shooter game designed for Telegram Bot WebApps with custom Unity REST client, JSLib bridge for auth tokens, and HTML5 WebGL wrapper.
-                    </p>
-                    <div class="badge-list">
-                        <span class="badge">Unity WebGL</span>
-                        <span class="badge">Telegram API</span>
-                        <span class="badge">JSLib / JS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://t.me/DuckieLandBot/DuckieBubbles/" target="_blank" rel="noopener noreferrer">
-                            Telegram Mini App &rarr;
-                        </a>
-                    </div>
-                    </div>
-                </details>
-
-                <!-- Keystore Helper -->
-                <details class="collapsible-card" open>
-                    <summary class="job-header">
-                        <div class="job-title-group">
-                            <span class="toggle-indicator">▸</span>
-                            <div>
-                                <h3 class="job-title">Keystore Helper</h3>
-                            </div>
-                        </div>
-                        <span class="dates">10/2024 – Present</span>
-                    </summary>
-                    <div class="collapsible-body">
-                        <p>
-                        Open-source Windows desktop utility built with WPF to create Android Keystores and instantly extract SHA-1 and SHA-256 certificate fingerprints for Firebase and Google Play console setup.
-                    </p>
-                    <div class="badge-list">
-                        <span class="badge">C#</span>
-                        <span class="badge">WPF</span>
-                        <span class="badge">.NET Framework</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/herghys/Keystore-Helper" target="_blank" rel="noopener noreferrer">
-                            GitHub Repository &rarr;
-                        </a>
-                    </div>
-                    </div>
-                </details>
-                </div>
-
-                <div style="text-align: center; margin-top: 1.5rem;">
-                    <a class="btn btn-secondary" href="https://herghys.github.io/portfolio/">
-                        Show More Projects
+            <!-- Downloads -->
+            <div class="sidebar-section">
+                <div class="sidebar-heading">Downloads</div>
+                <div class="download-links">
+                    <a class="btn-sidebar btn-primary" href="print.html" target="_blank" rel="noopener noreferrer">
+                        <span>Print / Text View</span>
+                        <span>&rarr;</span>
+                    </a>
+                    <a class="btn-sidebar" href="../resources/Helmi_Arghya_Santosa_Resume.docx" download>
+                        <span>Word (.docx)</span>
+                        <span>&darr;</span>
+                    </a>
+                    <a class="btn-sidebar" href="https://drive.google.com/file/d/1-OxGf_6bLNlMsUk9lY4j7RCQD_D7ELcq/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                        <span>Original PDF</span>
+                        <span>&rarr;</span>
+                    </a>
+                    <a class="btn-sidebar" href="../portfolio/">
+                        <span>Portfolios</span>
+                        <span>&rarr;</span>
                     </a>
                 </div>
-            </section>
+            </div>
+        </aside>
 
-            <!-- Skills -->
-            <section class="section" id="skills">
-                <h2>Technical Skills</h2>
-                <p><strong>Programming Languages:</strong> C#, VB.Net, Java, Arduino, Python, HTML/CSS, SQL, JavaScript</p>
-                <p><strong>Game Engines & Frameworks:</strong> Unity3D, SteamVR SDK, Vuforia SDK, Windows Forms, WPF, .NET Core, .NET Framework</p>
-                <p><strong>Tools & Platforms:</strong> Git, Postman, Visual Studio, VS Code, Arduino IDE, Android Studio</p>
-                <p><strong>Cloud, Auth & Analytics:</strong> Firebase SDK (Auth, Analytics, FCM), Google Sign-In, Apple Sign-In, Facebook SDK</p>
-                <p><strong>Other Competencies:</strong> Computer Science & Web Programming Instruction, Technical Documentation, Game Design Documents (GDD)</p>
-            </section>
+        <!-- Main Column -->
+        <main class="main">
 
-            <!-- SDKs -->
-            <section class="section" id="sdks">
-                <h2>SDKs & Networking</h2>
-                <div class="badge-list">
-                    <span class="badge">Unity3D Engine</span>
-                    <span class="badge">SteamVR SDK</span>
-                    <span class="badge">Google Sign-In SDK</span>
-                    <span class="badge">Apple Sign-In SDK</span>
-                    <span class="badge">Facebook SDK</span>
-                    <span class="badge">Firebase Analytics SDK</span>
-                    <span class="badge">Firebase Cloud Messaging</span>
-                    <span class="badge">Firebase Authentication</span>
-                    <span class="badge">Google AdMob</span>
-                    <span class="badge">Google In-App Purchases (IAP)</span>
-                    <span class="badge">Google In-App Update SDK</span>
-                    <span class="badge">Vuforia AR SDK</span>
-                    <span class="badge">Mirror Networking</span>
-                    <span class="badge">Netcode for GameObjects</span>
-                    <span class="badge">Telegram API</span>
-                    <span class="badge">Twitter SDK</span>
+            <!-- Toolbar: Section Expansion Controls Only -->
+            <div class="resume-toolbar">
+                <div class="toolbar-status">
+                    <span class="status-dot"></span>
+                    <span>Curriculum Vitae</span>
                 </div>
-            </section>
+                <div class="toolbar-actions">
+                    <button type="button" class="btn-toggle" id="expand-all-btn">Expand All</button>
+                    <button type="button" class="btn-toggle" id="collapse-all-btn">Collapse All</button>
+                </div>
+            </div>
 
-            <!-- Education -->
-            <section class="section" id="education">
-                <h2>Education</h2>
-                <div class="job-header">
-                    <div>
-                        <h3 class="job-title">B.Ed / S.Pd in Informatics Engineering Education</h3>
-                        <span class="company-name">Yogyakarta State University (Universitas Negeri Yogyakarta)</span>
+            <!-- 1. Summary -->
+            <details class="resume-section" open id="summary">
+                <summary class="section-header">
+                    <span class="chevron">▸</span>
+                    <h2>Summary</h2>
+                </summary>
+                <div class="section-body">
+                    <div class="summary-text">
+                        <p>
+                            Unity developer who loves making games, from 2D to 3D, for mobile and desktop. Professional experience includes building VR applications, and independent freelance work covers AR projects and desktop apps.
+                        </p>
+                        <p>
+                            Day to day, working as a Unity developer, mostly in C# and .NET: building game systems, tools, and extensions, with a focus on clean, reliable code and a smooth experience for the player or user.
+                        </p>
+                        <p>
+                            Graduated from Yogyakarta State University with a degree in Education. Always learning and keeping up with what’s new in gaming and game technology.
+                        </p>
                     </div>
-                    <span class="dates">Graduated 09/2021</span>
                 </div>
-                <p><strong>GPA:</strong> 3.53 / 4.00</p>
-                <p>Specialized in Software Engineering, Web Development, and Game Development pedagogies.</p>
-            </section>
+            </details>
 
-            <!-- Language & Certificates -->
-            <section class="section" id="certificates">
-                <h2>Certificates & Languages</h2>
-                <p>
-                    <strong>C# (Basic) Certificate</strong> – HackerRank (ID: BE0C3E847A8E)<br>
-                    <a href="https://www.hackerrank.com/certificates/be0c3e847a8e" target="_blank" rel="noopener noreferrer">View Credential &rarr;</a>
-                </p>
-                <hr>
-                <p>
-                    <strong>Languages:</strong><br>
-                    &bull; <strong>Indonesian:</strong> Native speaker<br>
-                    &bull; <strong>English:</strong> 570 TOEFL Like (PROTEFL), 2016
-                </p>
-            </section>
+            <!-- 2. Professional Experience -->
+            <details class="resume-section" open id="experience">
+                <summary class="section-header">
+                    <span class="chevron">▸</span>
+                    <h2>Professional Experience</h2>
+                </summary>
+                <div class="section-body">
+                    <div class="role-cards-stack">
+                        <!-- PT. Falah Inovasi Teknologi -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Unity Programmer</h3>
+                                        <div class="role-company">PT. Falah Inovasi Teknologi &bull; Jakarta, Indonesia</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">01/2025 – Present</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Develop high-fidelity 3D and VR simulation applications in Unity3D, focusing on modular architecture, real-time physics, and responsive user interaction. Build interactive simulations across HTC Vive Pro 2 and Meta Quest headsets, implementing multiplayer networking, offline data persistence, procedural scenario generation, custom UI tooling, and multi-language localization.
+                                </p>
+                                <ul class="role-bullets">
+                                    <li>Engineered high-fidelity 3D and VR simulation systems, implementing physics-driven simulation mechanics and real-time trajectory calculation mechanics.</li>
+                                    <li>Developed immersive VR simulations with hardware calibration and input integration for HTC Vive Pro 2 and Meta Quest headsets.</li>
+                                    <li>Implemented procedural generation systems and dynamic event sequencing for interactive VR disaster simulation scenarios.</li>
+                                    <li>Architected a robust local save and load data persistence system for standalone offline sessions alongside real-time networked multiplayer simulation systems.</li>
+                                    <li>Built custom modular UI systems (including custom dropdown extensions) and implemented multi-language internationalization using the Unity Localization package.</li>
+                                </ul>
+                                <div class="tech-pills">
+                                    <span>C#</span>
+                                    <span>Unity3D</span>
+                                    <span>HTC Vive Pro 2</span>
+                                    <span>Meta Quest</span>
+                                    <span>SteamVR SDK</span>
+                                    <span>Unity Localization</span>
+                                    <span>Multiplayer Networking</span>
+                                    <span>Offline Persistence</span>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Newfemme Wanita Indonesia -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Game Developer (Unity Developer)</h3>
+                                        <div class="role-company">Newfemme Wanita Indonesia &bull; Jakarta, Indonesia</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">03/2022 – 08/2024</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Contributed to designing and developing applications including the main Newfemme app and Cinda game. Authored Game Design Documents (GDD), developed API connection modules using C# threading, and implemented SDK integrations (Google/Apple Sign-In, Firebase Analytics, Google In-App Update). Led optimization and profiling with Unity Profiler and Visual Studio Debugger.
+                                </p>
+                                <ul class="role-bullets">
+                                    <li>Developed Newfemme mobile application and minigames in Unity3D.</li>
+                                    <li>Authored comprehensive Game Design Documents (GDD) for Cinda: Virtual Dress Up.</li>
+                                    <li>Provided asynchronous HTTP client and API connection modules using C# Threading.</li>
+                                    <li>Provided custom extensions for Google Sign-In and Apple Sign-In authentication in Unity.</li>
+                                    <li>Implemented Firebase Analytics, Google In-App Update SDK, and custom analytics telemetry.</li>
+                                    <li>Conducted performance optimization and memory profiling with Unity Profiler and Visual Studio Debugger.</li>
+                                </ul>
+                                <div class="tech-pills">
+                                    <span>C#</span>
+                                    <span>Unity3D</span>
+                                    <span>Firebase SDK</span>
+                                    <span>Google Sign-In</span>
+                                    <span>Apple Sign-In</span>
+                                    <span>Postman</span>
+                                    <span>JSON</span>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Herghys Studio -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Developer (Self Employed)</h3>
+                                        <div class="role-company">Herghys Studio &bull; Tangerang, Indonesia</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">06/2021 – Present</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Independent development and publishing of commercial 2D/3D mobile games, Augmented Reality (AR) applications, desktop productivity tools, and open-source Unity packages.
+                                </p>
+                                <ul class="role-bullets">
+                                    <li>Developed and published mobile games: <em>Pong Evolved</em> and <em>Tap!</em> on Google Play Store.</li>
+                                    <li>Engineered AR applications utilizing Vuforia SDK with image targets and interactive 3D media.</li>
+                                    <li>Created Windows desktop applications (WPF &amp; WinForms) including Keystore Helper, ADB GUI Tool, and Afterburner Monitor.</li>
+                                    <li>Published open-source Unity extensions and modular packages (Audio Manager, 2D Extensions, Linq Extensions).</li>
+                                </ul>
+                                <div class="tech-pills">
+                                    <span>C#</span>
+                                    <span>Unity3D</span>
+                                    <span>Google AdMob</span>
+                                    <span>Vuforia SDK</span>
+                                    <span>WPF</span>
+                                    <span>Git</span>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- PT Teknoreka Inovasi Nusantara -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Freelance Game Developer</h3>
+                                        <div class="role-company">PT Teknoreka Inovasi Nusantara &bull; Remote</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">06/2023 – 08/2023</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Created 2D WebGL educational games (SiMurda Edugame, Eksponen Edugame, Petualangan Qori) and integrated backend API connections for account and leaderboard data with thorough Postman API validation.
+                                </p>
+                                <div class="tech-pills">
+                                    <span>C#</span>
+                                    <span>Unity3D</span>
+                                    <span>WebGL</span>
+                                    <span>Postman API</span>
+                                    <span>Git</span>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Fomuo Games -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Game Developer</h3>
+                                        <div class="role-company">Fomuo Games &bull; Jakarta, Indonesia</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">02/2023 – 06/2023</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Developed and reskinned 2D mobile and PC games (Candies Land, Baker Pro, Blush Tales, Blush Crush, Crossy Cube, Tiny Crash). Built authentication modules and set up Google Cloud and Firebase platforms.
+                                </p>
+                                <ul class="role-bullets">
+                                    <li>Developed 2D gameplay logic, scoring, and level progressions.</li>
+                                    <li>Engineered Google Sign-In and Apple Sign-In modules for cross-platform authentication.</li>
+                                    <li>Configured Firebase Authentication, Firestore, and Analytics backends.</li>
+                                </ul>
+                                <div class="tech-pills">
+                                    <span>C#</span>
+                                    <span>Unity3D</span>
+                                    <span>Firebase Auth</span>
+                                    <span>Google / Apple Sign-In</span>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- SMK YPKK 1 Sleman -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Teacher Intern</h3>
+                                        <div class="role-company">SMK YPKK 1 Sleman &bull; Yogyakarta, Indonesia</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">06/2019 – 08/2019</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Authored instructional curriculum and learning modules for web programming and taught foundational web development to vocational students.
+                                </p>
+                                <div class="tech-pills">
+                                    <span>Instruction</span>
+                                    <span>Web Programming</span>
+                                    <span>HTML / CSS</span>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Run System -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Software Developer Intern</h3>
+                                        <div class="role-company">Run System - PT. Global Sukses Solusi &bull; Yogyakarta, Indonesia</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">07/2018 – 08/2018</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Developed a high-temperature monitoring hardware device with Arduino and created Windows Forms desktop software with MySQL database connection.
+                                </p>
+                                <div class="tech-pills">
+                                    <span>C#</span>
+                                    <span>Arduino IDE</span>
+                                    <span>Windows Forms</span>
+                                    <span>MySQL</span>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 3. Projects -->
+            <details class="resume-section" open id="projects">
+                <summary class="section-header">
+                    <span class="chevron">▸</span>
+                    <h2>Projects</h2>
+                </summary>
+                <div class="section-body">
+                    <div class="role-cards-stack">
+                        <!-- Pong Evolved -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Pong Evolved</h3>
+                                        <div class="role-company">Action Arcade Mobile Game &bull; Published on Google Play</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">09/2021 – 10/2021</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Action arcade mobile game with infinite dynamic levels, retro-modern aesthetic, particle effects, and integrated Google AdMob monetization.
+                                </p>
+                                <div class="tech-pills">
+                                    <span>Unity3D</span>
+                                    <span>C#</span>
+                                    <span>Google AdMob</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.HerghysStudio.PongEvolved" target="_blank" rel="noopener noreferrer">
+                                        Google Play Store &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Tap! -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Tap!</h3>
+                                        <div class="role-company">Reflex Arcade Mobile Game &bull; Published on Google Play</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">07/2021 – 09/2021</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Fast-paced mobile reflex and tapping arcade game featuring responsive touchscreen controls, scoring systems, and Google AdMob SDK.
+                                </p>
+                                <div class="tech-pills">
+                                    <span>Unity3D</span>
+                                    <span>C#</span>
+                                    <span>Google AdMob</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.HerghysStudio.Game.Tap" target="_blank" rel="noopener noreferrer">
+                                        Google Play Store &rarr;
+                                    </a>
+                                    <a href="https://github.com/herghys/Tap" target="_blank" rel="noopener noreferrer">
+                                        GitHub &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Linjun Nail Art -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Linjun Nail Art</h3>
+                                        <div class="role-company">E-Commerce Showcase &amp; Studio Lookbook</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">2024 – Present</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    E-commerce showcase website and digital lookbook for Linjun Nail Art &amp; Eyelashes handmade press-on nail studio. Designed product catalog with high-resolution image galleries, categorized showcases, and WhatsApp order inquiry workflows.
+                                </p>
+                                <div class="tech-pills">
+                                    <span>PHP / Laravel</span>
+                                    <span>JavaScript</span>
+                                    <span>Responsive Web</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://linjunnailart.com/" target="_blank" rel="noopener noreferrer">
+                                        Live Website (linjunnailart.com) &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Newfemme Cinda -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Cinda: Virtual Dress Up</h3>
+                                        <div class="role-company">Commercial Mobile Avatar Game &bull; Newfemme</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">10/2023 – 03/2024</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Gamified e-commerce mobile experience featuring 3D avatar generation from selfies, dress-up mechanics, asset bundle streaming, and real-world product rewards.
+                                </p>
+                                <div class="tech-pills">
+                                    <span>Unity3D</span>
+                                    <span>C# Threading</span>
+                                    <span>Firebase Auth</span>
+                                    <span>Google / Apple Sign-In</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.newfemmewanitaindonesia.cinda" target="_blank" rel="noopener noreferrer">
+                                        Google Play Store &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Duckie Bubble -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Duckie Bubble</h3>
+                                        <div class="role-company">Telegram Bot WebApp &bull; Unity WebGL</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">09/2024 – 10/2024</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Bubble shooter game designed for Telegram Bot WebApps with custom Unity REST client, JSLib bridge for auth tokens, and HTML5 WebGL wrapper.
+                                </p>
+                                <div class="tech-pills">
+                                    <span>Unity WebGL</span>
+                                    <span>Telegram API</span>
+                                    <span>JSLib / JS</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://t.me/DuckieLandBot/DuckieBubbles/" target="_blank" rel="noopener noreferrer">
+                                        Play on Telegram &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Keystore Helper -->
+                        <details class="role-card" open>
+                            <summary class="role-header">
+                                <div class="role-info">
+                                    <span class="chevron-sm">▸</span>
+                                    <div>
+                                        <h3 class="role-title">Keystore Helper</h3>
+                                        <div class="role-company">Windows Desktop Utility &bull; Open Source</div>
+                                    </div>
+                                </div>
+                                <span class="role-dates">10/2024 – Present</span>
+                            </summary>
+                            <div class="role-content">
+                                <p class="role-lead">
+                                    Open-source Windows desktop utility built with WPF to create Android Keystores and instantly extract SHA-1 and SHA-256 certificate fingerprints for Firebase and Google Play console setup.
+                                </p>
+                                <div class="tech-pills">
+                                    <span>C#</span>
+                                    <span>WPF</span>
+                                    <span>.NET Framework</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/herghys/Keystore-Helper" target="_blank" rel="noopener noreferrer">
+                                        GitHub Repository &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="projects-more-action">
+                        <a class="btn-more-projects" href="../portfolio/">Show More Projects (32 Total) &rarr;</a>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 4. Technical Skills -->
+            <details class="resume-section" open id="skills">
+                <summary class="section-header">
+                    <span class="chevron">▸</span>
+                    <h2>Technical Skills</h2>
+                </summary>
+                <div class="section-body">
+                    <div class="skills-spec-grid">
+                        <div class="skill-row">
+                            <span class="skill-name">Programming Languages</span>
+                            <span class="skill-detail">C#, VB.NET, Java, Python, SQL, JavaScript, HTML5/CSS3, Arduino (C++)</span>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-name">Game Engines &amp; Frameworks</span>
+                            <span class="skill-detail">Unity3D (2018–Unity 6), Unity Localization, SteamVR, Vuforia AR SDK, Ready Player Me SDK, .NET Core, .NET Framework, Windows Forms, WPF</span>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-name">VR &amp; Hardware Platforms</span>
+                            <span class="skill-detail">HTC Vive Pro 2, Meta Quest (Quest 2 / 3 / Pro), SteamVR Tracking</span>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-name">Architecture &amp; Gameplay</span>
+                            <span class="skill-detail">Object-Oriented Design (OOD), State Machines, Object Pooling, Event-Driven Architecture, C# Multithreading, Shader Graph, Cinemachine, URP, Vehicle Physics, Flight Kinematics</span>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-name">Tools &amp; Platforms</span>
+                            <span class="skill-detail">Git, GitHub, Postman, Visual Studio, VS Code, Android Studio, Unity Profiler, Figma</span>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-name">Cloud, Auth &amp; Telemetry</span>
+                            <span class="skill-detail">Firebase SDK (Auth, Analytics, FCM), Google Sign-In, Apple Sign-In, Facebook SDK</span>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 5. SDKs & Networking -->
+            <details class="resume-section" open id="sdks">
+                <summary class="section-header">
+                    <span class="chevron">▸</span>
+                    <h2>SDKs &amp; Networking</h2>
+                </summary>
+                <div class="section-body">
+                    <div class="tech-pills">
+                        <span>Unity3D Engine</span>
+                        <span>Unity Localization</span>
+                        <span>SteamVR SDK</span>
+                        <span>HTC Vive Pro 2</span>
+                        <span>Meta Quest</span>
+                        <span>Google Sign-In SDK</span>
+                        <span>Apple Sign-In SDK</span>
+                        <span>Facebook SDK</span>
+                        <span>Firebase Analytics SDK</span>
+                        <span>Firebase Cloud Messaging</span>
+                        <span>Firebase Authentication</span>
+                        <span>Google AdMob</span>
+                        <span>Google In-App Purchases (IAP)</span>
+                        <span>Google In-App Update SDK</span>
+                        <span>Vuforia AR SDK</span>
+                        <span>Mirror Networking</span>
+                        <span>Netcode for GameObjects</span>
+                        <span>Telegram API</span>
+                        <span>Twitter SDK</span>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 6. Education -->
+            <details class="resume-section" open id="education">
+                <summary class="section-header">
+                    <span class="chevron">▸</span>
+                    <h2>Education</h2>
+                </summary>
+                <div class="section-body">
+                    <div class="education-card">
+                        <div class="edu-top">
+                            <div>
+                                <h3 class="edu-degree">Bachelor of Education (S.Pd) in Informatics Engineering Education</h3>
+                                <div class="edu-school">Yogyakarta State University (Universitas Negeri Yogyakarta)</div>
+                            </div>
+                            <span class="edu-year">Graduated 09/2021</span>
+                        </div>
+                        <div class="edu-details">
+                            <span class="gpa-tag">GPA: 3.53 / 4.00</span>
+                            <p class="edu-note">Specialized in Software Engineering, Web Development, and Game Development pedagogies.</p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 7. Certificate -->
+            <details class="resume-section" open id="certificate">
+                <summary class="section-header">
+                    <span class="chevron">▸</span>
+                    <h2>Certificate</h2>
+                </summary>
+                <div class="section-body">
+                    <div class="certificate-card">
+                        <div class="cert-info">
+                            <h3 class="cert-name">C# (Basic) Certificate</h3>
+                            <div class="cert-meta">HackerRank &bull; Certificate ID: <code>BE0C3E847A8E</code></div>
+                        </div>
+                        <a class="cert-verify-link" href="https://www.hackerrank.com/certificates/be0c3e847a8e" target="_blank" rel="noopener noreferrer">
+                            Verify Credential &rarr;
+                        </a>
+                    </div>
+                </div>
+            </details>
 
         </main>
     </div>
-    <script src="scripts/resume.js" defer></script>
+
 </body>
 </html>

@@ -3,37 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Helmi Arghya Santosa - Resume</title>
+  <title>Helmi Arghya Santosa - Resume Document</title>
   <link rel="stylesheet" href="styles/print.css">
+  <script src="scripts/print.js" defer></script>
 </head>
 <body>
 
-  <div class="actions-bar">
-    <a href="/resume" class="back-btn">&larr; Back to Visual Resume</a>
-    <div style="display: flex; gap: 10px;">
-      <a href="Helmi_Arghya_Santosa_Resume.docx" download class="print-btn btn-docx">Download Word (.docx)</a>
-      <button id="print-resume-btn" type="button" class="print-btn">Print / Save as PDF</button>
+  <!-- Sticky Navigation Bar with Section Jump Pills -->
+  <div class="doc-top-bar">
+    <div class="doc-bar-inner">
+      <a href="index.html" class="doc-back-link">&larr; Back to Visual Resume</a>
+      <div class="doc-nav-pills">
+        <a href="#summary" class="nav-pill">Overview</a>
+        <a href="#skills" class="nav-pill">Skills</a>
+        <a href="#experience" class="nav-pill">Experience</a>
+        <a href="#projects" class="nav-pill">Projects</a>
+        <a href="#education" class="nav-pill">Education</a>
+      </div>
+      <div class="doc-actions">
+        <a href="Helmi_Arghya_Santosa_Resume.docx" download class="doc-btn btn-docx">Download Word (.docx)</a>
+        <button id="print-resume-btn" type="button" class="doc-btn btn-print">Print / Save as PDF</button>
+      </div>
     </div>
   </div>
 
   <div class="resume-wrapper">
-    <header>
+    <header class="doc-header">
       <h1>Helmi Arghya Santosa</h1>
-      <div class="headline">Unity Game Developer &bull; Software Engineer</div>
-      <div class="contact-line">
+      <div class="doc-headline">Unity Game Developer &bull; Software Engineer</div>
+      <div class="doc-contact-line">
         Tangerang 15151, Indonesia &bull; +62 877-7113-9889 &bull; <a href="mailto:helmi.santosa1@gmail.com">helmi.santosa1@gmail.com</a><br>
-        <a href="https://www.linkedin.com/in/herghys" target="_blank">linkedin.com/in/herghys</a> &bull;
-        <a href="https://github.com/herghys" target="_blank">github.com/herghys</a> &bull;
-        <a href="https://herghys.github.io/portfolio" target="_blank">herghys.github.io/portfolio</a>
+        <a href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer">linkedin.com/in/herghys</a> &bull;
+        <a href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">github.com/herghys</a> &bull;
+        <a href="https://herghys.github.io/portfolio" target="_blank" rel="noopener noreferrer">herghys.github.io/portfolio</a>
       </div>
     </header>
 
-    <section>
+    <section class="doc-section" id="summary">
       <h2>Professional Summary</h2>
-      <p style="margin-bottom: 6px;">
+      <p style="margin-bottom: 8px;">
         Unity developer who loves making games, from 2D to 3D, for mobile and desktop. Professional experience includes building VR applications, and independent freelance work covers AR projects and desktop apps.
       </p>
-      <p style="margin-bottom: 6px;">
+      <p style="margin-bottom: 8px;">
         Day to day, working as a Unity developer, mostly in C# and .NET: building game systems, tools, and extensions, with a focus on clean, reliable code and a smooth experience for the player or user.
       </p>
       <p>
@@ -41,13 +52,16 @@
       </p>
     </section>
 
-    <section>
+    <section class="doc-section" id="skills">
       <h2>Technical Skills</h2>
       <div class="skills-category">
         <strong>Languages:</strong> C#, VB.NET, Java, Python, SQL, JavaScript, HTML5/CSS3, Arduino (C++)
       </div>
       <div class="skills-category">
-        <strong>Game Engines & Frameworks:</strong> Unity3D (2019 - Unity 6), SteamVR, Vuforia AR SDK, Ready Player Me SDK, .NET Core, .NET Framework, Windows Forms, WPF
+        <strong>Game Engines & Frameworks:</strong> Unity3D (2018 - Unity 6), Unity Localization, SteamVR, Vuforia AR SDK, Ready Player Me SDK, .NET Core, .NET Framework, Windows Forms, WPF
+      </div>
+      <div class="skills-category">
+        <strong>VR &amp; Hardware Platforms:</strong> HTC Vive Pro 2, Meta Quest (Quest 2/3/Pro), SteamVR SDK
       </div>
       <div class="skills-category">
         <strong>Architecture & Patterns:</strong> Object-Oriented Design (OOD), State Machines, Object Pooling, Event-Driven Architecture, C# Multithreading, Shader Graph, Cinemachine, URP, Vehicle Physics, Flight Kinematics
@@ -63,7 +77,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="doc-section" id="experience">
       <h2>Professional Experience</h2>
 
       <div class="entry">
@@ -72,10 +86,11 @@
           <div class="entry-dates">01/2025 – Present | Jakarta, Indonesia</div>
         </div>
         <ul>
-          <li>Architect and develop modular gameplay systems, UI frameworks, and simulation features in Unity3D for cross-platform enterprise and gaming applications.</li>
-          <li>Serve as lead system integrator for VR multiplayer titles utilizing SteamVR, synchronizing networked player rigs, physics interactions, and real-time state replication.</li>
-          <li>Profile memory allocations, draw calls, and CPU spikes using the Unity Profiler, maintaining smooth 90 FPS target frame rates on VR headsets.</li>
-          <li>Integrate REST API communication pipelines with Postman validation for cloud state synchronization and analytics logging.</li>
+          <li>Engineer high-fidelity 3D and VR simulation applications in Unity3D, developing modular physics-driven simulation systems and real-time trajectory calculation mechanics.</li>
+          <li>Develop immersive VR training and interactive simulations with dedicated hardware support for HTC Vive Pro 2 and Meta Quest headsets.</li>
+          <li>Implement procedural generation systems and dynamic event sequencing for interactive VR disaster simulation scenarios.</li>
+          <li>Architect a robust local save and load data persistence system for standalone offline sessions alongside real-time networked multiplayer simulation systems.</li>
+          <li>Build custom modular UI systems (including custom dropdown extensions) and implement multi-language internationalization using the Unity Localization package.</li>
         </ul>
       </div>
 
@@ -154,11 +169,11 @@
       </div>
     </section>
 
-    <section>
+    <section class="doc-section" id="projects">
       <h2>Featured Projects & Prototypes</h2>
 
-      <h3 class="subheading">Commercial Releases & Web Applications</h3>
-      <ul>
+      <h3 style="font-size: 1rem; color: #60a5fa; margin: 1rem 0 0.5rem;">Commercial Releases & Web Applications</h3>
+      <ul style="padding-left: 1.25rem;">
         <li><strong>Pong Evolved</strong> (Mobile Game, Google Play) &bull; Infinite-level action arcade mobile game featuring dynamic physics, particle effects, and AdMob banner/interstitial ads.</li>
         <li><strong>Tap!</strong> (Mobile Game, Google Play & GitHub) &bull; Fast-paced reflex tapping game with responsive touchscreen input, local high-score tracking, and AdMob integration.</li>
         <li><strong>Cinda: Virtual Dress Up</strong> (Commercial Mobile Game, Google Play) &bull; AI selfie-generated 3D avatar e-commerce dress-up game with AssetBundle streaming and OAuth sign-in.</li>
@@ -168,8 +183,8 @@
         <li><strong>Fomuo Suite (Candies Land, Baker Pro, Blush Tales, Blush Crush)</strong> &bull; Commercial casual mobile puzzle and cooking games integrating Google/Apple Sign-In, Firebase, and leaderboards.</li>
       </ul>
 
-      <h3 class="subheading">Game & Simulation Prototypes</h3>
-      <ul>
+      <h3 style="font-size: 1rem; color: #60a5fa; margin: 1.25rem 0 0.5rem;">Game & Simulation Prototypes</h3>
+      <ul style="padding-left: 1.25rem;">
         <li><strong>HappyD</strong> (Healthcare Gamification Prototype) &bull; Diabetes health management prototype; integrated Ready Player Me SDK for custom 3D avatar generation and Firebase user persistence.</li>
         <li><strong>Tiny Crash</strong> (3D Racing Prototype, Windows) &bull; 3D arcade car racing game built in Unity featuring vehicle drift kinematics, circuit track design, and online leaderboards.</li>
         <li><strong>Sky Racer</strong> (3D Flight Simulation Prototype, Windows) &bull; 3D airplane flight racing prototype featuring pitch/roll kinematics, aerial checkpoint rings, and cloud scoreboards.</li>
@@ -177,8 +192,8 @@
         <li><strong>Logibot</strong> (3D Puzzle Adventure, Thesis Project) &bull; 3D robotics educational puzzle game built with custom Shader Graph shaders, Cinemachine cameras, and the new Unity Input System.</li>
       </ul>
 
-      <h3 class="subheading">Augmented Reality (AR) & Educational Games</h3>
-      <ul>
+      <h3 style="font-size: 1rem; color: #60a5fa; margin: 1.25rem 0 0.5rem;">Augmented Reality (AR) & Educational Games</h3>
+      <ul style="padding-left: 1.25rem;">
         <li><strong>ARMath / GeoARVenture</strong> (Mobile AR) &bull; Augmented reality 3D geometry educational game built with Unity and Vuforia SDK image target tracking.</li>
         <li><strong>Wayangku AR</strong> (Mobile AR) &bull; Indonesian cultural heritage educational AR application visualizing 3D Pandawa Wayang Kulit characters with Vuforia SDK.</li>
         <li><strong>AR Batuan</strong> (Mobile AR) &bull; Geological educational AR application featuring 3D rock specimen models and interactive classification info.</li>
@@ -189,8 +204,8 @@
         <li><strong>Periodic Table / Atomic</strong> (Educational Mobile) &bull; Interactive 2D chemistry learning game for mastering the periodic table of elements.</li>
       </ul>
 
-      <h3 class="subheading">Developer Utilities & Desktop Applications</h3>
-      <ul>
+      <h3 style="font-size: 1rem; color: #60a5fa; margin: 1.25rem 0 0.5rem;">Developer Utilities & Desktop Applications</h3>
+      <ul style="padding-left: 1.25rem;">
         <li><strong>Keystore Helper</strong> (Windows WPF, GitHub) &bull; Open-source desktop utility automating Java Keytool commands to generate Android keystores and extract SHA-1 and SHA-256 certificate fingerprints.</li>
         <li><strong>Unity Open-Source Packages (2D Extension, Linq Extension, Audio Manager)</strong> &bull; Published modular C# extension libraries for scene hierarchy querying, 2D physics helpers, and decoupled audio pooling.</li>
         <li><strong>ADB GUI Tool</strong> (Windows Forms, GitHub) &bull; Graphical interface wrapper over Android Debug Bridge (ADB) for installing APKs and file transfer.</li>
@@ -200,7 +215,7 @@
       </ul>
     </section>
 
-    <section>
+    <section class="doc-section" id="education">
       <h2>Education</h2>
       <div class="entry">
         <div class="entry-header">
@@ -211,13 +226,15 @@
       </div>
     </section>
 
-    <section>
+    <section class="doc-section" id="certificates">
       <h2>Certifications & Languages</h2>
-      <p><strong>C# (Basic) Certificate</strong> &bull; HackerRank (ID: BE0C3E847A8E) &bull; <a href="https://www.hackerrank.com/certificates/be0c3e847a8e" target="_blank">Verify Credential</a></p>
+      <p style="margin-bottom: 6px;"><strong>C# (Basic) Certificate</strong> &bull; HackerRank (ID: BE0C3E847A8E) &bull; <a href="https://www.hackerrank.com/certificates/be0c3e847a8e" target="_blank" rel="noopener noreferrer">Verify Credential</a></p>
       <p><strong>Languages:</strong> Indonesian (Native) &bull; English (Professional Working Proficiency, 570 TOEFL Equivalent, PROTEFL)</p>
     </section>
   </div>
 
-  <script src="scripts/print.js" defer></script>
+  <!-- Floating Back to Top Button -->
+  <a href="#" class="back-to-top" title="Back to Top">&uarr;</a>
+
 </body>
 </html>

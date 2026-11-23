@@ -1,7 +1,6 @@
-// Resume Script: Profile Photo, 3-Layout Switcher, and Collapsible Controls
+// Resume Script: Profile Photo and Section Collapsible Controls
 document.addEventListener('DOMContentLoaded', function () {
     initProfilePhoto();
-    initLayoutSwitcher();
     initCollapsibleControls();
 });
 
@@ -44,90 +43,48 @@ function initProfilePhoto() {
     }
 }
 
-// 2. 3-Layout Switcher (Sidebar, Single Column, Compact Grid)
-function initLayoutSwitcher() {
-    var container = document.getElementById('resume-container');
-    var layoutBtns = document.querySelectorAll('.layout-btn');
-    if (!container || !layoutBtns.length) return;
-
-    var validLayouts = ['sidebar', 'single', 'compact'];
-
-    function setLayout(layoutName, updateHistory) {
-        if (!validLayouts.includes(layoutName)) layoutName = 'sidebar';
-
-        // Update container classes
-        validLayouts.forEach(function (l) {
-            container.classList.remove('layout-' + l);
-        });
-        container.classList.add('layout-' + layoutName);
-
-        // Update active button state
-        layoutBtns.forEach(function (btn) {
-            if (btn.getAttribute('data-layout') === layoutName) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-
-        // Persist preference
-        try {
-            localStorage.setItem('resume_layout', layoutName);
-        } catch (e) {}
-
-        // Optionally update URL query param without page reload
-        if (updateHistory && window.history && window.history.replaceState) {
-            var url = new URL(window.location);
-            url.searchParams.set('layout', layoutName);
-            window.history.replaceState({}, '', url);
-        }
-    }
-
-    // Attach click handlers
-    layoutBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            var targetLayout = btn.getAttribute('data-layout');
-            setLayout(targetLayout, true);
-        });
-    });
-
-    // Detect initial layout: 1. URL param -> 2. LocalStorage -> 3. Default (sidebar)
-    var initialLayout = 'sidebar';
-    try {
-        var urlParams = new URLSearchParams(window.location.search);
-        var paramLayout = urlParams.get('layout');
-        if (paramLayout && validLayouts.includes(paramLayout)) {
-            initialLayout = paramLayout;
-        } else {
-            var saved = localStorage.getItem('resume_layout');
-            if (saved && validLayouts.includes(saved)) {
-                initialLayout = saved;
-            }
-        }
-    } catch (e) {}
-
-    setLayout(initialLayout, false);
-}
-
-// 3. Collapsible Controls (Expand All / Collapse All)
+// 2. Collapsible Controls (Expand All / Collapse All)
 function initCollapsibleControls() {
     var expandAllBtn = document.getElementById('expand-all-btn');
     var collapseAllBtn = document.getElementById('collapse-all-btn');
-    var cards = document.querySelectorAll('details.collapsible-card');
+
+    function getAllDetails() {
+        return document.querySelectorAll('details.resume-section, details.role-card');
+    }
 
     if (expandAllBtn) {
         expandAllBtn.addEventListener('click', function () {
-            cards.forEach(function (card) {
-                card.open = true;
+            getAllDetails().forEach(function (el) {
+                el.open = true;
             });
         });
     }
 
     if (collapseAllBtn) {
         collapseAllBtn.addEventListener('click', function () {
-            cards.forEach(function (card) {
-                card.open = false;
+            getAllDetails().forEach(function (el) {
+                el.open = false;
             });
         });
     }
+
+    // Auto-open target section when nav link or anchor is clicked
+    function openTargetFromHash() {
+        if (!window.location.hash) return;
+        try {
+            var target = document.querySelector(window.location.hash);
+            if (target) {
+                if (target.tagName === 'DETAILS') {
+                    target.open = true;
+                }
+                var parentDetails = target.closest('details');
+                if (parentDetails) {
+                    parentDetails.open = true;
+                }
+            }
+        } catch (e) {}
+    }
+
+    window.addEventListener('hashchange', openTargetFromHash);
+    openTargetFromHash();
 }
