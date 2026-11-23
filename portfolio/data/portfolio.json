@@ -943,22 +943,24 @@
         "title": "Logibot",
         "projectType": "1",
         "icon": "",
-        "description": "3D educational robotics puzzle game built with custom Shader Graph visual effects, Cinemachine, and input systems.",
+        "description": "Undergraduate thesis project — an educational 3D robotics logic and puzzle game built in Unity featuring custom Shader Graph visual effects, Cinemachine camera rigging, and the new Unity Input System.",
         "projectTime": {
             "startDate": "July 2021",
             "endDate": "September 2021",
             "currentlyWorking": false
         },
         "tasks": [
-            "Implemented new Unity Input System and Cinemachine camera rigging",
+            "Researched and developed undergraduate thesis project on educational robotics logic and 3D puzzle progression",
+            "Implemented new Unity Input System and dynamic Cinemachine camera rigging",
             "Integrated 3D character models, rigging, and animation blending",
-            "Authored and integrated custom visual shaders with ShaderGraph"
+            "Authored and optimized custom visual shaders using Unity Shader Graph"
         ],
         "technologies": [
             "Unity3D",
+            "C#",
             "ShaderGraph",
             "Cinemachine",
-            "C#",
+            "Unity Input System",
             "Git"
         ],
         "repo": {
@@ -996,19 +998,22 @@
         "title": "Periodic Table (Atomic)",
         "projectType": "1",
         "icon": "",
-        "description": "Interactive educational 2D chemistry game for mobile to learn and master chemical elements of the Periodic Table.",
+        "description": "Interactive UI-based chemistry application and learning game built in Unity (uGUI) to visualize, explore, and test knowledge on chemical elements of the Periodic Table on mobile.",
         "projectTime": {
             "startDate": "June 2021",
             "endDate": "June 2021",
             "currentlyWorking": false
         },
         "tasks": [
-            "Implemented interactive responsive 2D GUI and element categorization",
-            "Built score evaluation and data persistence logic"
+            "Engineered responsive 2D chemistry UI layout and element categorization using Unity UI (uGUI)",
+            "Implemented interactive element inspection modals displaying atomic numbers, electron configuration, and chemical properties",
+            "Built quiz evaluation engine, scoring system, and local player progress persistence"
         ],
         "technologies": [
             "Unity3D",
             "C#",
+            "Unity UI (uGUI)",
+            "Mobile App Development",
             "Git"
         ],
         "repo": {
