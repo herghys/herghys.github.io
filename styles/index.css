@@ -1,0 +1,248 @@
+:root {
+    --bg: #1e1e2f;
+    --text: #f0f0f0;
+    --accent: #ff79c6;
+    --link: #8be9fd;
+    --card-bg: #2c2c3f;
+    --card-border: #3d3d54;
+    --tag-bg: #383850;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem;
+}
+
+h1, h2, h3 {
+    color: var(--accent);
+    margin-top: 0;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+/* Hero Section: Photo vs No-Photo Layout */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.profile-photo-wrapper {
+    display: none; /* Hidden by default in "No-Photo" layout */
+}
+
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    box-shadow: 0 4px 20px rgba(255, 121, 198, 0.25);
+}
+
+/* "With Photo" Layout activated dynamically when photo loads */
+.hero-section.has-photo {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+.hero-section.has-photo .profile-photo-wrapper {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+}
+
+.hero-section.has-photo .hero-text {
+    flex: 1;
+}
+
+.contact-icons {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-icons li {
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-icons img {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    background: var(--accent);
+    color: #1e1e2f;
+    padding: 0.65rem 1.3rem;
+    border-radius: 6px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+    background: #ff92d0;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--link);
+    border: 2px solid var(--link);
+}
+
+.btn-outline:hover {
+    background: rgba(139, 233, 253, 0.15);
+    color: #fff;
+}
+
+.row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1 1 320px;
+    min-width: 300px;
+}
+
+/* Featured Projects Grid */
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    border-color: var(--accent);
+}
+
+.project-card h3 {
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+}
+
+.project-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+    background: var(--tag-bg);
+    color: var(--link);
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    color: #d8d8e0;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.tech-pill {
+    font-size: 0.75rem;
+    background: #202030;
+    color: #bbb;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.project-link {
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+hr.divider {
+    border: none;
+    height: 1px;
+    background-color: var(--card-border);
+    margin: 2.2rem 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .hero-section.has-photo {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .hero-section.has-photo .button-group {
+        justify-content: center;
+    }
+}

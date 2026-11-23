@@ -4,180 +4,102 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Herghys | Helmi Arghya Santosa</title>
-    <style>
-        :root {
-            --bg: #1e1e2f;
-            --text: #f0f0f0;
-            --accent: #ff79c6;
-            --link: #8be9fd;
-            --card-bg: #2c2c3f;
-        }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        .container {
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-        }
-
-        h1, h2, h3 {
-            color: var(--accent);
-        }
-
-        a {
-            color: var(--link);
-            text-decoration: none;
-        }
-
-            a:hover {
-                text-decoration: underline;
-            }
-
-        .section {
-            margin-bottom: 2rem;
-        }
-
-        .contact-icons img {
-            width: 18px;
-            vertical-align: middle;
-            margin-right: 6px;
-            filter: brightness(0) invert(1);
-        }
-
-        ul {
-            padding-left: 1.5rem;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            background: var(--accent);
-            color: #fff;
-            padding: 0.6rem 1.2rem;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-
-            .btn:hover {
-                background: #ff5dbb;
-            }
-
-        .row {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .col {
-            flex: 1 1 300px;
-            min-width: 300px;
-        }
-
-        img.stats {
-            max-width: 100%;
-            height: auto;
-            margin-top: 1rem;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 1rem;
-            }
-        }
-
-        hr.divider {
-            border: none;
-            height: 1px;
-            background-color: #444;
-            margin: 2rem 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/index.css" />
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
 
     <div class="container">
-        <h1>Hello, I'm Helmi Arghya Santosa 👋</h1>
-        <p>
-            I'm a <strong>Unity Game Developer</strong> with over 4 years of experience creating games and interactive applications across mobile, desktop, and WebGL platforms. I specialize in Unity3D, C#, and third-party SDK integrations including Firebase, Google/Apple Sign-In, and SteamVR. With a background in Informatics Education and a passion for building polished, performant experiences, I focus on clean architecture, user engagement, and continuous learning in game tech.
-        </p>
-    </div>
+        <!-- Hero Section (Adapts dynamically to With-Photo or No-Photo layout) -->
+        <header class="hero-section" id="hero-section">
+            <div class="profile-photo-wrapper" id="profile-photo-wrapper">
+                <img id="profile-photo"
+                     src="assets/photo/profile.jpg"
+                     alt="Helmi Arghya Santosa"
+                     class="profile-photo" />
+            </div>
+            <div class="hero-text">
+                <h1>Hello, I'm Helmi Arghya Santosa 👋</h1>
+                <p>
+                    I'm a <strong>Unity Game Developer & Software Engineer</strong> with 5 years of experience creating games, interactive applications, and simulation systems across mobile, desktop, VR, and WebGL platforms. I specialize in Unity3D, C#, and full third-party SDK integrations including Firebase, Google/Apple Sign-In, and SteamVR. With a degree in Informatics Engineering Education and a commitment to high-quality software craftsmanship, I focus on clean architecture, performance optimization, and up-to-date gaming technologies.
+                </p>
 
-    <div class="container">
-        <div class="button-group">
-            <a class="btn" href="https://herghys.github.io/resume" target="_blank">📄 Resume</a>
-            <a class="btn" href="https://herghys.github.io/portfolio" target="_blank">🌐 View Portfolio</a>
-            <a class="btn" href="https://github.com/herghys" target="_blank">🐙 GitHub</a>
-        </div>
+                <div class="button-group">
+                    <a class="btn" href="resume/">📄 Resume</a>
+                    <a class="btn" href="portfolio/">🌐 View Portfolio</a>
+                    <a class="btn btn-outline" href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+                    <a class="btn btn-outline" href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+                </div>
+            </div>
+        </header>
 
         <hr class="divider" />
-        <div class="row">
-            <div class="col section">
-                <h2>🌱 Currently Learning</h2>
-                <ul>
-                    <li>Advanced C# Programming</li>
-                    <li>Advanced Unity3D</li>
-                    <li>Unity DOTS / ECS</li>
-                    <li>VR (Steam VR SDK)</li>
-                    <li>Multiplayer with Mirror Networking</li>
-                </ul>
-            </div>
 
-            <div class="col section">
-                <h2>💬 Contact</h2>
-                <ul class="contact-icons">
-                    <li><img src="https://img.icons8.com/ios-glyphs/30/email.png" /> <a href="mailto:helmi.santosa1@gmail.com">helmi.santosa1@gmail.com</a></li>
-                    <li><img src="https://img.icons8.com/ios-filled/30/whatsapp.png" /> <a href="https://wa.me/+6287771139889">+62 877-7113-9889</a></li>
-                    <li><img src="https://img.icons8.com/ios-filled/30/linkedin.png" /> <a href="https://www.linkedin.com/in/herghys">LinkedIn</a></li>
-                    <li><img src="https://img.icons8.com/ios-filled/30/steam.png" /> <a href="https://steamcommunity.com/id/herghys">Steam</a></li>
-                    <li><img src="https://img.icons8.com/ios-filled/30/facebook-new.png" /> <a href="https://www.facebook.com/herghys">Facebook</a></li>
-                    <li><img src="https://img.icons8.com/ios-filled/30/instagram-new.png" /> <a href="https://www.instagram.com/herghys__">Instagram</a></li>
-                </ul>
+        <!-- Featured Projects Highlight (Loaded dynamically via scripts/main.js from data/featured.json) -->
+        <div class="section">
+            <h2>⭐ Featured Projects</h2>
+            <div id="featured-grid" class="featured-grid">
+                <div style="color: #aaa; font-style: italic; padding: 1rem 0;">Loading featured projects...</div>
             </div>
         </div>
 
         <hr class="divider" />
+
         <div class="row">
             <div class="col section">
                 <h2>🛠 Technologies & Tools</h2>
-                <p><strong>Languages:</strong> C#, Python, Java, VB.Net, JavaScript, SQL</p>
-                <p><strong>Frameworks:</strong> .Net Framework, Unity3D</p>
-                <p><strong>Tools:</strong> Git, Visual Studio, Android Studio, Postman, Firebase SDKs</p>
+                <p><strong>Languages:</strong> C#, VB.Net, Java, Python, Arduino, SQL, HTML/CSS, JavaScript</p>
+                <p><strong>Frameworks & Engines:</strong> Unity3D, SteamVR, Vuforia SDK, WinForms, WPF, .NET Core, .NET Framework</p>
+                <p><strong>SDKs & APIs:</strong> Firebase SDK (Auth, Analytics, FCM), Google & Apple Sign-In, Google AdMob, Google IAP, SteamVR, Mirror Networking, Telegram API, Facebook SDK</p>
+                <p><strong>Tools & Platforms:</strong> Git, Postman, Visual Studio, VS Code, Arduino IDE, Android Studio</p>
             </div>
 
             <div class="col section">
-                <h2>💼 Experience</h2>
+                <h2>💼 Experience Highlights</h2>
                 <ul>
-                    <li><strong>Unity Programmer</strong> – PT. Falah Inovasi Teknologi (2025–Now)</li>
-                    <li><strong>Unity Developer</strong> – Newfemme Wanita Indonesia (2022–2024)</li>
-                    <li><strong>Freelance Developer</strong> – Herghys Studio (2021–Present)</li>
-                    <li><strong>Game Developer</strong> – PT Teknoreka Inovasi Nusantara (2023)</li>
-                    <li><strong>Game Developer</strong> – Fomuo Games (2023)</li>
+                    <li><strong>Unity Programmer</strong> – PT. Falah Inovasi Teknologi (01/2025–Present)</li>
+                    <li><strong>Game Developer (Unity Developer)</strong> – Newfemme Wanita Indonesia (03/2022–08/2024)</li>
+                    <li><strong>Developer (Self Employed)</strong> – Herghys Studio (06/2021–Present)</li>
+                    <li><strong>Freelance Game Developer</strong> – PT Teknoreka Inovasi Nusantara (06/2023–08/2023)</li>
+                    <li><strong>Game Developer</strong> – Fomuo Games (02/2023–06/2023)</li>
+                    <li><strong>Teacher Intern</strong> – SMK YPKK 1 Sleman (06/2019–08/2019)</li>
+                    <li><strong>Software Developer Intern</strong> – Run System - PT. Global Sukses Solusi (07/2018–08/2018)</li>
                 </ul>
             </div>
         </div>
-        <!-- Vercel nya adios
+
         <hr class="divider" />
-        <div class="section">
-            <h2>🏆 GitHub Stats</h2>
-            <img class="stats" src="https://github-readme-stats.vercel.app/api?username=herghys&show_icons=true&theme=radical&include_all_commits=true&rank_icon=github" alt="GitHub Stats">
-            <img class="stats" src="https://github-readme-stats.vercel.app/api/top-langs?username=herghys&theme=radical&layout=compact&langs_count=10" alt="Top Languages">
+
+        <div class="row">
+            <div class="col section">
+                <h2>🌱 Currently Learning & Exploring</h2>
+                <ul>
+                    <li>Advanced C# Architecture & Design Patterns</li>
+                    <li>Advanced Unity3D Profiling & Memory Optimization</li>
+                    <li>Unity DOTS / ECS (Data-Oriented Technology Stack)</li>
+                    <li>Multiplayer Systems with Mirror Networking & Netcode</li>
+                    <li>VR Experiences with SteamVR SDK</li>
+                </ul>
+            </div>
+
+            <div class="col section">
+                <h2>💬 Contact & Socials</h2>
+                <ul class="contact-icons">
+                    <li><img src="https://img.icons8.com/ios-glyphs/30/email.png" alt="Email" /> <a href="mailto:helmi.santosa1@gmail.com">helmi.santosa1@gmail.com</a></li>
+                    <li><img src="https://img.icons8.com/ios-filled/30/whatsapp.png" alt="WhatsApp" /> <a href="https://wa.me/+6287771139889" target="_blank" rel="noopener noreferrer">+62 877-7113-9889</a></li>
+                    <li><img src="https://img.icons8.com/ios-filled/30/linkedin.png" alt="LinkedIn" /> <a href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer">LinkedIn (herghys)</a></li>
+                    <li><img src="https://img.icons8.com/ios-filled/30/github.png" alt="GitHub" /> <a href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">GitHub (@herghys)</a></li>
+                    <li><img src="https://img.icons8.com/ios-filled/30/steam.png" alt="Steam" /> <a href="https://steamcommunity.com/id/herghys" target="_blank" rel="noopener noreferrer">Steam (herghys)</a></li>
+                    <li><img src="https://img.icons8.com/ios-filled/30/facebook-new.png" alt="Facebook" /> <a href="https://www.facebook.com/herghys" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><img src="https://img.icons8.com/ios-filled/30/instagram-new.png" alt="Instagram" /> <a href="https://www.instagram.com/herghys__" target="_blank" rel="noopener noreferrer">Instagram (@herghys__)</a></li>
+                </ul>
+            </div>
         </div>
-        -->
+
+        <hr class="divider" />
+        <footer style="text-align: center; color: #888; font-size: 0.9rem; padding: 1rem 0;">
+            <p>&copy; 2026 Helmi Arghya Santosa (Herghys). All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>

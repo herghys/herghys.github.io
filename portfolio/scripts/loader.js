@@ -11,20 +11,34 @@ document.addEventListener('DOMContentLoaded', async function () {
                 // Card Header with Title, Year, and Project Type
                 const cardHeader = document.createElement('div');
                 cardHeader.classList.add('card-header');
+
+                let timeDisplay = '';
+                if (project.projectTime) {
+                    const start = project.projectTime.startDate || '';
+                    const end = project.projectTime.currentlyWorking ? 'Present' : (project.projectTime.endDate || '');
+                    if (start && end) {
+                        timeDisplay = `${start} - ${end}`;
+                    } else if (start || end) {
+                        timeDisplay = start || end;
+                    }
+                }
+
                 cardHeader.innerHTML = `
                     <h2>${project.title}</h2>
-                    <p class="year">${project.projectTime.startDate} - ${ project.projectTime.currentlyWorking ? 'Now' : project.projectTime.endDate}</p>
-                    <p class="project-type">Project Type: ${project.projectType == 1 ? 'Personal' : 'Work / Freelance'}</p>
+                    ${timeDisplay ? `<p class="year">${timeDisplay}</p>` : ''}
+                    <p class="project-type">Project Type: ${project.projectType == 1 ? 'Personal / Open Source' : 'Commercial / Freelance'}</p>
                     <p>${project.description}</p>
                 `;
 
                 // Tasks/Responsibilities
-                const tasks = project.tasks.map(task => `<li>${task}</li>`).join('');
+                const tasksHtml = project.tasks && project.tasks.length > 0
+                    ? `<strong>Tasks / Responsibilities</strong><ul>${project.tasks.map(task => `<li>${task}</li>`).join('')}</ul>`
+                    : '';
+
                 const cardBody = document.createElement('div');
                 cardBody.classList.add('card-body');
                 cardBody.innerHTML = `
-                    <strong>Tasks / Responsibilities</strong>
-                    <ul>${tasks}</ul>
+                    ${tasksHtml}
                     <strong>Technologies Used</strong>
                     <div class="tech-list">
                         ${project.technologies.map(tech => `<span class="tech-item">${tech}</span>`).join('')}
@@ -33,27 +47,54 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 // Repo Button
                 const repoBtn = document.createElement('a');
-                repoBtn.href = project.repo.link;
                 repoBtn.classList.add('repo-btn');
                 repoBtn.innerHTML = `<i class="fab fa-github"></i> Open Repo`;
 
-                 // Check if repo is private, and disable the button if so
-                 if (project.repo.isPrivate || repoBtn.href =="") {
+                if (project.repo && project.repo.link && !project.repo.isPrivate) {
+                    repoBtn.href = project.repo.link;
+                    repoBtn.target = "_blank";
+                    repoBtn.rel = "noopener noreferrer";
+                } else {
                     repoBtn.classList.add('disabled');
-                    repoBtn.removeAttribute('href'); // Remove link functionality
+                    repoBtn.removeAttribute('href');
                 }
 
-                // Store Button
+                // Store / External Link Button
                 const storeBtn = document.createElement('a');
-                storeBtn.href = project.store.link;
                 storeBtn.classList.add('store-btn');
-                storeBtn.innerHTML = `<i class="fas fa-store"></i> View on Store`;
 
-                // Check if store button should be disabled
-                if (!project.store.isAvailable || storeBtn.href == "") {
-                    storeBtn.classList.add('disabled');
-                    storeBtn.removeAttribute('href'); // Remove link functionality
+                let storeText = "View on Store";
+                let storeIcon = "fas fa-store";
+
+                if (project.store && project.store.buttonText) {
+                    storeText = project.store.buttonText;
+                    if (storeText.toLowerCase().includes('website') || storeText.toLowerCase().includes('visit')) {
+                        storeIcon = "fas fa-globe";
+                    }
+                } else if (project.store && project.store.link) {
+                    if (project.store.link.includes('play.google.com')) {
+                        storeText = "Google Play";
+                        storeIcon = "fab fa-google-play";
+                    } else if (project.store.link.includes('t.me')) {
+                        storeText = "Telegram App";
+                        storeIcon = "fab fa-telegram";
+                    } else if (project.store.link.startsWith('http')) {
+                        storeText = "Visit Website";
+                        storeIcon = "fas fa-globe";
+                    }
                 }
+
+                storeBtn.innerHTML = `<i class="${storeIcon}"></i> ${storeText}`;
+
+                if (project.store && project.store.isAvailable && project.store.link) {
+                    storeBtn.href = project.store.link;
+                    storeBtn.target = "_blank";
+                    storeBtn.rel = "noopener noreferrer";
+                } else {
+                    storeBtn.classList.add('disabled');
+                    storeBtn.removeAttribute('href');
+                }
+
                 // Buttons Group
                 const buttonGroup = document.createElement('div');
                 buttonGroup.classList.add('buttons-section');
@@ -67,34 +108,30 @@ document.addEventListener('DOMContentLoaded', async function () {
                 card.appendChild(document.createElement('hr'));
                 card.appendChild(cardBody);
 
-                 // Screenshots
-                 if (project.screenshot && project.screenshot.path) {
+                // Screenshots
+                if (project.screenshot && project.screenshot.path && project.screenshot.images && project.screenshot.images.length > 0) {
                     const screenshotsSection = document.createElement('div');
                     screenshotsSection.classList.add('screenshots');
-                
-                    // Fetch images from the 'images' array in the JSON
+
                     const imagePath = `assets/portfolios/${project.screenshot.path}`;
-                    const extensions = ['png', 'jpg', 'jpeg'];  // Supported extensions
-                
-                    // Loop through the images in the order they are given in the project.screenshot.images array
+                    const extensions = ['png', 'jpg', 'jpeg'];
+
                     project.screenshot.images.forEach((imageBaseName, index) => {
                         let fileFound = false;
-                
-                        // Loop through possible extensions to find the image
+
                         extensions.forEach(ext => {
                             const imgPath = `${imagePath}/${imageBaseName}.${ext}`;
                             const img = new Image();
-                
+
                             img.onload = function () {
-                                if (!fileFound) {  // Only load the first found image
+                                if (!fileFound) {
                                     fileFound = true;
-                
+
                                     const imgElement = document.createElement('img');
                                     imgElement.src = imgPath;
                                     imgElement.alt = `${project.title} screenshot ${index + 1}`;
                                     imgElement.classList.add('screenshot-thumb');
-                
-                                    // Add click event for fullscreen
+
                                     imgElement.addEventListener('click', () => {
                                         const modal = document.createElement('div');
                                         modal.classList.add('fullscreen-modal');
@@ -104,12 +141,12 @@ document.addEventListener('DOMContentLoaded', async function () {
                                         `;
                                         document.body.appendChild(modal);
                                         modal.style.display = "block";
-                
+
                                         modal.querySelector('.close').onclick = () => {
                                             modal.style.display = "none";
                                             document.body.removeChild(modal);
                                         };
-                
+
                                         window.onclick = (event) => {
                                             if (event.target === modal) {
                                                 modal.style.display = "none";
@@ -117,29 +154,21 @@ document.addEventListener('DOMContentLoaded', async function () {
                                             }
                                         };
                                     });
-                
-                                    // Append the image to the screenshots section
+
                                     screenshotsSection.appendChild(imgElement);
                                 }
                             };
-                
-                            img.onerror = function () {
-                                // If this file doesn't exist, continue to next extension
-                            };
-                
-                            img.src = imgPath;  // Start loading the image
+
+                            img.onerror = function () {};
+                            img.src = imgPath;
                         });
                     });
-                
-                    // Append the screenshot section to the card body
+
                     cardBody.appendChild(screenshotsSection);
                 }
-                
-                
 
                 projectsGrid.appendChild(card);
             });
         })
         .catch(error => console.error('Error loading the portfolio data:', error));
 });
-

@@ -4,9 +4,21 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
-# Ruby Gems
-.bundle
-Gemfile.lock
+# Vercel & Node
+.vercel/
+node_modules/
+
+# Python & Build Cache
+__pycache__/
+*.pyc
+
+# Word Documents (if hosted externally)
+*.docx
+
+# OS Artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
 
 # Log Files
 *.log

@@ -4,385 +4,508 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume | Helmi Arghya Santosa</title>
-    <style>
-        :root {
-            --bg-start: #121212;
-            --bg-end: #181818;
-            --text: #f0f0f0;
-            --accent: #8ab4f8;
-            --link: #8be9fd;
-            --card-bg: #1a1a1a;
-        }
-
-        * {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to bottom right, var(--bg-start), var(--bg-end));
-            color: var(--text);
-            line-height: 1.7;
-            background-attachment: fixed;
-        }
-
-        a {
-            color: var(--link);
-            text-decoration: none;
-        }
-
-            a:hover {
-                text-decoration: underline;
-            }
-
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            background: rgba(30, 30, 47, 0.95);
-            padding: 0.5rem 1rem;
-            display: flex;
-            gap: 1rem;
-            border-bottom: 1px solid #444;
-        }
-
-            .nav a {
-                font-weight: bold;
-                font-size: 0.95rem;
-            }
-
-        .container {
-            display: flex;
-            flex-direction: row;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            gap: 2rem;
-        }
-
-        .sidebar {
-            flex: 1;
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            min-width: 280px;
-            text-align: center;
-        }
-
-        .main {
-            flex: 3;
-        }
-
-        .profile-pic {
-            width: 100%;
-            max-width: 180px;
-            border-radius: 12px;
-            margin: 0 auto 1rem;
-            object-fit: cover;
-            display: block;
-        }
-
-        .placeholder {
-            background-color: #3a3a55;
-            color: #999;
-            height: 180px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-
-        h1, h2, h3 {
-            color: var(--accent);
-        }
-
-        .btn-group {
-            margin-top: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .btn {
-            background: var(--accent);
-            color: white;
-            padding: 0.6rem;
-            text-align: center;
-            border-radius: 6px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid #444;
-            margin: 2rem 0;
-        }
-
-        ul {
-            padding-left: 1.5rem;
-        }
-
-        .section {
-            margin-bottom: 2rem;
-            background-color: rgba(255, 255, 255, 0.03);
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-            .section:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            }
-
-        .experience-card {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            margin-bottom: 1.5rem;
-        }
-
-            .experience-card:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            }
-
-        .job-title {
-            font-weight: bold;
-            color: var(--link);
-        }
-
-        .dates {
-            font-size: 0.9em;
-            color: #aaa;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .btn-group {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .btn {
-                flex: 1 1 auto;
-            }
-
-            .nav {
-                flex-wrap: wrap;
-                gap: 0.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles/resume.css">
 </head>
 <body>
 
     <!-- Scroll Navigation -->
     <nav class="nav">
+        <a href="https://herghys.github.io/">🏠 Home</a>
         <a href="#summary">📝 Summary</a>
-        <a href="#education">🎓 Education</a>
+        <a href="#experience">💼 Experience</a>
+        <a href="#projects">🚀 Projects</a>
         <a href="#skills">🧠 Skills</a>
         <a href="#sdks">🧰 SDKs</a>
-        <a href="#experience">💼 Experience</a>
+        <a href="#education">🎓 Education</a>
+        <a href="#certificates">📜 Certificates</a>
     </nav>
 
     <div class="container">
         <!-- Sidebar -->
-        <div class="sidebar">
-            <img src="assets/photo/your-image.jpg" alt="Photo" class="profile-pic"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="placeholder" style="display: none;">No Photo Available</div>
+        <aside class="sidebar">
+            <div id="resume-photo-container" class="profile-photo-container">
+                <img id="resume-profile-photo" src="../assets/photo/profile.jpg" alt="Helmi Arghya Santosa" class="profile-pic">
+            </div>
 
             <h2>Helmi Arghya Santosa</h2>
-            <p><strong>Game Developer</strong><br>Tangerang 15151, Indonesia</p>
+            <div class="role-subtitle">
+                <strong>Unity Game Developer & Software Engineer</strong><br>
+                Tangerang 15151, Indonesia
+            </div>
+
             <hr>
 
-            <div style="text-align: left;">
+            <div class="contact-info">
                 <p>
-                    <strong>Email:</strong><br>
-                    <a href="mailto:helmi.santosa1@gmail.com">
-                        <img src="https://img.icons8.com/ios-filled/16/ffffff/new-post.png" alt="Email" style="vertical-align: middle; margin-right: 6px;">
-                        helmi.santosa1@gmail.com
-                    </a>
+                    <img src="https://img.icons8.com/ios-filled/16/ffffff/new-post.png" alt="Email">
+                    <a href="mailto:helmi.santosa1@gmail.com">helmi.santosa1@gmail.com</a>
                 </p>
                 <p>
-                    <strong>Phone:</strong><br>
-                    <a href="https://wa.me/+6287771139889">
-                        <img src="https://img.icons8.com/ios-filled/16/ffffff/whatsapp.png" alt="WhatsApp" style="vertical-align: middle; margin-right: 6px;">
-                        +62 877-7113-9889
-                    </a>
+                    <img src="https://img.icons8.com/ios-filled/16/ffffff/whatsapp.png" alt="Phone">
+                    <a href="https://wa.me/+6287771139889" target="_blank" rel="noopener noreferrer">+62 877-7113-9889</a>
                 </p>
-
-                <!-- Social Media Icons -->
-                <p style="margin-top: 1rem;">
-                    <a href="https://www.linkedin.com/in/herghys" target="_blank">
-                        <img src="https://img.icons8.com/ios-filled/20/ffffff/linkedin.png" alt="LinkedIn" style="margin-right: 8px;">
-                    </a>
-                    <a href="https://steamcommunity.com/id/herghys" target="_blank">
-                        <img src="https://img.icons8.com/ios-filled/20/ffffff/steam.png" alt="Steam" style="margin-right: 8px;">
-                    </a>
-                    <a href="https://www.facebook.com/herghys" target="_blank">
-                        <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png" alt="Facebook" style="margin-right: 8px;">
-                    </a>
-                    <a href="https://www.instagram.com/herghys__" target="_blank">
-                        <img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png" alt="Instagram">
-                    </a>
+                <p>
+                    <strong>Total Experience:</strong> 5 Years<br>
+                    <strong>Career Level:</strong> Experienced
                 </p>
             </div>
 
-            <div class="btn-group" style="margin-top: 2rem;">
-                <a class="btn" href="https://drive.google.com/file/d/1-OxGf_6bLNlMsUk9lY4j7RCQD_D7ELcq/view?usp=sharing" target="_blank"><img src="https://img.icons8.com/ios-filled/20/ffffff/download--v1.png" alt="Download" style="vertical-align: middle; margin-right: 6px;"> Download CV</a>
-                <a class="btn" href="https://herghys.github.io/portfolio/" target="_blank"><img src="https://img.icons8.com/ios-filled/20/ffffff/domain.png" alt="Portfolio" style="vertical-align: middle; margin-right: 6px;"> Portfolio</a>
-                <a class="btn" href="https://github.com/herghys" target="_blank"><img src="https://img.icons8.com/ios-glyphs/20/ffffff/github.png" alt="GitHub" style="vertical-align: middle; margin-right: 6px;"> GitHub</a>
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/herghys" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <img src="https://img.icons8.com/ios-filled/20/ffffff/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/herghys" target="_blank" rel="noopener noreferrer" title="GitHub">
+                    <img src="https://img.icons8.com/ios-glyphs/20/ffffff/github.png" alt="GitHub">
+                </a>
+                <a href="https://steamcommunity.com/id/herghys" target="_blank" rel="noopener noreferrer" title="Steam">
+                    <img src="https://img.icons8.com/ios-filled/20/ffffff/steam.png" alt="Steam">
+                </a>
+                <a href="https://www.facebook.com/herghys" target="_blank" rel="noopener noreferrer" title="Facebook">
+                    <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/herghys__" target="_blank" rel="noopener noreferrer" title="Instagram">
+                    <img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png" alt="Instagram">
+                </a>
             </div>
-        </div>
 
+            <div class="btn-group">
+                <a class="btn" href="ats.html" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.icons8.com/ios-filled/18/12121e/contract--v1.png" alt="ATS"> ATS-Friendly CV
+                </a>
+                <a class="btn btn-secondary" href="Helmi_Arghya_Santosa_Resume_ATS.docx" download>
+                    <img src="https://img.icons8.com/ios-filled/18/8be9fd/word.png" alt="Word"> Download Word (.docx)
+                </a>
+                <a class="btn btn-secondary" href="https://drive.google.com/file/d/1-OxGf_6bLNlMsUk9lY4j7RCQD_D7ELcq/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.icons8.com/ios-filled/18/8be9fd/download--v1.png" alt="Download"> Original CV (PDF)
+                </a>
+                <a class="btn btn-secondary" href="https://herghys.github.io/portfolio/">
+                    <img src="https://img.icons8.com/ios-filled/18/8be9fd/domain.png" alt="Portfolio"> View Portfolio
+                </a>
+                <a class="btn btn-secondary" href="https://github.com/herghys" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.icons8.com/ios-glyphs/18/8be9fd/github.png" alt="GitHub"> GitHub Profile
+                </a>
+            </div>
+        </aside>
 
         <!-- Main Content -->
-        <div class="main">
+        <main class="main">
 
-            <div class="section" id="summary">
+            <!-- Summary -->
+            <section class="section" id="summary">
                 <h2>📝 Summary</h2>
-                <p>Unity Game Developer with over 4 years of experience in building mobile, WebGL, and desktop games. Specialized in Unity3D, API integration, and performance optimization. Passionate about creating immersive, efficient, and scalable applications using modern tech tools and SDKs.</p>
-            </div>
+                <p>
+                    Graduated from Yogyakarta State University with a degree in Informatics Engineering Education. Specialized in Game Development (Unity). Software and Game Developer with <strong>5 years of experience</strong> building commercial mobile games, multiplayer VR applications, WebGL games, and desktop software utilities. Strong commitment to delivering high-quality, maintainable code with clean architecture. Up-to-date with the latest gaming trends and technologies.
+                </p>
+                <div class="badge-list">
+                    <span class="badge badge-accent">5 Years Experience</span>
+                    <span class="badge">Unity3D Specialist</span>
+                    <span class="badge">C# Expert</span>
+                    <span class="badge">VR & SteamVR</span>
+                    <span class="badge">SDK Integrations</span>
+                    <span class="badge">Multiplayer Networking</span>
+                </div>
+            </section>
 
-            <div class="section" id="education">
-                <h2>🎓 Education</h2>
-                <p><strong>B.Ed / S.Pd in Informatics Engineering Education</strong></p>
-                <p>Yogyakarta State University, Graduated 09/2021</p>
-                <p>GPA: 3.53</p>
-            </div>
-
-            <div class="section" id="skills">
-                <h2>🧠 Skills</h2>
-                <p><strong>Programming:</strong> C#, VB.Net, Java, Arduino, Python, HTML/CSS, SQL</p>
-                <p><strong>Frameworks & Game Engines:</strong> Unity3D, SteamVR, Vuforia SDK, Winform, WPF</p>
-                <p><strong>Tools:</strong> Git, Postman, Visual Studio, Arduino IDE</p>
-                <p><strong>Cloud & APIs:</strong> Firebase SDK, Google/Apple/Facebook Sign-In, Firebase Analytics</p>
-            </div>
-
-            <div class="section" id="sdks">
-                <h2>🧰 SDKs & Tools</h2>
-                <ul>
-                    <li>Facebook SDK (Unity)</li>
-                    <li>Google Sign-In SDK (Unity)</li>
-                    <li>Vuforia SDK (Unity)</li>
-                    <li>Apple Sign-In SDK (Unity)</li>
-                    <li>Firebase Analytic SDK (Unity)</li>
-                    <li>Firebase Cloud Messaging SDK (Unity)</li>
-                    <li>Firebase Authentication SDK (Unity)</li>
-                    <li>Goole IAP</li>
-                    <li>Twitter SDK</li>
-                    <li>SteamVR SDK</li>
-                    <li>Google AdMob</li>
-                    <li>Mirror Networking</li>
-                    <li>Netcode for GameObjects</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2>📄 Certificate</h2>
-                <p><strong>C# (Basic)</strong> - HackerRank - <a href="https://www.hackerrank.com/certificates/be0c3e847a8e">View Certificate</a></p>
-            </div>
-
-            <div class="section" id="experience">
-                <h2>💼 Experience</h2>
+            <!-- Experience -->
+            <section class="section" id="experience">
+                <h2>💼 Professional Experience</h2>
 
                 <!-- Experience: PT. Falah Inovasi Teknologi -->
                 <div class="experience-card">
-                    <p class="job-title">Unity Programmer – PT. Falah Inovasi Teknologi</p>
-                    <p class="dates">Jan 2025 – Present</p>
-                    <p>Develop and refine Unity3D applications with a focus on architecture, optimization, and API integration. Conduct profiling and testing to ensure performance and stability across VR and standard apps.</p>
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Unity Programmer</h3>
+                            <span class="company-name">PT. Falah Inovasi Teknologi</span> &bull; Jakarta, Indonesia
+                        </div>
+                        <span class="dates">01/2025 – Present</span>
+                    </div>
+                    <p>
+                        Develop and refine applications using Unity3D, focusing on efficient architecture and seamless functionality. Implement API connections, debug code, and optimize performance through rigorous profiling. Conduct thorough testing to ensure stability, reliability, and high-quality user interaction.
+                    </p>
+                    <strong>Key Responsibilities:</strong>
                     <ul>
-                        <li>Developed modules for main application/game</li>
-                        <li>Built custom UI reusable across projects</li>
-                        <li>Co-integrated multiplayer VR application/game</li>
+                        <li>Developed modules for the main application and simulation games</li>
+                        <li>Built custom reusable UI systems across company projects</li>
+                        <li>Served as integrator of VR multiplayer game systems using SteamVR</li>
                     </ul>
-                    <p><strong>Tools:</strong> C#, Unity3D, Git, PostmanAPI, SteamVR</p>
+                    <strong>Technologies Used:</strong>
+                    <div class="badge-list">
+                        <span class="badge">C#</span>
+                        <span class="badge">Unity3D</span>
+                        <span class="badge">SteamVR</span>
+                        <span class="badge">Git</span>
+                        <span class="badge">Postman API</span>
+                    </div>
                 </div>
 
-                <!-- Experience: Newfemme -->
+                <!-- Experience: Newfemme Wanita Indonesia -->
                 <div class="experience-card">
-                    <p class="job-title">Unity Developer – Newfemme Wanita Indonesia</p>
-                    <p class="dates">Mar 2022 – Aug 2024</p>
-                    <p>Designed and implemented Unity modules, integrations, and game design documents for the Newfemme app and Cinda game. Focused on API threading, sign-in integration, analytics, and optimization.</p>
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Game Developer (Unity Developer)</h3>
+                            <span class="company-name">Newfemme Wanita Indonesia</span> &bull; Jakarta, Indonesia
+                        </div>
+                        <span class="dates">03/2022 – 08/2024</span>
+                    </div>
+                    <p>
+                        Contributed to designing and developing applications including the main Newfemme app and Cinda game. Authored Game Design Documents (GDD), developed API connection modules using C# threading, and implemented SDK integrations (Google/Apple Sign-In, Firebase Analytics, Google In-App Update). Led optimization and profiling with Unity Profiler and Visual Studio Debugger.
+                    </p>
+                    <strong>Key Responsibilities:</strong>
                     <ul>
-                        <li>Developed apps and API modules with C# threading</li>
-                        <li>Created Game Design Documents (GDD)</li>
-                        <li>Implemented Google & Apple Sign-In, Firebase SDKs</li>
-                        <li>Custom analytics and debugging using Unity Profiler</li>
+                        <li>Developed Newfemme mobile application and minigames</li>
+                        <li>Authored comprehensive Game Design Documents (GDD) for Cinda</li>
+                        <li>Provided asynchronous HTTP client and API connection modules using C# Threading</li>
+                        <li>Provided custom extensions for Google Sign-In and Apple Sign-In authentication in Unity</li>
+                        <li>Implemented Firebase Analytics, Google In-App Update SDK, and custom analytics telemetry</li>
+                        <li>Conducted performance optimization and memory profiling with Unity Profiler and Visual Studio Debugger</li>
+                        <li>Performed manual playtesting and API response validation via Postman</li>
                     </ul>
-                    <p><strong>Tools:</strong> C#, Unity3D, Git, PostmanAPI, Firebase SDKs, Figma, Visual Studio</p>
+                    <strong>Technologies Used:</strong>
+                    <div class="badge-list">
+                        <span class="badge">C#</span>
+                        <span class="badge">Unity3D</span>
+                        <span class="badge">Firebase SDK</span>
+                        <span class="badge">Google Sign-In</span>
+                        <span class="badge">Apple Sign-In</span>
+                        <span class="badge">Facebook SDK</span>
+                        <span class="badge">Postman</span>
+                        <span class="badge">Figma</span>
+                        <span class="badge">Visual Studio</span>
+                        <span class="badge">JSON</span>
+                    </div>
                 </div>
 
                 <!-- Experience: Herghys Studio -->
                 <div class="experience-card">
-                    <p class="job-title">Developer – Herghys Studio (Freelance)</p>
-                    <p class="dates">Jun 2021 – Present</p>
-                    <p>Freelance development of games, desktop apps, and AR applications using Unity3D, Vuforia SDK, and Windows Forms/WPF.</p>
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Developer (Self Employed)</h3>
+                            <span class="company-name">Herghys Studio</span> &bull; Tangerang, Indonesia
+                        </div>
+                        <span class="dates">06/2021 – Present</span>
+                    </div>
+                    <p>
+                        Independent development and publishing of commercial 2D/3D mobile games, Augmented Reality (AR) applications, desktop productivity tools, and open-source Unity packages.
+                    </p>
+                    <strong>Key Responsibilities:</strong>
                     <ul>
-                        <li>Developed 2D/3D games and AR features</li>
-                        <li>Built desktop applications and Unity plugins</li>
+                        <li>Developed and published mobile games: <em>Pong Evolved</em> and <em>Tap!</em> on Google Play Store</li>
+                        <li>Engineered AR applications utilizing Vuforia SDK with image targets and interactive 3D media</li>
+                        <li>Created Windows desktop applications (WPF & WinForms) including Keystore Helper, ADB GUI Tool, and Afterburner Monitor</li>
+                        <li>Published open-source Unity extensions and modular packages (Audio Manager, 2D Extensions, Linq Extensions)</li>
                     </ul>
-                    <p><strong>Tools:</strong> C#, Unity3D, Git, Vuforia SDK, Visual Studio, JSON</p>
+                    <strong>Technologies Used:</strong>
+                    <div class="badge-list">
+                        <span class="badge">C#</span>
+                        <span class="badge">Unity3D</span>
+                        <span class="badge">Google AdMob</span>
+                        <span class="badge">Vuforia SDK</span>
+                        <span class="badge">WPF / WinForms</span>
+                        <span class="badge">Git</span>
+                        <span class="badge">Visual Studio</span>
+                    </div>
                 </div>
 
-                <!-- Experience: Teknoreka -->
+                <!-- Experience: PT Teknoreka Inovasi Nusantara -->
                 <div class="experience-card">
-                    <p class="job-title">Freelance Game Developer – PT Teknoreka Inovasi Nusantara</p>
-                    <p class="dates">Jun 2023 – Aug 2023</p>
-                    <p>Created a 2D WebGL game with complete API integration and validated functionality through Postman testing.</p>
-                    <ul>
-                        <li>Developed 2D WebGL game</li>
-                        <li>Integrated backend APIs and validated responses</li>
-                    </ul>
-                    <p><strong>Tools:</strong> C#, Unity3D, Git, PostmanAPI, Visual Studio</p>
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Freelance Game Developer</h3>
+                            <span class="company-name">PT Teknoreka Inovasi Nusantara</span> &bull; Remote
+                        </div>
+                        <span class="dates">06/2023 – 08/2023</span>
+                    </div>
+                    <p>
+                        Created 2D WebGL educational games (SiMurda Edugame, Eksponen Edugame, Petualangan Qori) and integrated backend API connections for account and leaderboard data with thorough Postman API validation.
+                    </p>
+                    <strong>Technologies Used:</strong>
+                    <div class="badge-list">
+                        <span class="badge">C#</span>
+                        <span class="badge">Unity3D</span>
+                        <span class="badge">WebGL</span>
+                        <span class="badge">Postman API</span>
+                        <span class="badge">Git</span>
+                    </div>
                 </div>
 
                 <!-- Experience: Fomuo Games -->
                 <div class="experience-card">
-                    <p class="job-title">Game Developer – Fomuo Games</p>
-                    <p class="dates">Feb 2023 – Jun 2023</p>
-                    <p>Created 2D games and implemented sign-in systems and analytics. Reskinned games and configured Firebase & Google Cloud services.</p>
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Game Developer</h3>
+                            <span class="company-name">Fomuo Games</span> &bull; Jakarta, Indonesia
+                        </div>
+                        <span class="dates">02/2023 – 06/2023</span>
+                    </div>
+                    <p>
+                        Developed and reskinned 2D mobile and PC games (Candies Land, Baker Pro, Blush Tales, Blush Crush, Crossy Cube, Tiny Crash). Built authentication modules and set up Google Cloud and Firebase platforms.
+                    </p>
+                    <strong>Key Responsibilities:</strong>
                     <ul>
-                        <li>Developed 2D games & reskinned existing ones</li>
-                        <li>Implemented Google & Apple Sign-In systems</li>
-                        <li>Configured Firebase for authentication and analytics</li>
+                        <li>Developed 2D gameplay logic, scoring, and level progressions</li>
+                        <li>Engineered Google Sign-In and Apple Sign-In modules for cross-platform authentication</li>
+                        <li>Configured Firebase Authentication, Firestore, and Analytics backends</li>
                     </ul>
-                    <p><strong>Tools:</strong> C#, Unity3D, Firebase SDKs, Git, PostmanAPI, Visual Studio</p>
+                    <strong>Technologies Used:</strong>
+                    <div class="badge-list">
+                        <span class="badge">C#</span>
+                        <span class="badge">Unity3D</span>
+                        <span class="badge">Firebase Auth & Analytics</span>
+                        <span class="badge">Google & Apple Sign-In</span>
+                        <span class="badge">Postman API</span>
+                    </div>
                 </div>
 
-                <!-- Experience: Teacher Intern -->
+                <!-- Experience: SMK YPKK 1 Sleman -->
                 <div class="experience-card">
-                    <p class="job-title">Teacher Intern – SMK YPKK 1 Sleman</p>
-                    <p class="dates">Jun 2019 – Aug 2019</p>
-                    <ul>
-                        <li>Created and taught web programming modules</li>
-                    </ul>
-                    <p><strong>Tools:</strong> HTML, CSS, PHP (not listed but implied from "web programming")</p>
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Teacher Intern</h3>
+                            <span class="company-name">SMK YPKK 1 Sleman</span> &bull; Yogyakarta, Indonesia
+                        </div>
+                        <span class="dates">06/2019 – 08/2019</span>
+                    </div>
+                    <p>
+                        Authored instructional curriculum and learning modules for web programming and taught foundational web development to vocational students.
+                    </p>
+                    <div class="badge-list">
+                        <span class="badge">Teaching</span>
+                        <span class="badge">Web Programming</span>
+                        <span class="badge">HTML / CSS</span>
+                    </div>
                 </div>
 
                 <!-- Experience: Run System -->
                 <div class="experience-card">
-                    <p class="job-title">Software Developer Intern – PT. Global Sukses Solusi (Run System)</p>
-                    <p class="dates">Jul 2018 – Aug 2018</p>
-                    <ul>
-                        <li>Developed a temperature monitoring system using Arduino</li>
-                        <li>Built desktop modules with Windows Forms and MySQL</li>
-                    </ul>
-                    <p><strong>Tools:</strong> C#, Arduino, Windows Forms, MySQL</p>
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Software Developer Intern</h3>
+                            <span class="company-name">Run System - PT. Global Sukses Solusi</span> &bull; Yogyakarta, Indonesia
+                        </div>
+                        <span class="dates">07/2018 – 08/2018</span>
+                    </div>
+                    <p>
+                        Developed a high-temperature monitoring hardware device with Arduino and created Windows Forms desktop software with MySQL database connection.
+                    </p>
+                    <div class="badge-list">
+                        <span class="badge">Arduino IDE</span>
+                        <span class="badge">C#</span>
+                        <span class="badge">Windows Forms</span>
+                        <span class="badge">MySQL</span>
+                    </div>
                 </div>
-                </section>
-            </div>
-        </div>
+            </section>
+
+            <!-- Key Highlighted Projects -->
+            <section class="section" id="projects">
+                <h2>🚀 Key Highlighted Projects</h2>
+
+                <!-- Pong Evolved -->
+                <div class="project-item">
+                    <div class="job-header">
+                        <h3 class="job-title">Pong Evolved</h3>
+                        <span class="dates">09/2021 – 10/2021</span>
+                    </div>
+                    <p>
+                        Action arcade mobile game with infinite dynamic levels, retro-modern aesthetic, particle effects, and integrated Google AdMob monetization.
+                    </p>
+                    <div class="badge-list">
+                        <span class="badge">Unity3D</span>
+                        <span class="badge">C#</span>
+                        <span class="badge">Google AdMob</span>
+                        <span class="badge">Mobile</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.HerghysStudio.PongEvolved" target="_blank" rel="noopener noreferrer">
+                            ▶ Google Play Store
+                        </a>
+                        <a href="https://herghys.github.io/PrivacyPolicyCollection/Pong-Evolved-Privacy-Policy/" target="_blank" rel="noopener noreferrer">
+                            🔒 Privacy Policy
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tap! -->
+                <div class="project-item">
+                    <div class="job-header">
+                        <h3 class="job-title">Tap!</h3>
+                        <span class="dates">07/2021 – 09/2021</span>
+                    </div>
+                    <p>
+                        Fast-paced mobile reflex and tapping arcade game featuring responsive touchscreen controls, scoring systems, and Google AdMob SDK.
+                    </p>
+                    <div class="badge-list">
+                        <span class="badge">Unity3D</span>
+                        <span class="badge">C#</span>
+                        <span class="badge">Google AdMob</span>
+                        <span class="badge">Mobile</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.HerghysStudio.Game.Tap" target="_blank" rel="noopener noreferrer">
+                            ▶ Google Play Store
+                        </a>
+                        <a href="https://github.com/herghys/Tap" target="_blank" rel="noopener noreferrer">
+                            🐙 GitHub Repo
+                        </a>
+                        <a href="https://herghys.github.io/PrivacyPolicyCollection/Tap-Privacy-Policy/" target="_blank" rel="noopener noreferrer">
+                            🔒 Privacy Policy
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Linjun Nail Art -->
+                <div class="project-item">
+                    <div class="job-header">
+                        <h3 class="job-title">Linjun Nail Art</h3>
+                        <span class="dates">2024 – Present</span>
+                    </div>
+                    <p>
+                        E-commerce showcase website and digital lookbook for Linjun Nail Art & Eyelashes handmade press-on nail studio. Designed product catalog with high-resolution image galleries, categorized showcases, and WhatsApp order inquiry workflows.
+                    </p>
+                    <div class="badge-list">
+                        <span class="badge">PHP</span>
+                        <span class="badge">Laravel</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">Responsive Web</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://linjunnailart.com/" target="_blank" rel="noopener noreferrer">
+                            🌐 Live Website (linjunnailart.com)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Newfemme Cinda -->
+                <div class="project-item">
+                    <div class="job-header">
+                        <h3 class="job-title">Newfemme Cinda</h3>
+                        <span class="dates">10/2023 – 03/2024</span>
+                    </div>
+                    <p>
+                        Gamified e-commerce mobile experience featuring 3D avatar generation from selfies, dress-up mechanics, asset bundle streaming, and real-world product rewards.
+                    </p>
+                    <div class="badge-list">
+                        <span class="badge">Unity3D</span>
+                        <span class="badge">C# Threading</span>
+                        <span class="badge">Firebase Auth</span>
+                        <span class="badge">Google/Apple Sign-In</span>
+                        <span class="badge">Asset Bundles</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.newfemmewanitaindonesia.cinda" target="_blank" rel="noopener noreferrer">
+                            ▶ Google Play Store
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Duckie Bubble -->
+                <div class="project-item">
+                    <div class="job-header">
+                        <h3 class="job-title">Duckie Bubble</h3>
+                        <span class="dates">09/2024 – 10/2024</span>
+                    </div>
+                    <p>
+                        Bubble shooter game designed for Telegram Bot WebApps with custom Unity REST client, JSLib bridge for auth tokens, and HTML5 WebGL wrapper.
+                    </p>
+                    <div class="badge-list">
+                        <span class="badge">Unity WebGL</span>
+                        <span class="badge">Telegram API</span>
+                        <span class="badge">JSLib / JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://t.me/DuckieLandBot/DuckieBubbles/" target="_blank" rel="noopener noreferrer">
+                            ✈ Telegram Mini App
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Keystore Helper -->
+                <div class="project-item">
+                    <div class="job-header">
+                        <h3 class="job-title">Keystore Helper</h3>
+                        <span class="dates">10/2024 – Present</span>
+                    </div>
+                    <p>
+                        Open-source Windows desktop utility built with WPF to create Android Keystores and instantly extract SHA-1 and SHA-256 certificate fingerprints for Firebase and Google Play console setup.
+                    </p>
+                    <div class="badge-list">
+                        <span class="badge">C#</span>
+                        <span class="badge">WPF</span>
+                        <span class="badge">.NET Framework</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/herghys/Keystore-Helper" target="_blank" rel="noopener noreferrer">
+                            🐙 GitHub Repo
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="section" id="skills">
+                <h2>🧠 Technical Skills</h2>
+                <p><strong>Programming Languages:</strong> C#, VB.Net, Java, Arduino, Python, HTML/CSS, SQL, JavaScript</p>
+                <p><strong>Game Engines & Frameworks:</strong> Unity3D, SteamVR SDK, Vuforia SDK, Windows Forms, WPF, .NET Core, .NET Framework</p>
+                <p><strong>Tools & Platforms:</strong> Git, Postman, Visual Studio, VS Code, Arduino IDE, Android Studio</p>
+                <p><strong>Cloud, Auth & Analytics:</strong> Firebase SDK (Auth, Analytics, FCM), Google Sign-In, Apple Sign-In, Facebook SDK</p>
+                <p><strong>Other Competencies:</strong> Computer Science & Web Programming Instruction, Technical Documentation, Game Design Documents (GDD)</p>
+            </section>
+
+            <!-- SDKs -->
+            <section class="section" id="sdks">
+                <h2>🧰 SDKs & Networking</h2>
+                <div class="badge-list">
+                    <span class="badge">Unity3D Engine</span>
+                    <span class="badge">SteamVR SDK</span>
+                    <span class="badge">Google Sign-In SDK</span>
+                    <span class="badge">Apple Sign-In SDK</span>
+                    <span class="badge">Facebook SDK</span>
+                    <span class="badge">Firebase Analytics SDK</span>
+                    <span class="badge">Firebase Cloud Messaging</span>
+                    <span class="badge">Firebase Authentication</span>
+                    <span class="badge">Google AdMob</span>
+                    <span class="badge">Google In-App Purchases (IAP)</span>
+                    <span class="badge">Google In-App Update SDK</span>
+                    <span class="badge">Vuforia AR SDK</span>
+                    <span class="badge">Mirror Networking</span>
+                    <span class="badge">Netcode for GameObjects</span>
+                    <span class="badge">Telegram API</span>
+                    <span class="badge">Twitter SDK</span>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section" id="education">
+                <h2>🎓 Education</h2>
+                <div class="job-header">
+                    <div>
+                        <h3 class="job-title">B.Ed / S.Pd in Informatics Engineering Education</h3>
+                        <span class="company-name">Yogyakarta State University (Universitas Negeri Yogyakarta)</span>
+                    </div>
+                    <span class="dates">Graduated 09/2021</span>
+                </div>
+                <p><strong>GPA:</strong> 3.53 / 4.00</p>
+                <p>Specialized in Software Engineering, Web Development, and Game Development pedagogies.</p>
+            </section>
+
+            <!-- Language & Certificates -->
+            <section class="section" id="certificates">
+                <h2>📜 Certificates & Languages</h2>
+                <p>
+                    <strong>C# (Basic) Certificate</strong> – HackerRank (ID: BE0C3E847A8E)<br>
+                    <a href="https://www.hackerrank.com/certificates/be0c3e847a8e" target="_blank" rel="noopener noreferrer">View Credential &rarr;</a>
+                </p>
+                <hr>
+                <p>
+                    <strong>Languages:</strong><br>
+                    &bull; <strong>Indonesian:</strong> Native speaker<br>
+                    &bull; <strong>English:</strong> 570 TOEFL Like (PROTEFL), 2016
+                </p>
+            </section>
+
+        </main>
     </div>
+    <script src="scripts/resume.js" defer></script>
 </body>
 </html>
