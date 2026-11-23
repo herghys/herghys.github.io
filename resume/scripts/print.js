@@ -1,4 +1,4 @@
-// ATS Resume script: Print handler
+// Printable Resume Script: Print handler
 document.addEventListener('DOMContentLoaded', () => {
     const printBtn = document.getElementById('print-resume-btn');
     if (printBtn) {

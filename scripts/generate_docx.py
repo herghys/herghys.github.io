@@ -298,8 +298,8 @@ def create_resume():
 
     # Save to both repositories
     paths = [
-        r"D:\ALALALALAL\herghys.github.io\resume\Helmi_Arghya_Santosa_Resume_ATS.docx",
-        r"D:\ALALALALAL\herghys_vercel\resume\Helmi_Arghya_Santosa_Resume_ATS.docx"
+        r"D:\ALALALALAL\herghys.github.io\resume\Helmi_Arghya_Santosa_Resume.docx",
+        r"D:\ALALALALAL\herghys_vercel\resume\Helmi_Arghya_Santosa_Resume.docx"
     ]
     for p in paths:
         doc.save(p)
