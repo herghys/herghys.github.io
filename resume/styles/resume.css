@@ -57,6 +57,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
+    transform: translateZ(0);
 }
 
 .nav-brand {
@@ -479,6 +480,8 @@ details.role-card {
     border-radius: 3px;
     overflow: hidden;
     transition: border-color 0.15s ease;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 160px;
 }
 
 details.role-card:hover {

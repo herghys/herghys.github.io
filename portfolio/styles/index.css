@@ -563,6 +563,12 @@ body {
   border: 1px solid rgba(88, 166, 255, 0.3);
 }
 
+.badge-client {
+  background: rgba(163, 113, 247, 0.12);
+  color: #d2a8ff;
+  border: 1px solid rgba(163, 113, 247, 0.35);
+}
+
 .badge-oss {
   background: rgba(46, 160, 67, 0.12);
   color: #7ee787;

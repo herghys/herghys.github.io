@@ -1,7 +1,6 @@
 [
     {
         "title": "Linjun Nail Art",
-        "projectType": "2",
         "icon": "",
         "description": "E-commerce showcase website and digital lookbook for Linjun Nail Art & Eyelashes, a handmade press-on nail studio. Features curated product catalogs, design collections, responsive galleries, and WhatsApp direct ordering workflows.",
         "projectTime": {
@@ -36,11 +35,17 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": false,
+        "isApplication": true,
+        "isPersonalProject": false,
+        "isWorkProject": false,
+        "isClientProject": true,
+        "isFreelanceProject": true,
+        "isOpenSource": false
     },
     {
         "title": "Pong Evolved",
-        "projectType": "3",
         "icon": "",
         "description": "Action arcade mobile game with infinite dynamic levels, retro-modern visual effects, sound feedback, and integrated Google AdMob monetization.",
         "projectTime": {
@@ -73,11 +78,17 @@
             "orientation": "portrait",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": true,
+        "isWorkProject": false,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Tap!",
-        "projectType": "3",
         "icon": "",
         "description": "Fast-paced mobile reflex and tapping arcade game featuring responsive touchscreen controls, scoring systems, and Google AdMob SDK.",
         "projectTime": {
@@ -101,8 +112,8 @@
             "Git"
         ],
         "repo": {
-            "link": "https://github.com/herghys/Tap",
-            "isPrivate": false
+            "link": "",
+            "isPrivate": true
         },
         "store": {
             "link": "https://play.google.com/store/apps/details?id=com.HerghysStudio.Game.Tap",
@@ -112,11 +123,17 @@
             "orientation": "portrait",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": true,
+        "isWorkProject": false,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Keystore Helper",
-        "projectType": "1",
         "icon": "",
         "description": "Open-source Windows desktop utility built with WPF to create Android Keystores and instantly extract SHA-1 and SHA-256 certificate fingerprints for Firebase and Google Play setup.",
         "projectTime": {
@@ -148,11 +165,17 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": false,
+        "isApplication": true,
+        "isPersonalProject": true,
+        "isWorkProject": false,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": true
     },
     {
         "title": "Cinda: Virtual Dress Up",
-        "projectType": "2",
         "icon": "cinda-icon.png",
         "description": "Commercial mobile game where users dress up a 3D avatar generated from selfies using AI, featuring gamified e-commerce and real-world physical reward integrations.",
         "projectTime": {
@@ -208,11 +231,17 @@
                 19,
                 20
             ]
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Ducky Pop",
-        "projectType": "2",
         "icon": "tap-icon.png",
         "description": "Fluid-physics match-3 mobile game with Google & Firebase login, in-app purchases, and live leaderboard API integrations.",
         "projectTime": {
@@ -263,11 +292,17 @@
                 15,
                 16
             ]
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Duckie Bubble",
-        "projectType": "2",
         "icon": "",
         "description": "Telegram Bot Mini-App bubble shooter game built with Unity WebGL, featuring custom REST client and JavaScript web wrapper integration.",
         "projectTime": {
@@ -312,11 +347,17 @@
                 8,
                 9
             ]
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Newfemme App",
-        "projectType": "2",
         "icon": "",
         "description": "Cross-platform mobile application and integrated minigames developed using Unity for iOS and Android.",
         "projectTime": {
@@ -350,11 +391,17 @@
             "orientation": "landscape",
             "path": "newfemme",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": true,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "HappyD",
-        "projectType": "2",
         "icon": "",
         "description": "Gamification health prototype built to help individuals managing diabetes. Integrated Ready Player Me for personalized 3D avatar creation and Firebase SDK backend.",
         "projectTime": {
@@ -388,11 +435,17 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": true,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Candies Land",
-        "projectType": "2",
         "icon": "",
         "description": "Match-3 puzzle game created with Unity, integrating Google and Firebase login, Facebook login, and online leaderboard API connections.",
         "projectTime": {
@@ -427,11 +480,17 @@
             "orientation": "portrait",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Baker Pro",
-        "projectType": "2",
         "icon": "",
         "description": "Engaging cooking and restaurant simulation game developed in Unity with social login and account synchronization.",
         "projectTime": {
@@ -465,11 +524,17 @@
             "orientation": "portrait",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Blush Tales",
-        "projectType": "2",
         "icon": "",
         "description": "Match-3 puzzle mobile game created with Unity with Google and Firebase Login, FB Login, and online leaderboard integration.",
         "projectTime": {
@@ -503,11 +568,17 @@
             "orientation": "portrait",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Blush Crush",
-        "projectType": "2",
         "icon": "",
         "description": "Casual match game created with Unity featuring Google and Firebase Login and leaderboard API connections.",
         "projectTime": {
@@ -540,11 +611,17 @@
             "orientation": "portrait",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Crossy Cube",
-        "projectType": "2",
         "icon": "",
         "description": "3D casual arcade crossing game prototype developed in Unity with cross-platform social authentication and online leaderboards.",
         "projectTime": {
@@ -578,11 +655,17 @@
             "orientation": "portrait",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Tiny Crash",
-        "projectType": "2",
         "icon": "",
         "description": "3D arcade car racing game prototype built for Windows in Unity, featuring vehicle dynamics, custom track design, and online leaderboards.",
         "projectTime": {
@@ -615,11 +698,17 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Sky Racer",
-        "projectType": "2",
         "icon": "",
         "description": "3D airplane flight racing prototype developed in Unity for Windows with pitch/roll flight dynamics and global scoreboards.",
         "projectTime": {
@@ -652,11 +741,17 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": true,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Si Murda",
-        "projectType": "2",
         "icon": "murda-icon.png",
         "description": "Client educational Javanese language adventure game with interactive trivia quizzes built for WebGL.",
         "projectTime": {
@@ -702,11 +797,17 @@
                 12,
                 13
             ]
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": false,
+        "isClientProject": true,
+        "isFreelanceProject": true,
+        "isOpenSource": false
     },
     {
         "title": "Fortune Hunter",
-        "projectType": "2",
         "icon": "",
         "description": "Client biology educational treasure-hunting adventure game developed for PC with Universal Render Pipeline (URP).",
         "projectTime": {
@@ -749,11 +850,17 @@
                 9,
                 10
             ]
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": false,
+        "isClientProject": true,
+        "isFreelanceProject": true,
+        "isOpenSource": false
     },
     {
         "title": "Petualangan Qori",
-        "projectType": "2",
         "icon": "",
         "description": "Client Islamic educational WebGL game featuring adventure storytelling, trivia quizzes, and interactive memory minigames.",
         "projectTime": {
@@ -785,11 +892,17 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": false,
+        "isClientProject": true,
+        "isFreelanceProject": true,
+        "isOpenSource": false
     },
     {
         "title": "Eksponen Edugame",
-        "projectType": "2",
         "icon": "",
         "description": "Client 2D WebGL math educational game focused on exponential arithmetic and interactive problem-solving.",
         "projectTime": {
@@ -834,11 +947,17 @@
                 12,
                 13
             ]
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": false,
+        "isWorkProject": false,
+        "isClientProject": true,
+        "isFreelanceProject": true,
+        "isOpenSource": false
     },
     {
         "title": "ARMath",
-        "projectType": "2",
         "icon": "",
         "description": "Client Augmented Reality geometry educational mobile game developed with Unity and Vuforia SDK.",
         "projectTime": {
@@ -869,11 +988,17 @@
             "orientation": "portrait",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": true,
+        "isPersonalProject": false,
+        "isWorkProject": false,
+        "isClientProject": true,
+        "isFreelanceProject": true,
+        "isOpenSource": false
     },
     {
         "title": "Wayangku AR",
-        "projectType": "2",
         "icon": "",
         "description": "Client mobile Augmented Reality educational application exploring Indonesian Pandawa Wayang Kulit culture using Vuforia SDK.",
         "projectTime": {
@@ -903,11 +1028,17 @@
             "orientation": "portrait",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": false,
+        "isApplication": true,
+        "isPersonalProject": false,
+        "isWorkProject": false,
+        "isClientProject": true,
+        "isFreelanceProject": true,
+        "isOpenSource": false
     },
     {
         "title": "AR Batuan",
-        "projectType": "2",
         "icon": "",
         "description": "Client mobile Augmented Reality educational game teaching rock types and geology using Vuforia target markers.",
         "projectTime": {
@@ -937,13 +1068,19 @@
             "orientation": "portrait",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": true,
+        "isApplication": true,
+        "isPersonalProject": false,
+        "isWorkProject": false,
+        "isClientProject": true,
+        "isFreelanceProject": true,
+        "isOpenSource": false
     },
     {
         "title": "Logibot",
-        "projectType": "3",
         "icon": "",
-        "description": "Undergraduate thesis project — an educational 3D robotics logic and puzzle game built in Unity featuring custom Shader Graph visual effects, Cinemachine camera rigging, and the new Unity Input System.",
+        "description": "Undergraduate thesis project \u2014 an educational 3D robotics logic and puzzle game built in Unity featuring custom Shader Graph visual effects, Cinemachine camera rigging, and the new Unity Input System.",
         "projectTime": {
             "startDate": "July 2021",
             "endDate": "September 2021",
@@ -992,11 +1129,17 @@
                 15,
                 16
             ]
-        }
+        },
+        "isGame": true,
+        "isApplication": false,
+        "isPersonalProject": true,
+        "isWorkProject": false,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Periodic Table (Atomic)",
-        "projectType": "3",
         "icon": "",
         "description": "Interactive UI-based chemistry application and learning game built in Unity (uGUI) to visualize, explore, and test knowledge on chemical elements of the Periodic Table on mobile.",
         "projectTime": {
@@ -1032,11 +1175,17 @@
                 2,
                 3
             ]
-        }
+        },
+        "isGame": true,
+        "isApplication": true,
+        "isPersonalProject": true,
+        "isWorkProject": false,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": false
     },
     {
         "title": "Unity 2D Extension",
-        "projectType": "1",
         "icon": "",
         "description": "Open-source collection of reusable 2D utility scripts and helper extensions for Unity3D game developers.",
         "projectTime": {
@@ -1065,11 +1214,17 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": false,
+        "isApplication": false,
+        "isPersonalProject": true,
+        "isWorkProject": false,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": true
     },
     {
         "title": "Unity Linq Extension",
-        "projectType": "1",
         "icon": "",
         "description": "Open-source LINQ helper extensions optimized for Unity GameObjects, Transforms, and Component hierarchies.",
         "projectTime": {
@@ -1099,11 +1254,17 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": false,
+        "isApplication": false,
+        "isPersonalProject": true,
+        "isWorkProject": false,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": true
     },
     {
         "title": "Unity Simple Audio Manager",
-        "projectType": "1",
         "icon": "",
         "description": "Lightweight, decoupled audio management package for Unity handling BGM, SFX, pitch variation, and volume fading.",
         "projectTime": {
@@ -1132,11 +1293,17 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": false,
+        "isApplication": false,
+        "isPersonalProject": true,
+        "isWorkProject": false,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": true
     },
     {
         "title": "MSI Afterburner Monitor",
-        "projectType": "1",
         "icon": "",
         "description": "Open-source Windows system tray utility to monitor GPU stats and switch MSI Afterburner profiles effortlessly.",
         "projectTime": {
@@ -1167,11 +1334,17 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": false,
+        "isApplication": true,
+        "isPersonalProject": true,
+        "isWorkProject": false,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": true
     },
     {
         "title": "ADB GUI Tool",
-        "projectType": "1",
         "icon": "",
         "description": "Open-source Windows desktop utility providing a clean graphical interface over Android Debug Bridge (ADB) commands.",
         "projectTime": {
@@ -1201,11 +1374,17 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": false,
+        "isApplication": true,
+        "isPersonalProject": true,
+        "isWorkProject": false,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": true
     },
     {
         "title": "Stardew Valley Mod Comparer",
-        "projectType": "1",
         "icon": "",
         "description": "Windows desktop WPF application to inspect and compare installed Stardew Valley game mods between different PCs via JSON export.",
         "projectTime": {
@@ -1238,13 +1417,19 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": false,
+        "isApplication": true,
+        "isPersonalProject": true,
+        "isWorkProject": false,
+        "isClientProject": false,
+        "isFreelanceProject": false,
+        "isOpenSource": true
     },
     {
         "title": "Temperature Monitoring Module",
-        "projectType": "2",
         "icon": "",
-        "description": "Client hardware engineering project with Run System (PT. Global Sukses Solusi) — real-world industrial hardware device for high-temperature monitoring built using Arduino microcontrollers, connected to a C# (Windows Forms) desktop telemetry application and MySQL database.",
+        "description": "Client hardware engineering project with Run System (PT. Global Sukses Solusi) \u2014 real-world industrial hardware device for high-temperature monitoring built using Arduino microcontrollers, connected to a C# (Windows Forms) desktop telemetry application and MySQL database.",
         "projectTime": {
             "startDate": "July 2018",
             "endDate": "August 2018",
@@ -1274,6 +1459,13 @@
             "orientation": "landscape",
             "path": "",
             "images": []
-        }
+        },
+        "isGame": false,
+        "isApplication": true,
+        "isPersonalProject": false,
+        "isWorkProject": false,
+        "isClientProject": true,
+        "isFreelanceProject": true,
+        "isOpenSource": false
     }
 ]

@@ -39,12 +39,22 @@
         const techStr = (project.technologies || []).join(' ');
         const fullText = `${project.title} ${project.description || ''} ${techStr}`.toLowerCase();
 
-        // Project Type
-        if (project.projectType == 2) {
+        // Project Classification via separated boolean flags
+        if (project.isWorkProject) {
+            categories.push('work');
             categories.push('commercial');
-        } else if (project.projectType == 3 || project.projectType === 'personal') {
+        }
+        if (project.isClientProject || project.isFreelanceProject) {
+            categories.push('client');
+            categories.push('commercial');
+        }
+        if (project.isPersonalProject) {
             categories.push('personal');
-        } else if (project.projectType == 1) {
+            if (project.title === 'Pong Evolved' || project.title === 'Tap!') {
+                categories.push('commercial');
+            }
+        }
+        if (project.isOpenSource) {
             categories.push('opensource');
             categories.push('tools');
         }
@@ -55,13 +65,15 @@
         }
 
         // Tools & Utilities
-        if (/\b(tool|wpf|winforms|extension|helper|comparer|monitoring|module|linq|utility)\b/i.test(fullText)) {
-            categories.push('tools');
+        if ((project.isApplication && !project.isGame) || /\b(tool|wpf|winforms|extension|helper|comparer|monitoring|module|linq|utility)\b/i.test(fullText)) {
+            if (!categories.includes('tools')) {
+                categories.push('tools');
+            }
         }
 
         // Games & Interactive
-        if (/\b(game|arcade|dress up|puzzle|racer|admob|bubble|lands|runner)\b/i.test(fullText) ||
-            ((project.technologies || []).includes('Unity3D') && !categories.includes('tools'))) {
+        if (project.isGame === true || (project.isGame !== false && (/\b(game|arcade|dress up|puzzle|racer|admob|bubble|lands|runner)\b/i.test(fullText) ||
+            ((project.technologies || []).includes('Unity3D') && !categories.includes('tools'))))) {
             categories.push('games');
         }
 
@@ -120,7 +132,7 @@
         card.setAttribute('data-index', projectIndex);
         card.setAttribute('data-categories', project._catStr || '');
 
-        const isCommercial = project.projectType == 2;
+        const isCommercialOrClient = project.isWorkProject || project.isClientProject || project.isFreelanceProject;
         const timeline = formatTimeline(project.projectTime);
 
         // --- Screenshots Media Block ---
@@ -178,12 +190,18 @@
 
         // --- Card Header ---
         let typeBadge = '';
-        if (project.projectType == 2) {
+        if (project.isClientProject || project.isFreelanceProject) {
+            typeBadge = `<span class="badge badge-client"><i class="fas fa-handshake"></i> Client Project</span>`;
+        } else if (project.isWorkProject) {
             typeBadge = `<span class="badge badge-commercial"><i class="fas fa-briefcase"></i> Commercial</span>`;
-        } else if (project.projectType == 3 || project.projectType === 'personal') {
+        } else if (project.isOpenSource) {
+            typeBadge = `<span class="badge badge-oss"><i class="fas fa-code-branch"></i> Open Source</span>`;
+        } else if (project.title === 'Pong Evolved' || project.title === 'Tap!') {
+            typeBadge = `<span class="badge badge-commercial"><i class="fas fa-briefcase"></i> Commercial</span>`;
+        } else if (project.isPersonalProject) {
             typeBadge = `<span class="badge badge-personal"><i class="fas fa-user"></i> Personal Project</span>`;
         } else {
-            typeBadge = `<span class="badge badge-oss"><i class="fas fa-code-branch"></i> Open Source</span>`;
+            typeBadge = `<span class="badge badge-commercial"><i class="fas fa-briefcase"></i> Commercial</span>`;
         }
 
         const timelineBadge = timeline
@@ -232,10 +250,10 @@
                     <i class="fab fa-github"></i> Repository
                 </a>
             `;
-        } else if (isCommercial) {
+        } else if (isCommercialOrClient) {
             repoActionHtml = `
                 <span class="badge-private" title="Client / Enterprise proprietary codebase under NDA">
-                    <i class="fas fa-shield-alt"></i> Client Confidential
+                    <i class="fas fa-shield-alt"></i> Confidential
                 </span>
             `;
         } else {
@@ -362,6 +380,7 @@
         const counts = {
             'all': allProjects.length,
             'commercial': 0,
+            'client': 0,
             'games': 0,
             'ar-vr-sim': 0,
             'tools': 0,
