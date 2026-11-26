@@ -50,7 +50,7 @@ Graduated from Yogyakarta State University with a degree in Education. Always le
 **Game & Software Developer (Self-Employed)**  
 *Herghys Studio* | Tangerang, Indonesia  
 *06/2021 – Present*
-- Designed, programmed, and published commercial mobile games on Google Play, including *Pong Evolved* and *Tap!*.
+- Designed and programmed commercial mobile games on Google Play, including *Pong Evolved* and *Tap!*.
 - Implemented responsive mobile touch mechanics, adaptive difficulty algorithms, and Google AdMob advertising monetization.
 - Developed Augmented Reality (AR) mobile applications utilizing Vuforia SDK with planar image tracking and interactive 3D media rendering.
 - Built open-source desktop software utilities in WPF and Windows Forms, including *Keystore Helper* (Android keystore generator & SHA-1/SHA-256 extractor).
@@ -86,8 +86,8 @@ Graduated from Yogyakarta State University with a degree in Education. Always le
 ### FEATURED PROJECTS & PROTOTYPES
 
 #### Commercial Releases & Web Applications
-- **Pong Evolved** (Mobile Game, Google Play) – Infinite-level action arcade mobile game with dynamic physics, particle effects, and AdMob banner/interstitial ads.
-- **Tap!** (Mobile Game, Google Play & GitHub) – Fast-paced reflex tapping game with responsive touchscreen input, high-score tracking, and AdMob integration.
+- **Pong Evolved** (Commercial Mobile Game, Google Play) – Infinite-level action arcade mobile game with dynamic physics, particle effects, and AdMob banner/interstitial ads.
+- **Tap!** (Commercial Mobile Game, Google Play) – Fast-paced reflex tapping game with responsive touchscreen input, high-score tracking, and AdMob integration.
 - **Cinda: Virtual Dress Up** (Commercial Mobile Game, Google Play) – AI selfie-generated 3D avatar e-commerce dress-up game with AssetBundle streaming and OAuth sign-in.
 - **Duckie Bubble** (Telegram Bot Mini-App, WebGL) – Unity WebGL bubble shooter game with custom REST API client and bidirectional JSLib token bridge.
 - **Ducky Pop** (Mobile Game, Google Play) – Fluid-physics match-3 puzzle game featuring Unity IAP, Firebase login, and live global leaderboards.
@@ -102,22 +102,22 @@ Graduated from Yogyakarta State University with a degree in Education. Always le
 - **Logibot** (3D Puzzle Adventure, Thesis Project) – 3D robotics educational puzzle game built with custom Shader Graph shaders, Cinemachine cameras, and the new Unity Input System.
 
 #### Augmented Reality (AR) & Educational Games
-- **ARMath / GeoARVenture** (Mobile AR) – Augmented reality 3D geometry educational game built with Unity and Vuforia SDK image target tracking.
-- **Wayangku AR** (Mobile AR) – Indonesian cultural heritage educational AR application visualizing 3D Pandawa Wayang Kulit characters with Vuforia SDK.
-- **AR Batuan** (Mobile AR) – Geological educational AR application featuring 3D rock specimen models and interactive classification info.
-- **SiMurda Edugame** (Educational WebGL) – Javanese language adventure exploration game with TextMeshPro typography and interactive trivia quizzes.
-- **Fortune Hunter** (PC Educational Adventure) – Biology educational game developed in Unity with Universal Render Pipeline (URP), Cinemachine, and Playable Director timelines.
-- **Petualangan Qori** (Educational WebGL) – Islamic educational game featuring adventure storytelling, trivia quizzes, and memory minigames.
-- **Eksponen Edugame** (Educational WebGL) – Interactive mathematics educational game focusing on exponential arithmetic.
-- **Periodic Table / Atomic** (Educational Mobile) – Interactive 2D chemistry learning game for mastering the periodic table of elements.
+- **ARMath / GeoARVenture** (Client Mobile AR) – Client augmented reality 3D geometry educational game built with Unity and Vuforia SDK image target tracking.
+- **Wayangku AR** (Client Mobile AR) – Client Indonesian cultural heritage educational AR application visualizing 3D Pandawa Wayang Kulit characters with Vuforia SDK.
+- **AR Batuan** (Client Mobile AR) – Client geological educational AR application featuring 3D rock specimen models and interactive classification info.
+- **SiMurda Edugame** (Client Educational WebGL) – Client Javanese language adventure exploration game with TextMeshPro typography and interactive trivia quizzes.
+- **Fortune Hunter** (Client PC Educational Adventure) – Client biology educational game developed in Unity with Universal Render Pipeline (URP), Cinemachine, and Playable Director timelines.
+- **Petualangan Qori** (Client Educational WebGL) – Client Islamic educational game featuring adventure storytelling, trivia quizzes, and memory minigames.
+- **Eksponen Edugame** (Client Educational WebGL) – Client interactive mathematics educational game focusing on exponential arithmetic.
+- **Periodic Table / Atomic** (Interactive Educational UI) – Mobile chemistry application built with Unity UI (uGUI) for exploring and testing knowledge on periodic table elements.
 
 #### Developer Utilities & Desktop Applications
 - **Keystore Helper** (Windows WPF, GitHub) – Open-source desktop utility automating Java Keytool commands to generate Android keystores and extract SHA-1 and SHA-256 certificate fingerprints.
-- **Unity Open-Source Packages (Unity 2D Extension, Unity Linq Extension, Unity Simple Audio Manager)** – Published modular C# extension libraries for scene hierarchy querying, 2D physics helpers, and decoupled audio pooling.
+- **Unity Open-Source Packages (Unity 2D Extension, Unity Linq Extension, Unity Simple Audio Manager)** – Open-source modular C# extension libraries for scene hierarchy querying, 2D physics helpers, and decoupled audio pooling.
 - **ADB GUI Tool** (Windows Forms, GitHub) – Graphical interface wrapper over Android Debug Bridge (ADB) for installing APKs and file transfer.
 - **MSI Afterburner Monitor** (Windows Forms, GitHub) – System tray utility for real-time GPU hardware monitoring and MSI Afterburner profile switching.
 - **Stardew Valley Mod Comparer** (Windows WPF) – Dual-targeted (.NET Core & .NET Framework) tool scanning mod directories and analyzing differences via JSON manifests.
-- **Temperature Monitoring Module** (Arduino, Windows Forms, MySQL) – Industrial temperature sensor telemetry hardware with desktop logging dashboard.
+- **Temperature Monitoring Module** (Arduino, Windows Forms, MySQL) – Real-world industrial temperature monitoring hardware device built using Arduino microcontrollers with companion C# desktop telemetry logging dashboard for client.
 
 ---
 
