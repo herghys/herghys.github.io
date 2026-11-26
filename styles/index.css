@@ -583,6 +583,12 @@ a:hover {
         gap: 0.75rem;
     }
 
+    .site-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 1rem;
+    }
+
     .intro-name {
         font-size: 2.2rem;
     }

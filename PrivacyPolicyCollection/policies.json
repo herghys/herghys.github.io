@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "TapColored-Privacy-Policy",
+    "appName": "Tap Colored",
+    "effectiveDate": "2026-11-26",
+    "effectiveLabel": "Nov 26, 2026",
+    "sdks": [
+      "Google Play Services",
+      "AdMob",
+      "Unity"
+    ],
+    "files": [
+      "PrivacyPolicy.md",
+      "index.html"
+    ]
+  },
+  {
+    "slug": "Pong-Evolved-Privacy-Policy",
+    "appName": "Pong Evolved",
+    "effectiveDate": "2026-11-23",
+    "effectiveLabel": "Nov 23, 2026",
+    "sdks": [
+      "Google Play Services",
+      "AdMob",
+      "Unity"
+    ],
+    "files": [
+      "PrivacyPolicy.md",
+      "index.html"
+    ]
+  },
+  {
+    "slug": "Tap-Privacy-Policy",
+    "appName": "Tap!",
+    "effectiveDate": "2023-05-06",
+    "effectiveLabel": "May 6, 2023",
+    "sdks": [
+      "Google Play Services",
+      "AdMob",
+      "Unity"
+    ],
+    "files": [
+      "PrivacyPolicy.md",
+      "index.html"
+    ]
+  },
+  {
+    "slug": "IAPLearn-Privacy-Policy",
+    "appName": "IAPLearn",
+    "effectiveDate": "2023-05-06",
+    "effectiveLabel": "May 6, 2023",
+    "sdks": [
+      "Google Play Services",
+      "AdMob",
+      "Unity"
+    ],
+    "files": [
+      "PrivacyPolicy.md",
+      "index.html"
+    ]
+  }
+]
