@@ -1,47 +1,86 @@
 (function () {
     var REPO_API = 'https://api.github.com/repos/herghys/herghys.github.io/contents/PrivacyPolicyCollection';
+    var CACHE_KEY = 'herghys_privacy_policies_v1';
     var IGNORED_DIRS = { styles: true, scripts: true };
 
     var SDK_CATALOG = {
         'Google Play Services': {
+            pattern: /google\s+play\s+services/i,
             role: 'App distribution & Android services',
             detail: 'Provides core Android platform features such as crash reporting, app updates, and Play Store integration. Data is governed by Google’s privacy policy.',
             url: 'https://www.google.com/policies/privacy/'
         },
         'AdMob': {
+            pattern: /\badmob\b/i,
             role: 'In-app advertising',
             detail: 'Serves ads so the app can remain free to play. AdMob may use device advertising IDs and cookies to deliver relevant or non-personalized ads.',
             url: 'https://support.google.com/admob/answer/6128543?hl=en'
         },
         'Unity': {
+            pattern: /\bunity\b/i,
             role: 'Game engine runtime & diagnostics',
             detail: 'Powers the game runtime and may collect anonymized device diagnostics (OS version, hardware specs) to help keep the game stable.',
             url: 'https://unity3d.com/legal/privacy-policy'
         },
         'Firebase': {
+            pattern: /\bfirebase\b/i,
             role: 'App backend & crash analytics',
             detail: 'Provides authentication, analytics, or crash reporting services governed by Google Firebase privacy terms.',
             url: 'https://firebase.google.com/support/privacy'
         },
         'Google Analytics': {
+            pattern: /google\s+analytics/i,
             role: 'Usage analytics',
             detail: 'Helps understand aggregate app usage and performance metrics.',
             url: 'https://policies.google.com/privacy'
         }
     };
 
-    var initialEntries = Array.isArray(window.PRIVACY_POLICIES) && window.PRIVACY_POLICIES.length
-        ? window.PRIVACY_POLICIES.slice()
-        : [];
+    // Offline / rate-limit fallback so the page always renders immediately
+    var FALLBACK_ENTRIES = [
+        {
+            slug: 'TapColored-Privacy-Policy',
+            appName: 'Tap Colored',
+            effectiveDate: '2026-11-26',
+            effectiveLabel: 'Nov 26, 2026',
+            sdks: ['Google Play Services', 'AdMob', 'Unity'],
+            files: ['index.html', 'PrivacyPolicy.md']
+        },
+        {
+            slug: 'Pong-Evolved-Privacy-Policy',
+            appName: 'Pong Evolved',
+            effectiveDate: '2026-11-23',
+            effectiveLabel: 'Nov 23, 2026',
+            sdks: ['Google Play Services', 'AdMob', 'Unity'],
+            files: ['index.html', 'PrivacyPolicy.md']
+        },
+        {
+            slug: 'Tap-Privacy-Policy',
+            appName: 'Tap!',
+            effectiveDate: '2023-05-06',
+            effectiveLabel: 'May 6, 2023',
+            sdks: ['Google Play Services', 'AdMob', 'Unity'],
+            files: ['index.html', 'PrivacyPolicy.md']
+        },
+        {
+            slug: 'IAPLearn-Privacy-Policy',
+            appName: 'IAPLearn',
+            effectiveDate: '2023-05-06',
+            effectiveLabel: 'May 6, 2023',
+            sdks: ['Google Play Services', 'AdMob', 'Unity'],
+            files: ['index.html', 'PrivacyPolicy.md']
+        }
+    ];
 
     var state = {
-        entries: initialEntries,
-        selectedSlug: initialEntries.length ? initialEntries[0].slug : '',
+        entries: loadCachedEntries() || FALLBACK_ENTRIES.slice(),
+        selectedSlug: '',
         activeTab: 'overview',
         filter: '',
         sortAsc: true,
         markdownCache: {}
     };
+    state.selectedSlug = state.entries.length ? state.entries[0].slug : '';
 
     var dirListEl = document.getElementById('dir-list');
     var dirCountEl = document.getElementById('dir-count');
@@ -58,12 +97,71 @@
 
     if (!dirListEl || !readerBody) return;
 
+    function loadCachedEntries() {
+        try {
+            var raw = sessionStorage.getItem(CACHE_KEY);
+            if (!raw) return null;
+            var parsed = JSON.parse(raw);
+            return Array.isArray(parsed) && parsed.length ? parsed : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function saveCachedEntries(list) {
+        try {
+            sessionStorage.setItem(CACHE_KEY, JSON.stringify(list));
+        } catch (e) {}
+    }
+
     function escapeHtml(value) {
         return String(value)
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;');
+    }
+
+    function formatDateLabel(isoDate) {
+        var parts = isoDate.split('-');
+        if (parts.length !== 3) return isoDate;
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        var monthIdx = parseInt(parts[1], 10) - 1;
+        var day = parseInt(parts[2], 10);
+        if (monthIdx < 0 || monthIdx > 11 || isNaN(day)) return isoDate;
+        return months[monthIdx] + ' ' + day + ', ' + parts[0];
+    }
+
+    function parsePolicyHtml(slug, html) {
+        var appName = slug.replace(/-Privacy-Policy$/i, '').replace(/-/g, ' ').trim();
+        var mName = html.match(/built\s+the\s+(?:<[^>]+>\s*)?([^<\n]+?)(?:\s*<\/[^>]+>)?\s+app\b/i);
+        if (mName) {
+            appName = mName[1].replace(/\s+/g, ' ').trim();
+        } else {
+            var mTitle = html.match(/<title>\s*Privacy\s+Policy\s*[-—|:]\s*([^|<]+)/i);
+            if (mTitle) appName = mTitle[1].replace(/\s+/g, ' ').trim();
+        }
+
+        var effectiveDate = '—';
+        var effectiveLabel = 'See full page';
+        var mDate = html.match(/effective\s+as\s+of\s+(?:<[^>]+>)*(\d{4}-\d{2}-\d{2})/i);
+        if (mDate) {
+            effectiveDate = mDate[1];
+            effectiveLabel = formatDateLabel(effectiveDate);
+        }
+
+        var sdks = Object.keys(SDK_CATALOG).filter(function (name) {
+            return SDK_CATALOG[name].pattern.test(html);
+        });
+
+        return {
+            slug: slug,
+            appName: appName,
+            effectiveDate: effectiveDate,
+            effectiveLabel: effectiveLabel,
+            sdks: sdks.length ? sdks : ['Google Play Services', 'AdMob', 'Unity'],
+            files: ['index.html', 'PrivacyPolicy.md']
+        };
     }
 
     function folderIcon() {
@@ -311,6 +409,49 @@
         renderReader();
     }
 
+    // Auto-discover all policy folders from GitHub and parse their index.html directly in the browser
+    function discoverPolicies() {
+        if (window.location.protocol !== 'http:' && window.location.protocol !== 'https:') return;
+
+        fetch(REPO_API, { headers: { Accept: 'application/vnd.github.v3+json' } })
+            .then(function (res) { return res.ok ? res.json() : null; })
+            .then(function (items) {
+                if (!Array.isArray(items)) return;
+
+                var folders = items.filter(function (item) {
+                    return item.type === 'dir' &&
+                        item.name.charAt(0) !== '.' &&
+                        !IGNORED_DIRS[item.name];
+                });
+
+                if (!folders.length) return;
+
+                var existingBySlug = {};
+                state.entries.forEach(function (e) { existingBySlug[e.slug] = e; });
+
+                Promise.all(folders.map(function (folder) {
+                    return fetch(encodeURIComponent(folder.name) + '/index.html')
+                        .then(function (r) { return r.ok ? r.text() : ''; })
+                        .then(function (html) {
+                            if (html) return parsePolicyHtml(folder.name, html);
+                            return existingBySlug[folder.name] || parsePolicyHtml(folder.name, '');
+                        })
+                        .catch(function () {
+                            return existingBySlug[folder.name] || parsePolicyHtml(folder.name, '');
+                        });
+                })).then(function (discovered) {
+                    state.entries = discovered;
+                    if (!discovered.some(function (e) { return e.slug === state.selectedSlug; })) {
+                        state.selectedSlug = discovered[0].slug;
+                    }
+                    saveCachedEntries(discovered);
+                    renderDirectory();
+                    renderReader();
+                });
+            })
+            .catch(function () {});
+    }
+
     dirListEl.addEventListener('click', function (e) {
         var btn = e.target.closest('button[data-slug]');
         if (!btn) return;
@@ -391,37 +532,7 @@
         }
     });
 
-    // Silently discover any newly added policy folders when hosted over HTTP/HTTPS
-    if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
-        fetch(REPO_API, { headers: { Accept: 'application/vnd.github.v3+json' } })
-            .then(function (res) { return res.ok ? res.json() : null; })
-            .then(function (items) {
-                if (!Array.isArray(items)) return;
-                var known = {};
-                state.entries.forEach(function (e) { known[e.slug] = true; });
-                var added = false;
-                items.forEach(function (item) {
-                    if (
-                        item.type === 'dir' &&
-                        item.name.charAt(0) !== '.' &&
-                        !IGNORED_DIRS[item.name] &&
-                        !known[item.name]
-                    ) {
-                        state.entries.push({
-                            slug: item.name,
-                            appName: item.name.replace(/-Privacy-Policy$/i, '').replace(/-/g, ' '),
-                            effectiveDate: '—',
-                            effectiveLabel: 'See full page',
-                            sdks: ['Google Play Services', 'AdMob', 'Unity']
-                        });
-                        added = true;
-                    }
-                });
-                if (added) renderDirectory();
-            })
-            .catch(function () {});
-    }
-
     renderDirectory();
     renderReader();
+    discoverPolicies();
 })();
